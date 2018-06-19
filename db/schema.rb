@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_18_162435) do
+ActiveRecord::Schema.define(version: 2018_06_19_132108) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "checks", force: :cascade do |t|
+    t.string "version"
+    t.string "ip"
+    t.string "hostname"
+    t.string "reason"
+    t.string "versbosity"
+    t.string "scandur"
+    t.integer "score"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_checks_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,8 +42,26 @@ ActiveRecord::Schema.define(version: 2018_06_18_162435) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "firstname"
+    t.string "lastname"
+    t.string "company"
+    t.string "profilepicture"
+    t.integer "nochecks"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vulnerabilities", force: :cascade do |t|
+    t.string "port"
+    t.string "protocol"
+    t.string "state"
+    t.string "service"
+    t.bigint "check_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["check_id"], name: "index_vulnerabilities_on_check_id"
+  end
+
+  add_foreign_key "checks", "users"
+  add_foreign_key "vulnerabilities", "checks"
 end
