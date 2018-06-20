@@ -18,6 +18,12 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+#Gems added by team Ceziam
+gem 'crack' 
+gem 'json' 
+gem 'net-ssh', '~> 3.2'
+gem 'net-scp', '~> 1.2', '>= 1.2.1'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
@@ -29,3 +35,5 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+
