@@ -19,8 +19,8 @@ gem 'uglifier'
 gem 'webpacker'
 
 #Gems added by team Ceziam
-gem 'crack' 
-gem 'json' 
+gem 'crack', '~> 0.4.3'
+gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'net-ssh', '~> 3.2'
 gem 'net-scp', '~> 1.2', '>= 1.2.1'
 
