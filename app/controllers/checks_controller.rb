@@ -30,8 +30,6 @@ class ChecksController < ApplicationController
       puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
     end
 
-    sleep 3
-
     # Convert the XML file into JSON file
     unparsed_doc = open("http://ceziam.com:8080/output2.xml")
     myXML2  = Crack::XML.parse(unparsed_doc)

@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_19_135955) do
+ActiveRecord::Schema.define(version: 2018_06_20_161850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "checks", force: :cascade do |t|
-    t.string "version"
     t.string "ip"
     t.string "hostname"
-    t.string "reason"
-    t.string "versbosity"
     t.string "scandur"
     t.integer "score"
     t.bigint "user_id"
@@ -60,6 +57,9 @@ ActiveRecord::Schema.define(version: 2018_06_19_135955) do
     t.bigint "check_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "version"
+    t.string "reason"
+    t.string "product"
     t.index ["check_id"], name: "index_vulnerabilities_on_check_id"
   end
 
