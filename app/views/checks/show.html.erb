@@ -1,5 +1,16 @@
-<h1> The checks of mine </h1>
+<h1>My check</h1>
 
 <p>hostname: <%= @check.hostname %></p>
 <p>User id: <%= @check.user_id %></p>
-<p>JSON: <%= @check.fullresponse %></p>
+<!-- <p>JSON: <%= @check.fullresponse %></p> -->
+
+<% JSON.parse(@check.fullresponse)["nmaprun"]["host"]["ports"]["port"].each do |info| %>
+  <p>*************</p>
+  <p>Port id: <%= info["portid"] %></p>
+  <p>State: <%= info["state"]["state"] %></p>
+  <p>Service: <%= info["service"]["name"] %></p>
+  <p>Protocol: <%= info["protocol"] %></p>
+<% end %>
+
+
+
