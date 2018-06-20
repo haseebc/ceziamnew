@@ -1,0 +1,53 @@
+.banner-green {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: red;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(40, 60, 134, 0.8) 0%, rgba(69, 162, 71, 0.8) 100%);
+}
+
+.logo-banner {
+  opacity: 0.8;
+  height: 85%;
+  width: 40%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-bottom: 50px;
+}
+
+.header-title {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.page-description {
+  font-family: 'Titillium Web', sans-serif;
+  color: white;
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.header-description {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: center;
+  margin-left: 10%;
+  height: 60%;
+  width: 40%;
+}
+
+.white-vector {
+  position: absolute;
+  height: 20vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 0px;
+}
