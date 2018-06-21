@@ -1,1 +1,154 @@
-_cards.scss
+.card-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: red;
+  height: 100vh;
+  background: #FFFDFD;
+}
+
+.alternate {
+background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 95, 109, 0.8) 99.66%);
+}
+
+.white {
+  color: #FFFDFD !important;
+}
+
+.grey {
+  color: #4F4F4F !important;
+}
+
+.green-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50%;
+  width: 40%;
+  background: linear-gradient(90deg, rgba(4, 135, 170, 0.8) 0%, rgba(134, 231, 143, 0.8) 100%);
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px lightgrey;
+}
+
+#grey {
+  position: absolute;
+  color: #4F4F4F;
+  top: 20px;
+  width: 100%;
+  height: 10%;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50%;
+  width: 40%;
+  background: linear-gradient(90deg, #DE6161 0%, #2657EB 100%);
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px lightgrey;
+}
+
+.card-white {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 50%;
+  width: 40%;
+  background: #FFFDFD;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px snow;
+}
+
+.card-description {
+position: absolute;
+font-family: 'Montserrat', sans-serif;
+font-weight: 300;
+font-size: 34px;
+text-align: left;
+color: #FFFFFF;
+width: 40%;
+bottom: 0px;
+left: 17px;
+}
+
+#card-description-paragraph {
+font-family: 'Montserrat', sans-serif;
+font-weight: 200;
+font-size: 20px;
+color: #FFFFFF;
+}
+
+.card-1-image {
+  height: 100%;
+  width: 85%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.5s;
+}
+
+.card-1-image:hover {
+  opacity: 0.6;
+}
+
+.card-2-image {
+  height: 100%;
+  width: 68%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.5s;
+  margin-right: 20px;
+}
+
+.card-2-image:hover {
+  opacity: 0.6;
+}
+
+.card-3-image {
+  height: 100%;
+  width: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.5s;
+  margin-right: 15px;
+}
+
+.card-3-image:hover {
+  opacity: 0.8;
+}
+
+.text-description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  text-align: left;
+  color: #4F4F4F;
+  width: 35%;
+}
+
+#description-paragraph {
+font-weight: 200;
+font-size: 20px;
+color: #4F4F4F;
+text-align: left;
+}
+
+.orange-vector {
+  position: absolute;
+  height: 20vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  bottom: 0px;
+}
+
