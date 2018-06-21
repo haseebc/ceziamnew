@@ -22,7 +22,7 @@
   font-family: 'Montserrat', sans-serif;
   color: white;
   font-size: 28px;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .page-description {
@@ -30,14 +30,16 @@
   color: white;
   font-size: 34px;
   font-weight: lighter;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .header-description {
   display: flex;
   flex-direction: column;
-  align-items: space-around;
+  align-items: space-between;
   justify-content: center;
-  margin-left: 10%;
+  margin-left: 5%;
   height: 60%;
   width: 40%;
 }

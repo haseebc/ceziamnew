@@ -1,0 +1,30 @@
+.header {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  height: 10%;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  color: #FFFDFD;
+  top: 10px;
+  left: 35px;
+}
+
+.title {
+  margin: auto;
+}
+.drop-down {
+  height: 30px;
+  width: 50px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.5s;
+}
+
+.drop-down:hover {
+  opacity: 0.6;
+}

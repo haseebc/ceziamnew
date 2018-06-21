@@ -1,0 +1,31 @@
+
+::placeholder {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 28px;
+  font-weight: 100;
+}
+
+#user_username {
+  height: 50px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: #FFFDFD 2px solid;
+  margin-bottom: 30px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input[type="text"]{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 28px;
+  font-weight: 100;
+}
+
