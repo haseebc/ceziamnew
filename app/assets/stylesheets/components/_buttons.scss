@@ -1,20 +1,21 @@
 #button-white {
 font-family: 'Montserrat', sans-serif;
-font-weight: 300;
+font-weight: 200;
 font-size: 28px;
 text-align: center;
 border: #FFFDFD 2px solid;
 border-radius: 50px;
-color: #FFFDFD;
+color: #566E95;
 text-decoration: none;
 width: 150px;
 padding-top: 10px;
 padding-bottom: 10px;
 transition: 0.4s;
+background-color: rgba(255, 255, 255, 1);
 }
 
 
 #button-white:hover {
-  color: #566E95;
-    background-color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+    background-color: transparent;
   }

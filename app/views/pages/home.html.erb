@@ -1,12 +1,22 @@
 
 <div class="banner-green">
+  <div class="header">
+    <div class="drop-down" style="background-image: url(<%= image_path('drop-down.png') %>);">
+  </div>
+    <div class="title"><p>CEZIAM</p></div>
+  </div>
   <div class="header-description">
     <p class="header-title">Welcome to Ceziam</p>
     <p class="page-description"> Check your websites presence and security here.</p>
-    <a href="" id="button-white">Check</a>
+    <form action="">
+      <div>
+        <input class="string required" id="user_username" maxlength="255" name="user[username]" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
+      </div>
+      <input id="button-white" name="commit" type="submit" value="Check" />
+    </form>
   </div>
   <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
   </div>
   <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
-</div>
+  </div>
 </div>
