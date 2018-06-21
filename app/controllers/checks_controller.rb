@@ -13,22 +13,22 @@ class ChecksController < ApplicationController
 
   def create
     # Run the check using the user input
-    targeth = params[:check]["hostname"] # Need to secure this action!!!
-    ports_to_check = "20,21,25,53,67,80,135,137,138,139,161,389,445,548,1433,3389"
+    # targeth = params[:check]["hostname"] # Need to secure this action!!!
+    # ports_to_check = "20,21,25,53,67,80,135,137,138,139,161,389,445,548,1433,3389"
 
-    @jumphost = "ceziam.com"
-    @username = "root"
-    @password = "ill3matic"
-    @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{targeth}"
+    # @jumphost = "ceziam.com"
+    # @username = "root"
+    # @password = "ill3matic"
+    # @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{targeth}"
 
-    begin
-      ssh = Net::SSH.start(@jumphost, @username, :password => @password)
-      res = ssh.exec!(@cmd)
-      ssh.close
-      puts res
-    rescue
-      puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
-    end
+    # begin
+    #   ssh = Net::SSH.start(@jumphost, @username, :password => @password)
+    #   res = ssh.exec!(@cmd)
+    #   ssh.close
+    #   puts res
+    # rescue
+    #   puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
+    # end
 
     # Convert the XML file into JSON file
     unparsed_doc = open("http://ceziam.com:8080/output2.xml")
