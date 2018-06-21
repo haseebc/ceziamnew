@@ -1,0 +1,20 @@
+#button-white {
+font-family: 'Montserrat', sans-serif;
+font-weight: 300;
+font-size: 28px;
+text-align: center;
+border: #FFFDFD 2px solid;
+border-radius: 50px;
+color: #FFFDFD;
+text-decoration: none;
+width: 150px;
+padding-top: 10px;
+padding-bottom: 10px;
+transition: 0.4s;
+}
+
+
+#button-white:hover {
+  color: #566E95;
+    background-color: rgba(255, 255, 255, 1);
+  }
