@@ -1,8 +1,11 @@
 <h1>Check for: <%= @check.hostname %></h1>
 
+<h3>Global score: <%= @check.global_score %>%</h3>
+
 <p>IP: <%= @check.ip %></p>
 <p>Scan duration: <%= @check.scandur %> seconds</p>
 <p>User id: <%= @check.user_id %></p>
+
 
 <!-- <p>JSON: <%= @check.fullresponse %></p> -->
 
@@ -22,7 +25,9 @@
   <li>Protocol: <%= vuln.protocol %></li>
   <li>Service: <%= vuln.service %></li>
   <li>Reason: <%= vuln.reason %></li>
+  <li>Weakness: <%= vuln.weakness %></li>
+  <li>Risk: <%= vuln.risk %></li>
+  <li>Recommandation: <%= vuln.recommandation %></li>
   <br>
 <% end %>
 </ul>
-
