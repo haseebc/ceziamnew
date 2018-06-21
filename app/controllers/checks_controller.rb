@@ -14,7 +14,7 @@ class ChecksController < ApplicationController
   def create
     # Run the check using the user input
     targeth = params[:check]["hostname"] # Need to secure this action!!!
-    ports_to_check = "21,22,80,3389"
+    ports_to_check = "20,21,25,53,67,80,135,137,138,139,161,389,445,548,1433,3389"
 
     @jumphost = "ceziam.com"
     @username = "root"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_20_161850) do
+ActiveRecord::Schema.define(version: 2018_06_21_123211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(version: 2018_06_20_161850) do
     t.string "version"
     t.string "reason"
     t.string "product"
+    t.string "weakness"
+    t.string "risk"
+    t.string "recommandation"
     t.index ["check_id"], name: "index_vulnerabilities_on_check_id"
   end
 
