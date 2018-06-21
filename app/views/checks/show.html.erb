@@ -1,5 +1,28 @@
-<h1> The checks of mine </h1>
+<h1>Check for: <%= @check.hostname %></h1>
 
-<p>hostname: <%= @check.hostname %></p>
+<p>IP: <%= @check.ip %></p>
+<p>Scan duration: <%= @check.scandur %> seconds</p>
 <p>User id: <%= @check.user_id %></p>
-<p>JSON: <%= @check.fullresponse %></p>
+
+<!-- <p>JSON: <%= @check.fullresponse %></p> -->
+
+<!-- <#% JSON.parse(@check.fullresponse)["nmaprun"]["host"]["ports"]["port"].each do |info| %>
+  <p>*************</p>
+  <p>Port id: <#%= info["portid"] %></p>
+  <p>State: <%#= info["state"]["state"] %></p>
+  <p>Service: <#%= info["service"]["name"] %></p>
+  <p>Protocol: <#%= info["protocol"] %></p>
+<#% end %> -->
+
+<h3>Vulnerabilities:</h3>
+<ul>
+<% @check.vulnerabilities.each do |vuln| %>
+  <li>Port: <%= vuln.port %></li>
+  <li>State: <%= vuln.state %></li>
+  <li>Protocol: <%= vuln.protocol %></li>
+  <li>Service: <%= vuln.service %></li>
+  <li>Reason: <%= vuln.reason %></li>
+  <br>
+<% end %>
+</ul>
+

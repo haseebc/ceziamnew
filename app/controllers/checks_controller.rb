@@ -7,67 +7,56 @@ require 'open-uri'
 require 'pry'
 
 class ChecksController < ApplicationController
+  def new
+    @check = Check.new
+  end
 
-    def new
-        @check = Check.new
+  def create
+    # Run the check using the user input
+    targeth = params[:check]["hostname"] # Need to secure this action!!!
+    ports_to_check = "21,22,80,3389"
+
+    @jumphost = "ceziam.com"
+    @username = "root"
+    @password = "ill3matic"
+    @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{targeth}"
+
+    begin
+      ssh = Net::SSH.start(@jumphost, @username, :password => @password)
+      res = ssh.exec!(@cmd)
+      ssh.close
+      puts res
+    rescue
+      puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
     end
 
-    def create  
-        # raise 
-        # run check using the user input (hostname)
-        # targeth = @check.hostname
-        # @targeth = targeth
-        
-        # @check= Check.new(hostname_param)
+    # Convert the XML file into JSON file
+    unparsed_doc = open("http://ceziam.com:8080/output2.xml")
+    myXML2  = Crack::XML.parse(unparsed_doc)
+    myJSON2 = myXML2.to_json
 
-        targeth = params[:check]["hostname"]
-        # targeth = @check.hostname
-        @targeth = targeth
-        
+    # Create the check and store the JSON object
+    @check = Check.new(hostname_param)
+    @check.user = current_user
+    @check.fullresponse = myJSON2
 
-        @jumphost = "ceziam.com"
-        @username = "root"
-        @password = "ill3matic"
-        @cmd = "nmap -sV -oX /var/www/html/output2.xml -p 21,22,80,3389 #{@targeth}"
-        
-            begin
-                ssh = Net::SSH.start(@jumphost, @username, :password => @password)
-                res = ssh.exec!(@cmd)
-                ssh.close
-                puts res
-            rescue
-                puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
-            end
-
-            sleep 12
-
-        # convert the XML file into JSON file
-        unparsed_doc = open("http://ceziam.com:8080/output2.xml")
-        myXML2  = Crack::XML.parse(unparsed_doc)
-        myJSON2 = myXML2.to_json
-
-        # create the check and store the JSON object
-        @check = Check.new(hostname_param)   
-        @check.user = current_user
-        @check.fullresponse = myJSON2
-
-        # save the check
-        if @check.save
-            redirect_to @check
-        else 
-            # redirect to the home page
-            render 'new'
-        end        
+    # Save the check
+    if @check.save
+        redirect_to @check
+    else
+      # Redirect to the home page
+      render 'new'
     end
-    
-    def show 
-        @check = Check.find(params[:id])
-    end
+  end
 
-    private 
+  def show
+    @check = Check.find(params[:id])
+  end
 
-    def hostname_param
-        params.require(:check).permit(:hostname)
-    end
+  private
+
+  def hostname_param
+    params.require(:check).permit(:hostname)
+  end
 end
 
