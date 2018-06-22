@@ -6,15 +6,25 @@
 <% end %>
 
 
+ <div class="container" id="loading-symbol" hidden>
+      <div class="circles">
+        <div class="circle-multiple">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+      </div>
+    </div>
 
-<img src="https://media.giphy.com/media/DVHrK100eH3J6/giphy.gif" hidden 
+<img src="https://media.giphy.com/media/DVHrK100eH3J6/giphy.gif" hidden
 
 id="loader-gif">
 
 
 <script>
     const form = document.querySelector('#new_check');
-    const gif = document.querySelector("#loader-gif");
+    const gif = document.querySelector("#loading-symbol");
     form.addEventListener('submit', function(event) {
         form.hidden = true;
         gif.hidden = false;
