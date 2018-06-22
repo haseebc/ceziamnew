@@ -1,1 +1,24 @@
 
+.title-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: red;
+  height: 30vh;
+  background: #FFFDFD;
+}
+
+.info-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.results {
+  font-family: 'montserrat', sans-serif;
+  font-size: 42px;
+  margin-top: 20px;
+  font-weight: 200;
+}
+
