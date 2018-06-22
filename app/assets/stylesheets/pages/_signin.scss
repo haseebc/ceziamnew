@@ -1,0 +1,46 @@
+.container-sign-up{
+  background-size: cover;
+  background: linear-gradient(271.29deg, rgba(100, 43, 115, 0.8) 1.56%, rgba(197, 66, 110, 0.8) 98.87%);
+  color: white;
+  height: 170vh;
+}
+
+
+.form-signin h2{
+  justify-content: center;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.form-signin p{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: lighter;
+}
+
+.form-actions{
+  background: transparent;
+  text-align: center;
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+}
+
+.form-actions:hover {
+  opacity: 1;
+  color: white;
+}
+
+.button-signin {
+  background: transparent;
+  color: white;
+  width: 100%;
+}
+
+.button-signin:hover {
+  color: white;
+  background: transparent;
+}
