@@ -63,9 +63,6 @@ ActiveRecord::Schema.define(version: 2018_06_21_123211) do
     t.string "weakness"
     t.string "risk"
     t.string "recommandation"
-    t.integer "impact"
-    t.integer "likelihood"
-    t.integer "netrisk"
     t.index ["check_id"], name: "index_vulnerabilities_on_check_id"
   end
 
