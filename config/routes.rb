@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'dashboard/checks' 
-  get 'dashboard/detailed-results'   
+  get 'dashboard/detailed-results'
   
   devise_for :users
   root to: 'pages#home'

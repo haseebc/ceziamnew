@@ -2,9 +2,8 @@
 
 <% @checks.each do |check| %>
     <p>Hostname: <%= check.hostname %></p>
-    <p>Global score: <%= check.global_score %>%</p>
+    <p>Global score: <%= check.score %>%</p>
     <p>IP: <%= check.ip %></p>
-    <p>Scan duration: <%= check.scandur %> seconds</p>
     <p>Number of vulnerabilities found: <%= check.vulnerabilities.count %></p>
     <p><%= link_to 'See full report', check_path(check) %></p>
     <br>

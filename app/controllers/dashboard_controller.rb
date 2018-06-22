@@ -4,6 +4,8 @@ class DashboardController < ApplicationController
     end
 
     def detailed_results
-        @check = current_user.checks.last
+        @check = Check.last
+        @check.user = current_user
+        @check.save
     end
 end
