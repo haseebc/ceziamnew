@@ -4,7 +4,10 @@
 
 <p>IP: <%= @check.ip %></p>
 <p>Scan duration: <%= @check.scandur %> seconds</p>
-<p>User id: <%= @check.user_id %></p>
+
+<% if current_user %>
+
+<p>Scanned by: <%= @check.user.email %></p>
 
 <h3>Vulnerabilities:</h3>
 <ul>
@@ -17,8 +20,15 @@
   <li>Weakness: <%= vuln.weakness %></li>
   <li>Risk: <%= vuln.risk %></li>
   <li>Recommandation: <%= vuln.recommandation %></li>
-  <li>Netrisk: <%= vuln.netrisk %></li>
+  <li>Netrisk: <%= vuln.netrisk %>%</li>
   <br>
 <% end %>
 </ul>
 
+<% else %>
+
+<h4>Sign up to get our detailed report</h4>
+
+<%= link_to 'See full report', dashboard_detailed_results_path %>
+
+<% end %>

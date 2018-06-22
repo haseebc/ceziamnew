@@ -1,12 +1,12 @@
 <h1>My detailed report:</h1>
 
-<h2>Check for: <%= @check.hostname %></h2>
+<h1>Check for: <%= @check.hostname %></h1>
 
-<h3>Global score: <%= @check.global_score %>%</h3>
+<h3>Risk score: <%= @check.score %>%</h3>
 
 <p>IP: <%= @check.ip %></p>
 <p>Scan duration: <%= @check.scandur %> seconds</p>
-<p>User id: <%= @check.user_id %></p>
+<p>Scanned by: <%= @check.user.email %></p>
 
 <h3>Vulnerabilities:</h3>
 <ul>
@@ -19,6 +19,7 @@
   <li>Weakness: <%= vuln.weakness %></li>
   <li>Risk: <%= vuln.risk %></li>
   <li>Recommandation: <%= vuln.recommandation %></li>
+  <li>Netrisk: <%= vuln.netrisk %>%</li>
   <br>
 <% end %>
 </ul>

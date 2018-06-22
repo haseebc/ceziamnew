@@ -1,5 +1,5 @@
 class Check < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, required: false
   after_create :set_vulnerabilities, :set_check
 
   has_many :vulnerabilities

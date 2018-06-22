@@ -7,6 +7,8 @@ require 'open-uri'
 require 'pry'
 
 class ChecksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create, :show]
+
   def new
     @check = Check.new
   end
@@ -42,10 +44,10 @@ class ChecksController < ApplicationController
 
     # Save the check
     if @check.save
-        redirect_to @check
+        redirect_to check_path(@check)
     else
       # Redirect to the home page
-      render 'new'
+      redirect_to root_path
     end
   end
 
