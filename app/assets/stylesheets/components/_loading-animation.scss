@@ -7,13 +7,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
-  height: 150px;
+  width: 70px;
+  height: 70px;
   background-color: transparent;
-  opacity: 0.9;
-  left: 120px;
-  right: 0;
-  margin: auto;
+  bottom: 173px;
+  left: 243px;
   border-radius: 50%;
 
 }
@@ -35,20 +33,20 @@
   $mix-sub-from: mix($mix-main, $from);
   $mix-sub-to: mix($mix-main, $to);
 
-  box-shadow: 0 4px 0 $weight rgba($mix-sub-to, .75),
-              0 -4px 0 $weight rgba($mix-sub-from, .25),
-              4px 0 0 $weight rgba($mix-sub-to, .25),
-              -4px 0 0 $weight  rgba($mix-sub-from, .25),
-              4px -4px 0 $weight rgba($mix-main, .5),
-              -4px 4px 0 $weight rgba($mix-main, .5),
-              4px 4px 0 $weight rgba($to, .75),
-              -4px -4px 0 $weight rgba($from, .75);
+  box-shadow: 0 2px 0 $weight rgba($mix-sub-to, .75),
+              0 -2px 0 $weight rgba($mix-sub-from, .25),
+              2px 0 0 $weight rgba($mix-sub-to, .25),
+              -2px 0 0 $weight  rgba($mix-sub-from, .25),
+              2px -2px 0 $weight rgba($mix-main, .5),
+              -2px 2px 0 $weight rgba($mix-main, .5),
+              2px 2px 0 $weight rgba($to, .75),
+              -2px -2px 0 $weight rgba($from, .75);
 }
 
 /// BASIC EXAMPLE ///
 
 .circle {
-  @include size(150px);
+  @include size(50px);
 
   border-radius: 100%;
 
@@ -112,29 +110,29 @@
 
 
 
-.btn {
-  border: none;
-  display: inline-block;
-  background: transparent;
+// .btn {
+//   border: none;
+//   display: inline-block;
+//   background: transparent;
 
-  color: rgba(white, .7);
-  background: rgba(white, .05);
-  text-decoration: none;
+//   color: rgba(white, .7);
+//   background: rgba(white, .05);
+//   text-decoration: none;
 
-  padding: 15px 20px;
+//   padding: 15px 20px;
 
-  border-radius: 10px;
+//   border-radius: 10px;
 
-  transition: all .2s;
+//   transition: all .2s;
 
-  @include border-gradient(gray, darkgray);
+//   @include border-gradient(gray, darkgray);
 
-  &:hover {
-    @include border-gradient(hotpink, skyblue);
-    color: white;
-    background: rgba(skyblue, .05);
-  }
-}
+//   &:hover {
+//     @include border-gradient(hotpink, skyblue);
+//     color: white;
+//     background: rgba(skyblue, .05);
+//   }
+// }
 
 
 ///// OTHER /////
