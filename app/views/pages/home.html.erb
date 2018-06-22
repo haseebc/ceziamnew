@@ -1,5 +1,16 @@
 
 <div class="banner-green">
+  <div id="loading-card" hidden>
+    <div class="container" id="loading-symbol" hidden>
+      <div class="circles">
+        <div class="circle-multiple">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+      </div>
+      </div>
+    </div>
   <div class="header">
     <div class="drop-down" style="background-image: url(<%= image_path('drop-down.png') %>);">
   </div>
@@ -8,10 +19,10 @@
   <div class="header-description">
     <p class="header-title">Welcome to Ceziam</p>
     <p class="page-description"> Check your websites presence and security here.</p>
-    <form action="/checks" method="post">
+    <form id="search" action="/checks" method="post">
       <div>
        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <input class="string required" id="user_username" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
+      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
       </div>
       <input id="button-white" name="commit" type="submit" value="Check" />
     </form>
@@ -80,4 +91,12 @@
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
 </div>
+
+<script>
+  const form = document.querySelector('#search');
+  const gif = document.querySelector("#loading-symbol");
+  form.addEventListener('submit', function(event) {
+      gif.hidden = false;
+  });
+</script>
 

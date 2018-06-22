@@ -1,0 +1,140 @@
+@import "bourbon";
+
+
+#loading-card {
+  z-index: 9999;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+  opacity: 0.9;
+  left: 120px;
+  right: 0;
+  margin: auto;
+  border-radius: 50%;
+
+}
+
+// .loading-percentage {
+//   z-index: 9999;
+//   position: absolute;
+//   width: 150px;
+//   height: 150px;
+//   left: 120px;
+//   right: 0;
+//   margin: auto;
+// }
+
+/// border-gradient mixin: ///
+
+@mixin border-gradient($from, $to, $weight: 0) {
+  $mix-main: mix($from, $to);
+  $mix-sub-from: mix($mix-main, $from);
+  $mix-sub-to: mix($mix-main, $to);
+
+  box-shadow: 0 4px 0 $weight rgba($mix-sub-to, .75),
+              0 -4px 0 $weight rgba($mix-sub-from, .25),
+              4px 0 0 $weight rgba($mix-sub-to, .25),
+              -4px 0 0 $weight  rgba($mix-sub-from, .25),
+              4px -4px 0 $weight rgba($mix-main, .5),
+              -4px 4px 0 $weight rgba($mix-main, .5),
+              4px 4px 0 $weight rgba($to, .75),
+              -4px -4px 0 $weight rgba($from, .75);
+}
+
+/// BASIC EXAMPLE ///
+
+.circle {
+  @include size(150px);
+
+  border-radius: 100%;
+
+  @include border-gradient(red, yellow);
+}
+
+////////////// OTHER EXAMPLES ////////////////
+
+
+.circle {
+  &:nth-of-type(2) {
+    @include border-gradient(skyblue, hotpink);
+
+    animation: rotateThis 1s linear infinite;
+  }
+
+  &:nth-of-type(3) {
+    @include border-gradient(#E14847, #B53BB4);
+  }
+
+  &-multiple { @include size(100px); }
+
+  &-multiple & {
+    @include position(absolute, 0px 0px 0px 0px);
+    margin: auto;
+
+    &:nth-of-type(1) { animation: psycho 2s linear infinite; }
+    &:nth-of-type(2) { animation: psycho 2s linear .1s infinite; }
+    &:nth-of-type(3) { animation: psycho 2s linear .25s infinite; }
+  }
+
+}
+
+@keyframes rotateThis {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes psycho {
+  0% {
+    transform: rotate(0deg) scale(1) translate(0, 0);
+  }
+
+  33% {
+    transform: rotate(360deg) scale(1) translate(5px, 5px);
+  }
+
+  66% {
+    transform: rotate(720deg) scale(1) translate(-5px, -5px);
+  }
+
+  100% {
+    transform: rotate(1080deg) scale(1) translate(0, 0);
+  }
+}
+
+
+
+.btn {
+  border: none;
+  display: inline-block;
+  background: transparent;
+
+  color: rgba(white, .7);
+  background: rgba(white, .05);
+  text-decoration: none;
+
+  padding: 15px 20px;
+
+  border-radius: 10px;
+
+  transition: all .2s;
+
+  @include border-gradient(gray, darkgray);
+
+  &:hover {
+    @include border-gradient(hotpink, skyblue);
+    color: white;
+    background: rgba(skyblue, .05);
+  }
+}
+
+
+///// OTHER /////
