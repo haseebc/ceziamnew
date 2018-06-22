@@ -57,9 +57,6 @@ ActiveRecord::Schema.define(version: 2018_06_21_123211) do
     t.bigint "check_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "version"
-    t.string "reason"
-    t.string "product"
     t.string "weakness"
     t.string "risk"
     t.string "recommandation"
