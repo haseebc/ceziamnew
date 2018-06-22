@@ -8,9 +8,10 @@
   <div class="header-description">
     <p class="header-title">Welcome to Ceziam</p>
     <p class="page-description"> Check your websites presence and security here.</p>
-    <form action="">
+    <form action="/checks" method="post">
       <div>
-        <input class="string required" id="user_username" maxlength="255" name="user[username]" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
+       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <input class="string required" id="user_username" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
       </div>
       <input id="button-white" name="commit" type="submit" value="Check" />
     </form>
@@ -30,7 +31,6 @@
     </div>
     <div class="card-1-image" style="background-image: url(<%= image_path('card-1.png') %>);">
     </div>
-
   </div>
   <div class="text-description">
     <p>How it works</p>
@@ -57,7 +57,6 @@
     <div class="card-2-image" style="background-image: url(<%= image_path('cybersecurity.png') %>);">
     </div>
   </div>
-
   <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
   </div>
 </div>
@@ -71,7 +70,6 @@
     </div>
     <div class="card-3-image" style="background-image: url(<%= image_path('hacker.png') %>);">
     </div>
-
   </div>
   <div class="text-description">
     <p>Why do you need it?</p>
@@ -79,7 +77,6 @@
     is very neccesary if you want hackers
     to have a really difficult time trying to harm you. Remember that a kick-ass website is no good with lame security. Nobody will trust it!</p>
   </div>
-
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
 </div>
