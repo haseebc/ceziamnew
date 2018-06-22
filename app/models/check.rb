@@ -1,23 +1,12 @@
 class Check < ApplicationRecord
   belongs_to :user
-  after_create :set_vulnerabilities, :set_check, :global_score
+  after_create :set_vulnerabilities, :set_check
 
   has_many :vulnerabilities
 
-  def global_score
-    @ports_checked = JSON.parse(self.fullresponse)["nmaprun"]["host"]["ports"]["port"]
-
-    @ports_opened = []
-
-    JSON.parse(self.fullresponse)["nmaprun"]["host"]["ports"]["port"].each do |info|
-      if info["state"]["state"] == "open"
-        @ports_opened << info["portid"]
-      end
-    end
-
-    @global_score = (1 - (@ports_opened.count.to_f / @ports_checked.count.to_f)) * 100
-  
-    return @global_score
+  def set_global_score
+    self.score = self.vulnerabilities.pluck(:netrisk).max
+    self.save
   end
 
   private
@@ -33,6 +22,7 @@ class Check < ApplicationRecord
           check_id: self.id)
       end
     end
+    set_global_score
   end
 
   def set_check
