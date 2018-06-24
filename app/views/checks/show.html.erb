@@ -48,14 +48,17 @@
           <li>Weakness: <%= vuln.weakness %></li>
           <li>Risk: <%= vuln.risk %></li>
           <li>Recommandation: <%= vuln.recommandation %></li>
-          <li>Netrisk: <%= vuln.netrisk %>%</li>
-          <br>
+          <li>Netrisk: <%= vuln.netrisk %> </li>
+            <br>
         <% end %>
         </ul>
+
 
         <% else %>
 
         <h4>Sign up to get our detailed report</h4>
+
+         <h5>Attack Surface: <%= puts @subdomains_neat %> </h5>
 
         <%= link_to 'See full report', dashboard_detailed_results_path %>
 
