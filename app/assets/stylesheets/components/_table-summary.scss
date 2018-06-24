@@ -1,24 +1,123 @@
-
-.title-container {
+.data-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: red;
-  height: 30vh;
-  background: #FFFDFD;
+  height: 50%;
+  width: 90%;
 }
 
-.info-table {
+
+#result-summary {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 50px;
+  color: #4F4F4F;
+}
+.summary-page {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: center;
+}
+.progress {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0px;
+}
+
+.risk-factor {
+  text-align: center;
+  font-family: 'montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 60px;
+  color: #4F4F4F;
+  position: absolute;
+  z-index: 999;
+  margin: auto;
+}
+
+.risk-title {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 28px;
+  color: #4F4F4F;
+}
+.risk-chart {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content:center;
+}
+
+#result-font {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 300 !important;
+  font-size: 42px;
+  color: #4F4F4F;
+}
+.info-table {
+  font-family: 'montserrat', sans-serif !important;
+  font-weight: 200;
+  color: #4F4F4F;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
 .results {
   font-family: 'montserrat', sans-serif;
   font-size: 42px;
   margin-top: 20px;
-  font-weight: 200;
 }
 
+
+@keyframes load{0%{stroke-dashoffset:0}}
+.progress {
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    &>li {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        color: #4F4F4F;
+        font-family: 'montserrat', sans-serif;
+        font-weight:200;
+        &:before {
+            content: attr(data-name);
+            position: absolute;
+            width: 100%;
+            font-weight:400;
+        }
+        &:after {
+            content: attr(data-percent);
+            position: absolute;
+            width: 100%;
+            top: 3.7rem;
+            left: 0;
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+    svg {
+        width: 100%;
+        &:nth-child(2) {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: rotate(-90deg);
+        }
+        &:nth-child(2) path {
+            fill: none;
+            stroke-width: 15;
+            stroke-dasharray: 629;
+            stroke: #FFFDFD;
+            opacity: 0.8;
+            animation: load 7s;
+        }
+    }
+}
