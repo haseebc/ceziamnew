@@ -67,9 +67,7 @@ class ChecksController < ApplicationController
     url = "http://ceziam.com:8080/#{targeth}.json"
     serialized_subdomains = open(url).read
     subdomains = JSON.parse(serialized_subdomains)
-    
     @subdomains_neat = JSON.pretty_generate(subdomains)
-    
 
 
   end
