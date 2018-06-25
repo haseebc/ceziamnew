@@ -66,12 +66,11 @@
 
         <p>IP: <%= @check.ip %></p>
         <p>Scan duration: <%= @check.scandur %> seconds</p>
-        <p>Subdomains found: <%= @check.attacksurface["hosts"].count %></p>
+        <p id="subdomains">Subdomains found: <%= @check.attacksurface["hosts"].count %></p>
 
-      <h4>Sign up to get our detailed report</h4>
 
       <%= link_to 'See full report', new_user_registration_path, id: "button-purple" %>
-      
+
     </div>
   </div>
 
