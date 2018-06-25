@@ -5,7 +5,9 @@
     </div>
     <div class="title grey"><p>CEZIAM</p></div>
   </div>
+
   <div><p id="result-summary">Result Summary</p></div>
+
   <div class="data-container">
     <div class="risk-chart">
       <div class="risk-factor"> <%= @check.score %>%
@@ -59,64 +61,20 @@
       </defs>
       </svg>
     </div>
-      <div class="info-table">
-        <h1 id="result-font">Check For:  <%= @check.hostname %></h1>
+    <div class="info-table">
+      <h1 id="result-font">Check For:  <%= @check.hostname %></h1>
 
-          <p>IP: <%= @check.ip %></p>
-          <p>Scan duration: <%= @check.scandur %> seconds</p>
-
-          <% if current_user %>
-
-          <p>Scanned by: <%= @check.user.email %></p>
-
-          <h3>Vulnerabilities:</h3>
-          <ul>
-          <% @check.vulnerabilities.each do |vuln| %>
-            <li>Port: <%= vuln.port %></li>
-            <li>State: <%= vuln.state %></li>
-            <li>Protocol: <%= vuln.protocol %></li>
-            <li>Service: <%= vuln.service %></li>
-            <li>Reason: <%= vuln.reason %></li>
-            <li>Weakness: <%= vuln.weakness %></li>
-            <li>Risk: <%= vuln.risk %></li>
-            <li>Recommandation: <%= vuln.recommandation %></li>
-            <li>Netrisk: <%= vuln.netrisk %>%</li>
-            <br>
-          <% end %>
-          </ul>
-        
-        <p>Scanned by: <%= @check.user.email %></p>
-
-        <h3>Vulnerabilities:</h3>
-        <ul>
-        <% @check.vulnerabilities.each do |vuln| %>
-          <li>Port: <%= vuln.port %></li>
-          <li>State: <%= vuln.state %></li>
-          <li>Protocol: <%= vuln.protocol %></li>
-          <li>Service: <%= vuln.service %></li>
-          <li>Reason: <%= vuln.reason %></li>
-          <li>Weakness: <%= vuln.weakness %></li>
-          <li>Risk: <%= vuln.risk %></li>
-          <li>Recommandation: <%= vuln.recommandation %></li>
-          <li>Netrisk: <%= vuln.netrisk %> </li>
-            <br>
-        <% end %>
-        </ul>
+        <p>IP: <%= @check.ip %></p>
+        <p>Scan duration: <%= @check.scandur %> seconds</p>
+        <p id="subdomains">Subdomains found: <%= @check.attacksurface["hosts"].count %></p>
 
 
-        <% else %>
+      <%= link_to 'See full report', new_user_registration_path, id: "button-purple" %>
 
-        <h4>Sign up to get our detailed report</h4>
-
-         <h5>Attack Surface: <%= puts @subdomains_neat %> </h5>
-
-        <%= link_to 'See full report', dashboard_detailed_results_path %>
-
-        <% end %>
-      </div>
-
-          <a id="button-purple" href="/dashboard/detailed-results">See full report</a>
+    </div>
+  </div>
 
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
 </div>
+<%= render 'shared/footer' %>

@@ -20,6 +20,15 @@ background-color: rgba(255, 255, 255, 1);
     background-color: transparent;
   }
 
+.alternate-log-in {
+  color: #87617D;
+  margin-bottom: 30px;
+  width: 150px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
 #button-purple{
   z-index: 99999;
   font-family: 'Montserrat', sans-serif;
@@ -37,8 +46,39 @@ background-color: rgba(255, 255, 255, 1);
   background-color: #985F6A;
 }
 
+
 #button-purple:hover {
   color: #985F6A !important;
   background-color: transparent !important;
   border-color: #985F6A;
   }
+
+.thin-buttons {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 200;
+  transition: 0.5s;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.thin-buttons:hover{
+  opacity: 0.6 !important;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.main {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 28px;
+  color: #FFFDFD;
+}
+
+.scroll {
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
+}

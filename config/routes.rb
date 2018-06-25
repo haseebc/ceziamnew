@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   get 'dashboard/checks'
   get 'dashboard/detailed-results'
   get 'pages/glossary'
+  
+  devise_for :users, controllers: { registrations: "registrations" }
 
-  devise_for :users
   root to: 'pages#home'
 
   resources :checks do
     resources :vulnerabilities, only: [:new, :create]
+    get 'full-report'
   end
 
   resources :users, only: [:edit, :update]

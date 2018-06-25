@@ -1,31 +1,45 @@
 <div class="container-sign-up">
   <div class="row">
+    <div class="header">
+    <div class="buttons-header">
+      <div class="dropdown">
+        <div class="drop-down">
+          <button class="drop-down"></button>
+          <div class="dropdown-content">
+          <a href="/users/sign_out">Log Out</a>
+          <a href="#">Profile</a>
+          <a href="#">My Checks</a>
+        </div>
+      </div>
+    </div>
+    <a href="/users/sign_in" class="thin-buttons">Sign In</a>
+    <a href="/users/sign_up" class="thin-buttons">Sign Up</a>
+    <a href="" class="thin-buttons">Glossary</a>
+  </div>
+    <div class="title"><a href="/" class="thin-buttons main">CEZIAM</a></div>
+  </div>
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
       <div class="form-signin">
-        <h2>CEZIAM</h2>
-      　<p>We are concerned about Security. That is why we ask for you to register to get the full report.</p>
+      　<p class="white" id="log-in-paragraph">We are concerned about Security. That is why we ask for you to register to get the full report.</p>
       　　<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       　　<%= f.error_notification %>
       　<div class="form-inputs">
-          <%= f.input :firstname, autofocus: true %>
-          <%= f.input :lastname %>
-          <%= f.input :company %>
-          <%= f.input :email, required: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
-          <%= f.button :submit, "Sign up", class: "button-white" %>
+          <%= f.input :firstname, autofocus: true, placeholder: "First Name", class: "input-fields" %>
+          <%= f.input :lastname, placeholder: "Last Name", class: "input-fields" %>
+          <%= f.input :company, placeholder: "Company", class: "input-fields" %>
+          <%= f.input :email, required: true, placeholder: "E-mail", class: "input-fields" %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", class: "input-fields" %>
+          <%= f.input :password_confirmation, required: true, placeholder: "Confirm Password", class: "input-fields" %>
+          <div class="button-box">
+            <%= f.button :submit, "Sign up", class: "button-white alternate-log-in" %>
+            <%= render "devise/shared/links" %>
+            <div class="line"></div>
+            <a href="#" class="thin-buttons">Google +</a>
+            <a href="#" class="thin-buttons">Facebook</a>
+          </div>
       　</div>
       　<% end %>
-
-      　<%= render "devise/shared/links" %>
-
-        <hr>
-        <div class="sns-login">
-          <a href="#" class="sns-login">Use Google +</a>
-          <a href="#" class="sns-login">Use Facebook</a>
-        </div>
-
       </div>
     </div>
   </div>

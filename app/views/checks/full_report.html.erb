@@ -1,0 +1,68 @@
+<h1>Full report</h1>
+
+<h3>Check For:  <%= @check.hostname %></h3>
+
+    <p>Risk score: <%= @check.score %>%</p>
+    <p>IP: <%= @check.ip %></p>
+    <p>Scan duration: <%= @check.scandur %> seconds</p>
+    <p>Scanned by: <%= @check.user.email %></p>
+
+    <h3>Vulnerabilities:</h3>
+    <ul>
+        <% @check.vulnerabilities.each do |vuln| %>
+        <li>Port: <%= vuln.port %></li>
+        <li>State: <%= vuln.state %></li>
+        <li>Protocol: <%= vuln.protocol %></li>
+        <li>Service: <%= vuln.service %></li>
+        <li>Reason: <%= vuln.reason %></li>
+        <li>Weakness: <%= vuln.weakness %></li>
+        <li>Risk: <%= vuln.risk %></li>
+        <li>Recommandation: <%= vuln.recommandation %></li>
+        <li>Netrisk: <%= vuln.netrisk %>%</li>
+        <br>
+        <% end %>
+    </ul>
+
+<section>
+  <!--for demo wrap-->
+  <h1>Attack surface</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Subdomain</th>
+          <th>IP</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      <% @check.attacksurface["hosts"].each_with_index do |subdomain, index| %>
+      <% if subdomain["ip_address"] %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= subdomain["host"] %></td>
+          <td><%= subdomain["ip_address"] %></td>
+        </tr>
+        <% else %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= subdomain["host"] %></td>
+          <td>Not found</td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
