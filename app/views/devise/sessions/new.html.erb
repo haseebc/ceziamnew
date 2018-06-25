@@ -1,26 +1,33 @@
 <div class="container-log-in">
   <div class="row">
+    <div class="header">
+    <div class="drop-down" style="background-image: url(<%= image_path('drop-down.png') %>);">
+    </div>
+    <div class="title"><p>CEZIAM</p></div>
+  </div>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
           <div class="form-login">
-            <h2>CEZIAM</h2>
-            <p>Log in to your user account to view your profile and access your security checks.</p>
+            <p class="white" id="log-in-paragraph">Log in to your user account to view your profile and access your security checks.</p>
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-inputs">
-                  <%= f.input :email, required: false, autofocus: true %>
-                  <%= f.input :password, required: false %>
+                  <%= f.input :email, required: false, autofocus: true, placeholder: "E-mail", class: "input-fields" %>
+                  <%= f.input :password, required: false, placeholder: "Password", class: "input-fields" %>
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                  <%= f.button :submit, "Log in", class: "button-white" %>
+                  <div class="button-box">
+                    <%= f.button :submit, "Log in", class: "button-white alternate-log-in" %>
+                    <%= render "devise/shared/links" %>
+                    <div class="line"></div>
+                    <a href="#" class="thin-buttons">Use Google +</a>
+                    <a href="#" class="thin-buttons">Use Facebook</a>
+                    <hr>
+                  </div>
                 </div>
               <% end %>
-            <%= render "devise/shared/links" %>
           </div>
 
-          <hr>
 
           <div class="sns-login">
-            <a href="#" class="sns-login">Use Google +</a>
-            <a href="#" class="sns-login">Use Facebook</a>
           </div>
       </div>
   </div>
