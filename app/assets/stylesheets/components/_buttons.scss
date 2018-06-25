@@ -53,7 +53,7 @@ background-color: rgba(255, 255, 255, 1);
   border-color: #985F6A;
   }
 
-.thin-buttons{
+.thin-buttons {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   color: #FFFFFF;
@@ -69,4 +69,16 @@ background-color: rgba(255, 255, 255, 1);
   opacity: 0.6 !important;
   color: #FFFFFF;
   text-decoration: none;
+}
+
+.main {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 28px;
+  color: #FFFDFD;
+}
+
+.scroll {
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 20px;
 }
