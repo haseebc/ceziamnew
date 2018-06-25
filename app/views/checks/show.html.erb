@@ -1,40 +1,90 @@
 
-
-<div class="banner-green">
+<div class="card-container summary-page">
   <div class="header">
-    <div class="drop-down" style="background-image: url(<%= image_path('drop-down.png') %>);">
+    <div class="drop-down" style="background-image: url(<%= image_path('drop-down2.png') %>);">
+    </div>
+    <div class="title grey"><p>CEZIAM</p></div>
   </div>
-    <div class="title"><p>CEZIAM</p></div>
-  </div>
-  <div class="header-description">
-    <p class="header-title">Website Checker</p>
-    <p class="page-description"> On this page you will
-    be able to see the main concerns
-    regarding your website.</p>
-  </div>
-  <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
-  </div>
-  <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
-  </div>
-</div>
+  <div><p id="result-summary">Result Summary</p></div>
+  <div class="data-container">
+    <div class="risk-chart">
+      <div class="risk-factor"> <%= @check.score %>%
+      <div class="risk-title">Risk Factor</div>
+    </div>
+      <ul class="progress">
+          <li>
+              <svg viewBox="-10 -10 220 220">
+              <g fill="none" stroke-width="10" transform="translate(100,100)">
+              <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+              <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+              <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+              <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+              <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+              <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+              </g>
+              </svg>
+              <svg viewBox="-10 -10 220 220">
+              <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="<%= @check.score + 71 %>%"></path>
+              </svg>
+          </li>
+        </li>
+      </ul>
+  <!--  Defining Angle Gradient Colors  -->
+      <svg width="0" height="0">
+      <defs>
+      <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+          <stop stop-color="#618099"/>
+          <stop offset="100%" stop-color="#8e6677"/>
+      </linearGradient>
+      <linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+          <stop stop-color="#8e6677"/>
+          <stop offset="100%" stop-color="#9b5e67"/>
+      </linearGradient>
+      <linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+          <stop stop-color="#9b5e67"/>
+          <stop offset="100%" stop-color="#9c787a"/>
+      </linearGradient>
+      <linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+          <stop stop-color="#9c787a"/>
+          <stop offset="100%" stop-color="#817a94"/>
+      </linearGradient>
+      <linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+          <stop stop-color="#817a94"/>
+          <stop offset="100%" stop-color="#498a98"/>
+      </linearGradient>
+      <linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+          <stop stop-color="#498a98"/>
+          <stop offset="100%" stop-color="#618099"/>
+      </linearGradient>
+      </defs>
+      </svg>
+    </div>
+      <div class="info-table">
+        <h1 id="result-font">Check For:  <%= @check.hostname %></h1>
 
-<div class="title-container">
-  <div class="title results" id="grey"><p>Security Check Summary</p></div>
-  <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>);">
-  </div>
-</div>
+          <p>IP: <%= @check.ip %></p>
+          <p>Scan duration: <%= @check.scandur %> seconds</p>
 
-<div class="card-container alternate">
-  <div class="title white" id="grey"><p>CEZIAM</p></div>
-    <div class="info-table">
-      <h1>Check for: <%= @check.hostname %></h1>
-        <h3>Risk score: <%= @check.score %>%</h3>
+          <% if current_user %>
 
-        <p>IP: <%= @check.ip %></p>
-        <p>Scan duration: <%= @check.scandur %> seconds</p>
+          <p>Scanned by: <%= @check.user.email %></p>
 
-        <% if current_user %>
-
+          <h3>Vulnerabilities:</h3>
+          <ul>
+          <% @check.vulnerabilities.each do |vuln| %>
+            <li>Port: <%= vuln.port %></li>
+            <li>State: <%= vuln.state %></li>
+            <li>Protocol: <%= vuln.protocol %></li>
+            <li>Service: <%= vuln.service %></li>
+            <li>Reason: <%= vuln.reason %></li>
+            <li>Weakness: <%= vuln.weakness %></li>
+            <li>Risk: <%= vuln.risk %></li>
+            <li>Recommandation: <%= vuln.recommandation %></li>
+            <li>Netrisk: <%= vuln.netrisk %>%</li>
+            <br>
+          <% end %>
+          </ul>
+        
         <p>Scanned by: <%= @check.user.email %></p>
 
         <h3>Vulnerabilities:</h3>
@@ -65,11 +115,8 @@
         <% end %>
       </div>
 
-  <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
-  </div>
-</div>
+          <a id="button-purple" href="/dashboard/detailed-results">See full report</a>
 
-<div class="title-container">
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
 </div>
