@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  get 'dashboard/checks' 
+  get 'dashboard/checks'
   get 'dashboard/detailed-results'
+  get 'pages/glossary'
   
   devise_for :users, controllers: { registrations: "registrations" }
+
   root to: 'pages#home'
 
   resources :checks do
