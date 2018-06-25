@@ -38,16 +38,9 @@ class ChecksController < ApplicationController
 
     # Create the check and store the JSON object
     @check = Check.new(hostname: params[:hostname])
-    @check.user = current_user
+
     @check.fullresponse = myJSON2
 
-    # Save the check
-    if @check.save
-        redirect_to check_path(@check)
-    else
-      # Redirect to the home page
-      redirect_to root_path
-    end
 
     #attacksurface_check
     #this is using a hacked version of Enumall.sh, which is based on the Recon-Ng. Enumall.sh uses Google scraping, Bing scraping, Baidu scraping, Netcraft, and brute forcing using a wordlist. You can see a demo of the script here:
@@ -67,22 +60,37 @@ class ChecksController < ApplicationController
     url = "http://ceziam.com:8080/#{targeth}.json"
     serialized_subdomains = open(url).read
     subdomains = JSON.parse(serialized_subdomains)
-    @subdomains_neat = JSON.pretty_generate(subdomains)
+    # @subdomains_neat = JSON.pretty_generate(subdomains)
 
-
+    @check.attacksurface = subdomains
+    @check.user = current_user
+    # Save the check
+    if @check.save
+      unless current_user
+        session[:last_check_id] = @check.id
+      end
+        redirect_to check_path(@check)
+    else
+      # Redirect to the home page
+      redirect_to root_path
+    end
   end
 
   def show
     @check = Check.find(params[:id])
   end
-  
 
-  
+  def full_report
+    @check = Check.find(params[:check_id])
+    unless @check.user
+      @check.user = current_user
+      @check.save
+    end
+  end
 
   private
 
   def hostname_param
     params.require(:check).permit(:hostname)
   end
-
 end

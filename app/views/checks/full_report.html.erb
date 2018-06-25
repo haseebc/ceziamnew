@@ -1,0 +1,35 @@
+<h1>Full report</h1>
+
+<h3>Check For:  <%= @check.hostname %></h3>
+
+    <p>Risk score: <%= @check.score %>%</p>
+    <p>IP: <%= @check.ip %></p>
+    <p>Scan duration: <%= @check.scandur %> seconds</p>
+    <p>Scanned by: <%= @check.user.email %></p>
+
+    <h3>Vulnerabilities:</h3>
+    <ul>
+        <% @check.vulnerabilities.each do |vuln| %>
+        <li>Port: <%= vuln.port %></li>
+        <li>State: <%= vuln.state %></li>
+        <li>Protocol: <%= vuln.protocol %></li>
+        <li>Service: <%= vuln.service %></li>
+        <li>Reason: <%= vuln.reason %></li>
+        <li>Weakness: <%= vuln.weakness %></li>
+        <li>Risk: <%= vuln.risk %></li>
+        <li>Recommandation: <%= vuln.recommandation %></li>
+        <li>Netrisk: <%= vuln.netrisk %>%</li>
+        <br>
+        <% end %>
+    </ul>
+
+    <h3>Attack surface:</h3>
+    <ul>
+    <% @check.attacksurface["hosts"].each do |subdomain| %>
+    <% if subdomain["ip_address"] %>
+    <li><%= subdomain["host"] %> -- <%= subdomain["ip_address"] %></li>
+    <% else %>
+    <li><%= subdomain["host"] %></li>
+    <% end %>
+    <% end %>
+    </ul>
