@@ -27,7 +27,7 @@ class ChecksController < ApplicationController
       res = ssh.exec!(@cmd)
       ssh.close
       puts res
-    rescue
+      rescue
       puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
     end
 
@@ -48,16 +48,41 @@ class ChecksController < ApplicationController
       # Redirect to the home page
       redirect_to root_path
     end
+
+    #attacksurface_check
+    #this is using a hacked version of Enumall.sh, which is based on the Recon-Ng. Enumall.sh uses Google scraping, Bing scraping, Baidu scraping, Netcraft, and brute forcing using a wordlist. You can see a demo of the script here:
+    @cmd_attack_surface = "/home/haseeb/tools/recon-ng/domain/enumall.py #{targeth}"
+    @cmd_send_to_apache = "mv * /var/www/html/"
+    begin
+      ssh = Net::SSH.start(@jumphost, @username, :password => @password)
+      res = ssh.exec!(@cmd_attack_surface)
+      res = ssh.exec!(@cmd_send_to_apache)
+      ssh.close
+      puts res
+      rescue
+      puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
+    end
+
+    #Get the newly created json file and have it neat to present in HTML
+    url = "http://ceziam.com:8080/#{targeth}.json"
+    serialized_subdomains = open(url).read
+    subdomains = JSON.parse(serialized_subdomains)
+    @subdomains_neat = JSON.pretty_generate(subdomains)
+
+
   end
 
   def show
     @check = Check.find(params[:id])
   end
+  
+
+  
 
   private
 
-  # def hostname_param
-  #   params.require(:check).permit(:hostname)
-  # end
-end
+  def hostname_param
+    params.require(:check).permit(:hostname)
+  end
 
+end
