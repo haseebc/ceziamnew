@@ -23,13 +23,46 @@
         <% end %>
     </ul>
 
-    <h3>Attack surface:</h3>
-    <ul>
-    <% @check.attacksurface["hosts"].each do |subdomain| %>
-    <% if subdomain["ip_address"] %>
-    <li><%= subdomain["host"] %> -- <%= subdomain["ip_address"] %></li>
-    <% else %>
-    <li><%= subdomain["host"] %></li>
-    <% end %>
-    <% end %>
-    </ul>
+<section>
+  <!--for demo wrap-->
+  <h1>Attack surface</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Index</th>
+          <th>Subdomain</th>
+          <th>IP</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+      <% @check.attacksurface["hosts"].each_with_index do |subdomain, index| %>
+      <% if subdomain["ip_address"] %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= subdomain["host"] %></td>
+          <td><%= subdomain["ip_address"] %></td>
+        </tr>
+        <% else %>
+        <tr>
+          <td><%= index %></td>
+          <td><%= subdomain["host"] %></td>
+          <td>Not found</td>
+        </tr>
+        <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+</script>
