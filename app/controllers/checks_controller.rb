@@ -54,6 +54,10 @@ class ChecksController < ApplicationController
   def hostname_valid?(user_input)
     valid_hostname_regex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/
 
+    if user_input.end_with? "/"
+      user_input.tr!("/", "")
+    end 
+
     user_input.match(valid_hostname_regex)
   end
 end
