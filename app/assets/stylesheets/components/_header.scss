@@ -19,16 +19,29 @@
   opacity: 0.6;
 }
 .drop-down {
+  background-image: url('drop-down.png');
+  background-color: transparent;
+  border: none;
+  position: relative;
+  display: inline-block;
+  transition: 0.4s;
   height: 30px;
   width: 50px;
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
-  transition: 0.5s;
 }
 
-.drop-down:hover {
+.dropdown {
+  transition: 0.2s 0 ease;
+}
+
+.dropdown:hover .dropdown-content {
   color: rgba(104, 166, 117, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-delay: 1s !important;
 }
 
 .buttons-header {
@@ -40,14 +53,6 @@
   margin-left: 30px;
 }
 
-.drop-down {
-    background-image: url('drop-down.png');
-    background-color: transparent;
-    border: none;
-    position: relative;
-    display: inline-block;
-    transition: 0.4s;
-}
 
 .black-burguer {
   background-image: url('drop-down2.png');
@@ -85,20 +90,16 @@
 .dropdown-content a:hover {
   background-color: white;
   color: #C04C5D;
-  transition: 0.4s; opacity: 1 !important;
-}
-
-.dropdown:hover .dropdown-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1 !important;
   transition: 0.4s;
 }
 
-.dropdown:hover .dropbtn {
-  background-color: white;
-  opacity: 1 !important}
+
+// .dropdown:hover .dropdown-content {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   opacity: 1 !important;
+// }
 
 // animation for button/
 
