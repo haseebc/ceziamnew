@@ -1,10 +1,3 @@
-require "rubygems"
-require 'net/ssh'
-require 'net/scp'
-require "crack"
-require "json"
-require 'open-uri'
-
 class ChecksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:create, :show]
 
@@ -13,78 +6,32 @@ class ChecksController < ApplicationController
   end
 
   def create
-    # Run the check using the user input
-    targeth = params[:hostname] # Need to secure this action!!!
-    ports_to_check = "20,21,25,53,67,80,135,137,138,139,161,389,445,548,1433,3389"
+    if hostname_valid?(params[:hostname]).nil?
+      # feeback about non valid hostname
+      flash[:notice] = "Please remove the \"http://\" or enter a valid hostname to run the check."
+      render 'pages/home'
 
-    @jumphost = "websec.app"
-    @username = "root"
-    @password = "m1am1100"
-    @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{targeth}"
-
-    begin
-      ssh = Net::SSH.start(@jumphost, @username, :password => @password)
-      res = ssh.exec!(@cmd)
-      ssh.close
-      puts res
-      rescue
-      puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
-    end
-
-    # Convert the XML file into JSON file
-    unparsed_doc = open("http://ceziam.com:8080/output2.xml")
-    myXML2  = Crack::XML.parse(unparsed_doc)
-    myJSON2 = myXML2.to_json
-
-    # Create the check and store the JSON object
-    @check = Check.new(hostname: params[:hostname])
-
-    @check.fullresponse = myJSON2
-
-
-    #attacksurface_check
-    #this is using a hacked version of Enumall.sh, which is based on the Recon-Ng. Enumall.sh uses Google scraping, Bing scraping, Baidu scraping, Netcraft, and brute forcing using a wordlist. You can see a demo of the script here:
-    @cmd_attack_surface = "/home/haseeb/tools/recon-ng/domain/enumall.py #{targeth}"
-    @cmd_send_to_apache = "mv * /var/www/html/"
-    begin
-      ssh = Net::SSH.start(@jumphost, @username, :password => @password)
-      res = ssh.exec!(@cmd_attack_surface)
-      res = ssh.exec!(@cmd_send_to_apache)
-      ssh.close
-      puts res
-      rescue
-      puts "Unable to connect to #{@jumphost} using #{@username}/#{@password}"
-    end
-
-    #Get the newly created json file and have it neat to present in HTML
-    url = "http://websec.app:8080/#{targeth}.json"
-    serialized_subdomains = open(url).read
-    subdomains = JSON.parse(serialized_subdomains)
-    # @subdomains_neat = JSON.pretty_generate(subdomains)
-
-    @check.attacksurface = subdomains
-
-
-
-    if current_user
-      @check.user = current_user
-        if @check.save
-          redirect_to check_full_report_path(@check)
-        else
-          redirect to root_path
-        end
     else
-      session[:last_check_id] = @check.id
-        if @check.save
-          redirect_to check_path(@check)
-        else
-          redirect to root_path
-        end
+
+      @check = CheckService.new(params[:hostname]).run
+
+      if current_user 
+        @check.user = current_user
+          if @check.save
+            redirect_to check_full_report_path(@check)
+          else
+            redirect_to root_path
+          end
+      else 
+          if @check.save
+            session[:last_check_id] = @check.id
+            redirect_to check_path(@check)
+          else
+            redirect_to root_path
+          end
+      end 
     end
-  end
-
-    # Save the check
-
+  end 
 
   def show
     @check = Check.find(params[:id])
@@ -92,15 +39,21 @@ class ChecksController < ApplicationController
 
   def full_report
     @check = Check.find(params[:check_id])
-    unless @check.user
-      @check.user = current_user
-      @check.save
-    end
+      unless @check.user
+        @check.user = current_user
+        @check.save
+      end
   end
 
   private
 
   def hostname_param
     params.require(:check).permit(:hostname)
+  end
+
+  def hostname_valid?(user_input)
+    valid_hostname_regex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/
+
+    user_input.match(valid_hostname_regex)
   end
 end
