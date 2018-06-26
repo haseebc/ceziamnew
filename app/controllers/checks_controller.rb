@@ -19,7 +19,7 @@ class ChecksController < ApplicationController
 
     @jumphost = "ceziam.com"
     @username = "root"
-    @password = "ill3matic"
+    @password = "m1am1911"
     @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{targeth}"
 
     begin
@@ -63,19 +63,28 @@ class ChecksController < ApplicationController
     # @subdomains_neat = JSON.pretty_generate(subdomains)
 
     @check.attacksurface = subdomains
-    @check.user = current_user
-    # Save the check
-    if @check.save
-      unless current_user
-        session[:last_check_id] = @check.id
-        redirect_to check_path(@check)
-      end
-        redirect_to check_full_report_path(@check)
-    else
-      # Redirect to the home page
-      redirect_to root_path
-    end
+   
+
+
+    if current_user 
+      @check.user = current_user
+        if @check.save
+          redirect_to check_full_report_path(@check)
+        else
+          redirect to root_path
+        end
+    else 
+      session[:last_check_id] = @check.id
+        if @check.save
+          redirect_to check_path(@check)
+        else
+          redirect to root_path
+        end
+    end 
   end
+
+    # Save the check
+ 
 
   def show
     @check = Check.find(params[:id])
