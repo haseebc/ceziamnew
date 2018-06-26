@@ -1,0 +1,47 @@
+.glossary-container{
+  // position: relative;
+  height: 100%;
+  background: white;
+  margin: auto;
+}
+
+.glossary-table {
+  padding: 60px 20px;
+  color: #4F4F4F;
+  width: 100%;
+  // table-layout: auto;
+  word-break: break-all;
+  word-wrap: break-all;
+  table-layout: fixed;
+
+}
+
+.glossary-th {
+  border-bottom: solid 3px silver;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  // text-align: center;
+  padding: 10px;
+  word-break: break-all;
+  word-wrap: break-all;
+  width: 200px;
+}
+
+.glossary-td {
+  border-bottom: solid 3px silver;
+  align-items: center;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: 200;
+  font-size: 20px;
+  color: #4F4F4F;
+  word-break: break-all;
+  word-wrap: break-all;
+}
+
+.glossary-td a {
+  // color: #469AE0;
+
+  text-decoration: none;
+}

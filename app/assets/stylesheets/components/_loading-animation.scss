@@ -1,19 +1,22 @@
 @import "bourbon";
 
-
-#loading-card {
+.button-loader-container {
+  position: relative;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container-animation{
   z-index: 9999;
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 70px;
   height: 70px;
-  background-color: transparent;
-  bottom: 173px;
-  left: 243px;
-  border-radius: 50%;
-
+  margin: auto;
 }
 
 // .loading-percentage {
@@ -134,5 +137,103 @@
 //   }
 // }
 
+.start-screen {
+  display: flex;
+  justify-content: center;
+  flex-flow: nowrap column;
+  align-items: center;
+  min-height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: white;
+  opacity: 0.8;
+}
+.loading {
+  display: flex;
+  margin: 24px 0;
+}
+.loading__element {
+  font: normal 100 2rem/1 Roboto;
+  letter-spacing: .5em;
+}
+[class*="el"] {
+  animation: bouncing 3s infinite ease;
+}
 
-///// OTHER /////
+@for $i from 1 through 15 {
+  $delay: percentage($i);
+  .el#{$i} {
+    animation-delay: $delay / 1000% + s;
+  }
+}
+
+@keyframes bouncing {
+  0%, 100% {
+    transform: scale3d(1,1,1);
+  }
+  50% {
+    transform: scale3d(0,0,1);
+  }
+}
+
+.buttons-header {
+  padding-top: 15px;
+  width: 35%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.drop-down {
+    background-image: url('drop-down.png');
+    background-color: transparent;
+    border: none;
+    position: relative;
+    display: inline-block;
+    transition: 0.4s;
+
+}
+
+.dropdown-content {
+  text-align: center;
+    width: 400px;
+    display: none;
+    position: absolute;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.dropdown-content a {
+    color: #68A675;
+    padding: 12px 16px;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+  color: #C04C5D;
+  transition: 0.4s; opacity: 1 !important;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1 !important;
+  transition: 0.4s;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+  opacity: 1 !important}
+

@@ -1,20 +1,22 @@
 
 <div class="banner-green">
-  <div id="loading-card" hidden>
-    <div class="container" id="loading-symbol" hidden>
-      <div class="circles">
-        <div class="circle-multiple">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
+  <div class="header">
+    <div class="buttons-header">
+      <div class="dropdown">
+        <div class="drop-down">
+          <button class="drop-down"></button>
+          <div class="dropdown-content">
+          <a href="/users/sign_out">Log Out</a>
+          <a href="#">Profile</a>
+          <a href="#">My Checks</a>
         </div>
       </div>
-      </div>
     </div>
-  <div class="header">
-    <div class="drop-down" style="background-image: url(<%= image_path('drop-down.png') %>);">
+    <a href="/users/sign_in" class="thin-buttons">Sign In</a>
+    <a href="/users/sign_up" class="thin-buttons">Sign Up</a>
+    <a href="" class="thin-buttons">Glossary</a>
   </div>
-    <div class="title"><p>CEZIAM</p></div>
+    <div class="title"><a href="/" class="thin-buttons main">CEZIAM</a></div>
   </div>
   <div class="header-description">
     <p class="header-title">Welcome to Ceziam</p>
@@ -24,8 +26,36 @@
        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
       </div>
-      <input class="button-white" name="commit" type="submit" value="Check" />
+      <div class="button-loader-container">
+        <input class="button-white" id="button-banner" name="commit" type="submit" value="Check" />
+        <div class="container-animation">
+        <div class="circles" id="loading-symbol" hidden>
+          <div class="circle-multiple">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          <div class="start-screen">
+            <div class="loading">
+              <div class="loading__element el1">C</div>
+              <div class="loading__element el2">H</div>
+              <div class="loading__element el3">E</div>
+              <div class="loading__element el4">C</div>
+              <div class="loading__element el5">K</div>
+              <div class="loading__element el6">I</div>
+              <div class="loading__element el7">N</div>
+              <div class="loading__element el8">G</div>
+              <div class="loading__element el9"> </div>
+              <div class="loading__element el13">.</div>
+              <div class="loading__element el14">.</div>
+              <div class="loading__element el15">.</div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+      </div>
     </form>
+    <a href="#card-1" class="thin-buttons scroll" type="scroll-button">Scroll down</a>
   </div>
   <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
   </div>
@@ -33,8 +63,7 @@
   </div>
 </div>
 
-<div class="card-container">
-  <div class="title" id="grey"><p>CEZIAM</p></div>
+<div class="card-container" id="card-1">
   <div class="card">
     <div class="card-description">
       <p>Step 1</p>
@@ -54,8 +83,7 @@
   </div>
 </div>
 
-<div class="card-container alternate">
-  <div class="title white" id="grey"><p>CEZIAM</p></div>
+<div class="card-container alternate" id="card-2">
   <div class="text-description white">
     <p>What is cybersecurity?</p>
     <p class="white" id="description-paragraph">Cybersecurity is one of the most important aspects of the internet but also one of the most obscure ones. Here, you can find clear information to understand better what it entails.</p>
@@ -72,8 +100,7 @@
   </div>
 </div>
 
-<div class="card-container">
-  <div class="title" id="grey"><p>CEZIAM</p></div>
+<div class="card-container" id="card-3">
   <div class="green-card">
     <div class="card-description">
       <p>Step 1</p>
@@ -98,5 +125,13 @@
   form.addEventListener('submit', function(event) {
       gif.hidden = false;
   });
+</script>
+
+<script>
+  $("scroll-button").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#card-1").offset().top},
+        'slow');
+});
 </script>
 
