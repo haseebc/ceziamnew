@@ -68,8 +68,9 @@ class ChecksController < ApplicationController
     if @check.save
       unless current_user
         session[:last_check_id] = @check.id
-      end
         redirect_to check_path(@check)
+      end
+        redirect_to check_full_report_path(@check)
     else
       # Redirect to the home page
       redirect_to root_path
