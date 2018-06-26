@@ -24,8 +24,8 @@ background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 50%;
-  width: 40%;
+  height: 100%;
+  width: 100%;
   background: linear-gradient(90deg, rgba(4, 135, 170, 0.8) 0%, rgba(134, 231, 143, 0.8) 100%);
   opacity: 0.8;
   border-radius: 8px;
@@ -45,12 +45,19 @@ background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 50%;
-  width: 40%;
+  height: 100%;
+  width:100%;
   background: linear-gradient(90deg, #DE6161 0%, #2657EB 100%);
   opacity: 0.8;
   border-radius: 8px;
   box-shadow: 6px 6px 10px lightgrey;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  width: 40%;
 }
 
 .card-white {
@@ -58,8 +65,8 @@ background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 50%;
-  width: 40%;
+  height: 100%;
+  width: 100%;
   background: #FFFDFD;
   border-radius: 8px;
   box-shadow: 2px 2px 20px snow;
