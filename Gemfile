@@ -24,6 +24,7 @@ gem 'json', '~> 1.8', '>= 1.8.3'
 gem 'net-ssh', '~> 3.2'
 gem 'net-scp', '~> 1.2', '>= 1.2.1'
 gem 'bourbon'
+gem 'jquery-rails', '~> 4.3.3'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

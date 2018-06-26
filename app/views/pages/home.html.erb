@@ -1,23 +1,6 @@
 
 <div class="banner-green">
-  <div class="header">
-    <div class="buttons-header">
-      <div class="dropdown">
-        <div class="drop-down">
-          <button class="drop-down"></button>
-          <div class="dropdown-content">
-          <a href="/users/sign_out">Log Out</a>
-          <a href="#">Profile</a>
-          <a href="#">My Checks</a>
-        </div>
-      </div>
-    </div>
-    <a href="/users/sign_in" class="thin-buttons">Sign In</a>
-    <a href="/users/sign_up" class="thin-buttons">Sign Up</a>
-    <a href="" class="thin-buttons">Glossary</a>
-  </div>
-    <div class="title"><a href="/" class="thin-buttons main">CEZIAM</a></div>
-  </div>
+  <%= render 'shared/navbar' %>
   <div class="header-description">
     <p class="header-title">Welcome to Ceziam</p>
     <p class="page-description"> Check if your website is running dangerous services.</p>
@@ -55,7 +38,7 @@
       </div>
       </div>
     </form>
-    <a href="#card-1" class="thin-buttons scroll" type="scroll-button">Scroll down</a>
+    <a href="#card-1" class="thin-buttons scroll">Scroll down</a>
   </div>
   <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
   </div>
@@ -64,13 +47,17 @@
 </div>
 
 <div class="card-container" id="card-1">
-  <div class="card">
-    <div class="card-description">
-      <p>Step 1</p>
-      <p id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+  <%= render 'shared/navbar-black' %>
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-description">
+        <p>Step 1</p>
+        <p id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+      </div>
+      <div class="card-1-image" style="background-image: url(<%= image_path('card-1.png') %>);">
+      </div>
     </div>
-    <div class="card-1-image" style="background-image: url(<%= image_path('card-1.png') %>);">
-    </div>
+    <a href="#card-2" class="thin-buttons-grey scroll">Scroll down</a>
   </div>
   <div class="text-description">
     <p>How it works</p>
@@ -84,30 +71,39 @@
 </div>
 
 <div class="card-container alternate" id="card-2">
+  <%= render 'shared/navbar' %>
   <div class="text-description white">
     <p>What is cybersecurity?</p>
     <p class="white" id="description-paragraph">Cybersecurity is one of the most important aspects of the internet but also one of the most obscure ones. Here, you can find clear information to understand better what it entails.</p>
   </div>
-  <div class="card-white">
-    <div class="card-description grey">
-      <p>Step 1</p>
-      <p class= "grey" id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
-    </div>
+  <div class="card-wrapper">
+    <div class="card-white">
+      <div class="card-description grey">
+        <p>Step 1</p>
+        <p class= "grey" id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+      </div>
     <div class="card-2-image" style="background-image: url(<%= image_path('cybersecurity.png') %>);">
     </div>
+  </div>
+  <a href="#card-3" class="thin-buttons scroll">Scroll down</a>
   </div>
   <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
   </div>
 </div>
 
+
 <div class="card-container" id="card-3">
-  <div class="green-card">
-    <div class="card-description">
-      <p>Step 1</p>
-      <p id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+  <%= render 'shared/navbar-black' %>
+  <div class="card-wrapper">
+    <div class="green-card">
+      <div class="card-description">
+        <p>Step 1</p>
+        <p id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+      </div>
+      <div class="card-3-image" style="background-image: url(<%= image_path('hacker.png') %>);">
+      </div>
     </div>
-    <div class="card-3-image" style="background-image: url(<%= image_path('hacker.png') %>);">
-    </div>
+    <a href=".banner-green" class="thin-buttons-grey scroll">Scroll to Top</a>
   </div>
   <div class="text-description">
     <p>Why do you need it?</p>
@@ -125,13 +121,5 @@
   form.addEventListener('submit', function(event) {
       gif.hidden = false;
   });
-</script>
-
-<script>
-  $("scroll-button").click(function() {
-    $('html,body').animate({
-        scrollTop: $("#card-1").offset().top},
-        'slow');
-});
 </script>
 
