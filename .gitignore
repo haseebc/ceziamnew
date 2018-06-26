@@ -15,3 +15,4 @@ yarn-error.log
 
 # Ignore application configuration
 /config/application.yml
+/app/services/check_service.rb
