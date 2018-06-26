@@ -4,8 +4,6 @@ class RegistrationsController < Devise::RegistrationsController
     def after_sign_up_path_for(resource)
         if session[:last_check_id]
             check_full_report_path(session[:last_check_id])
-        else
-            root_path
         end
     end
 end
