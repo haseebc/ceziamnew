@@ -6,27 +6,32 @@ class ChecksController < ApplicationController
   end
 
   def create
-    # Run the check using the user input
-     # Need to secure this action!!!
-    # Create the check and store the JSON object
-    @check = CheckService.new(params[:hostname]).run
+    if hostname_valid?(params[:hostname]).nil?
+      # feeback about non valid hostname
+      flash[:notice] = "Please remove the \"http://\" or enter a valid hostname to run the check."
+      render 'pages/home'
 
-    if current_user 
-      @check.user = current_user
-        if @check.save
-          redirect_to check_full_report_path(@check)
-        else
-          redirect_to root_path
-        end
-    else 
-        if @check.save
-          session[:last_check_id] = @check.id
-          redirect_to check_path(@check)
-        else
-          redirect_to root_path
-        end
+    else
+
+      @check = CheckService.new(params[:hostname]).run
+
+      if current_user 
+        @check.user = current_user
+          if @check.save
+            redirect_to check_full_report_path(@check)
+          else
+            redirect_to root_path
+          end
+      else 
+          if @check.save
+            session[:last_check_id] = @check.id
+            redirect_to check_path(@check)
+          else
+            redirect_to root_path
+          end
       end 
     end
+  end 
 
   def show
     @check = Check.find(params[:id])
@@ -46,4 +51,9 @@ class ChecksController < ApplicationController
     params.require(:check).permit(:hostname)
   end
 
+  def hostname_valid?(user_input)
+    valid_hostname_regex = /^(?!:\/\/)([a-zA-Z0-9-_]+\.)*[a-zA-Z0-9][a-zA-Z0-9-_]+\.[a-zA-Z]{2,11}?$/
+
+    user_input.match(valid_hostname_regex)
+  end
 end
