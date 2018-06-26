@@ -17,9 +17,9 @@ class ChecksController < ApplicationController
     targeth = params[:hostname] # Need to secure this action!!!
     ports_to_check = "20,21,25,53,67,80,135,137,138,139,161,389,445,548,1433,3389"
 
-    @jumphost = "ceziam.com"
+    @jumphost = "websec.app"
     @username = "root"
-    @password = "m1am1911"
+    @password = "m1am1100"
     @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{targeth}"
 
     begin
@@ -57,34 +57,34 @@ class ChecksController < ApplicationController
     end
 
     #Get the newly created json file and have it neat to present in HTML
-    url = "http://ceziam.com:8080/#{targeth}.json"
+    url = "http://websec.app:8080/#{targeth}.json"
     serialized_subdomains = open(url).read
     subdomains = JSON.parse(serialized_subdomains)
     # @subdomains_neat = JSON.pretty_generate(subdomains)
 
     @check.attacksurface = subdomains
-   
 
 
-    if current_user 
+
+    if current_user
       @check.user = current_user
         if @check.save
           redirect_to check_full_report_path(@check)
         else
           redirect to root_path
         end
-    else 
+    else
       session[:last_check_id] = @check.id
         if @check.save
           redirect_to check_path(@check)
         else
           redirect to root_path
         end
-    end 
+    end
   end
 
     # Save the check
- 
+
 
   def show
     @check = Check.find(params[:id])

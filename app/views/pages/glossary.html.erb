@@ -1,33 +1,10 @@
 
-<div class="banner-green">
-  <div id="loading-card" hidden>
-    <div class="container" id="loading-symbol" hidden>
-      <div class="circles">
-        <div class="circle-multiple">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
-      </div>
-      </div>
-    </div>
-  <div class="header">
-    <div class="drop-down" style="background-image: url(<%= image_path('drop-down.png') %>);">
+<div class="banner-green glossary">
+  <%= render 'shared/navbar' %>
+  <div class="glossary-header-container">
+    <p class="page-description glossary-description"> Here you will find a general glossary of terms for you to get comfortable with the cyber security jargon.</p>
   </div>
-    <div class="title"><p>CEZIAM</p></div>
-  </div>
-  <div class="header-description">
-    <p class="header-title">Welcome to Ceziam</p>
-    <p class="page-description"> Check if your website is running dangerous services.</p>
-    <form id="search" action="/checks" method="post">
-      <div>
-       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your URL..." autocomplete="off"/>
-      </div>
-      <input class="button-white" name="commit" type="submit" value="Check" />
-    </form>
-  </div>
-  <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
+  <div class="logo-banner static-logo" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
   </div>
   <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
   </div>
@@ -38,81 +15,84 @@
 <div class="glossary-container">
 <!--   <div class="title" id="grey"><p>CEZIAM</p></div> -->
     <div class="glossary-table">
+      <div class="table-title">Ceziam's Glossary of Terms you Need to Know</div>
       <table>
         <div class="row">
           <tr>
-            <th class="glossary-th">Words</th>
-            <th class="glossary-th">Descriptions</th>
+            <th class="glossary-th">Key Words</th>
+            <th class="glossary-th">General Definitions</th>
           </tr>
         </div>
         <div class="row">
           <tr>
-              <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Attack_surface">Attack surface</a></td>
+              <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Attack_surface">Attack surface</a></td>
               <td class="glossary-td">The attack surface of a software environment is the sum of the different points where an unauthorized user can try to enter data to or extract data from an environment. Keeping the attack surface as small as possible is a basic security measure.</td>
           </tr>
         </div>
         <tr>
-          <td class="glossary-td"><a href="https://www.csoonline.com/article/3242690/data-protection/what-is-cyber-security-how-to-build-a-cyber-security-strategy.html">Cyber Security</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://www.csoonline.com/article/3242690/data-protection/what-is-cyber-security-how-to-build-a-cyber-security-strategy.html">Cyber Security</a></td>
           <td class="glossary-td">Cyber security is the practice of ensuring the confidentiality, integrity and availability (CIA) of information.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Denial of Service (DoS)</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Denial-of-service_attack">Denial of Service (DoS)</a></td>
           <td class="glossary-td">This is a cyber-attack in which the perpetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to the Internet.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Domain_name">Domain</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Domain_name">Domain</a></td>
           <td class="glossary-td">The hierarchy of labels in a fully qualified domain name.
-A domain name is an identification string that defines a realm of administrative autonomy, authority or control within the Internet. For example “microsoft.com” is a domain name.</td>
+          A domain name is an identification string that defines a realm of administrative autonomy, authority or control within the Internet. For example “microsoft.com” is a domain name.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Hostname">Hostname</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Hostname">Hostname</a></td>
           <td class="glossary-td">Is a label that is assigned to a device connected to a computer network and that is used to identify the device on the internet.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/IP_address">IP Address</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/IP_address">IP Address</a></td>
           <td class="glossary-td">This is a numerical label assigned to each device connected to the internet.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Cyber_risk_quantification">Netrisk</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Cyber_risk_quantification">Netrisk</a></td>
           <td class="glossary-td">This is the overall risk prevalent in a computer system afetr the likelihood of the attack, impact and control effiveness has been considered.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Port_(computer_networking)">Port</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Port_(computer_networking)">Port</a></td>
           <td class="glossary-td">A computer port is assigned to a service (daemon or program) that is running.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Internet_Protocol">Protocol</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Internet_Protocol">Protocol</a></td>
           <td class="glossary-td">The Internet Protocol (IP) is the principal communications protocol in the Internet protocol suite for relaying datagrams across network boundaries</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Risk#Information_technology_and_information_security">Risk</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Risk#Information_technology_and_information_security">Risk</a></td>
           <td class="glossary-td">Something that could cause an organization not to meet one of its objectives.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Computer_access_control">Secure Access Control</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Computer_access_control">Secure Access Control</a></td>
           <td class="glossary-td">Controlling who has access to a computer or online service and the information it stores.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Security_controls">Security control</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Security_controls">Security control</a></td>
           <td class="glossary-td">safeguards or countermeasures to avoid, detect, counteract, or minimize security risks to physical property, information, computer systems, or other assets.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Daemon_(computing)">Service</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Daemon_(computing)">Service</a></td>
           <td class="glossary-td">In multitasking computer operating systems, a service is a computer program that runs as a background process, rather than being under the direct control of an interactive user. It is also known as a daemon.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">State</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol">State</a></td>
           <td class="glossary-td">State is commonly known as th status of a network socket. This gives an indication of the status of a socket interms of tcp/ip.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Subdomain">Subdomain</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Subdomain">Subdomain</a></td>
           <td class="glossary-td">A subdomain is a domain that is a part of a main domain.</td>
         </tr>
         <tr>
-          <td class="glossary-td"><a href="https://en.wikipedia.org/wiki/Vulnerability_(computing)">Vulnerability</a></td>
+          <td class="glossary-td" id="key-word"><a target="_blank" href="https://en.wikipedia.org/wiki/Vulnerability_(computing)">Vulnerability</a></td>
           <td class="glossary-td">Avulnerability is a weakness which can be exploited by a Threat Actor.</td>
         </tr>
     </table>
   </div>
+  <div class="orange-vector purple-summary" style="background-image: url(<%= image_path('purple-vector.png') %>);">
+  </div>
 </div>
-
+<%= render 'shared/footer' %>
