@@ -65,9 +65,38 @@ background-color: rgba(255, 255, 255, 1);
   margin-bottom: 15px;
 }
 
+
 .thin-buttons:hover{
   opacity: 0.6 !important;
   color: #FFFFFF;
+  text-decoration: none;
+}
+
+.thin-buttons:focus {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.thin-buttons-grey {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  color: #4F4F4F;
+  font-size: 20px;
+  font-weight: 200;
+  transition: 0.5s;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.thin-buttons-grey:hover{
+  opacity: 0.6 !important;
+  color: #4F4F4F;
+  text-decoration: none;
+}
+
+.thin-buttons-grey:focus {
+  color: #4F4F4F;
   text-decoration: none;
 }
 
@@ -80,5 +109,6 @@ background-color: rgba(255, 255, 255, 1);
 .scroll {
   text-align: left;
   padding-top: 20px;
-  padding-left: 20px;
+  padding-left: 18px;
+  width: 150px;
 }
