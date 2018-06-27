@@ -66,7 +66,9 @@
 
         <p>IP: <%= @check.ip %></p>
         <p>Scan duration: <%= @check.scandur %> seconds</p>
-        <p>Subdomains found: <%= @check.attacksurface["hosts"].count %></p>
+        <% unless @check.attacksurface.nil? %>
+          <p>Subdomains found: <%= @check.attacksurface["hosts"].count %></p>
+        <% end %>
         <p>Scanned by: <%= @check.user.email %></p>
 
     </div>
@@ -100,7 +102,10 @@
   </div>
 </div>
     
+    
+
 <section>
+<% unless @check.attacksurface.nil? %>
   <!--for demo wrap-->
   <h1>Attack surface</h1>
   <div class="tbl-header">
@@ -114,6 +119,7 @@
       </thead>
     </table>
   </div>
+
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
@@ -135,7 +141,10 @@
       </tbody>
     </table>
   </div>
+  <% end %>
 </section>
+
+
 
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>

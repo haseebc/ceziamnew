@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'dashboard/checks'
+  get 'dashboard/profile'
   get 'pages/glossary'
   
   devise_for :users, controllers: { registrations: "registrations" }

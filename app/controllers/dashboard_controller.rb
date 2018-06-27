@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-    def checks
+    def profile
         @checks = current_user.checks
     end
 end
