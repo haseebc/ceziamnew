@@ -1,3 +1,18 @@
+
+.card-container-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40vh;
+  background: #FFFDFD;
+}
+
+.survey-text-description {
+  margin-bottom: 5%;
+}
+
+
 .profile-title {
     margin: auto;
     }
@@ -242,8 +257,8 @@
         position: relative;
         display: inline-block;
         vertical-align: top;
-        height: 200px;
-        width: 250px;
+        height: 250px;
+        width: 300px;
         margin: 4%;
         text-align: left;
         
@@ -259,7 +274,7 @@
         display: block;
         max-width: 80%;
         
-        font-size: 16px;
+        font-size: 18px;
         line-height: 20px;
         margin-bottom: 15%;
 
@@ -269,8 +284,8 @@
       }
       
       .survey-country {
-        font-size: 11px;
-        line-height: 10px;
+        font-size: 13px;
+        line-height: 20px;
         text-transform: uppercase;
       }
       
@@ -325,13 +340,13 @@
       
       .survey-progress-label {
         line-height: 21px;
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 400;
       }
       
       .survey-completes {
         line-height: 21px;
-        font-size: 13px;
+        font-size: 15px;
         vertical-align: middle;
       }  
       
