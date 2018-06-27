@@ -257,8 +257,8 @@
         position: relative;
         display: inline-block;
         vertical-align: top;
-        height: 250px;
-        width: 300px;
+        height: 280px;
+        width: 330px;
         margin: 4%;
         text-align: left;
         
@@ -266,7 +266,6 @@
           display: block;
           width: auto;
           height: 150px;
-          margin: 10px auto;
         }
       }
       
@@ -274,19 +273,25 @@
         display: block;
         max-width: 80%;
         
-        font-size: 18px;
+        font-size: 20px;
         line-height: 20px;
         margin-bottom: 15%;
 
         @media screen and (max-width: 600px) {
             margin-bottom: 2%;
+            font-size: 16px;
           }
       }
       
       .survey-country {
-        font-size: 13px;
-        line-height: 20px;
+        font-size: 14px;
+        line-height: 30px;
         text-transform: uppercase;
+
+        @media screen and (max-width: 600px) {
+          font-size: 12px;
+          line-height: 10px;
+        }
       }
       
       .survey-country,
@@ -317,7 +322,7 @@
       }
       
       .survey-progress-bg {
-        width: 40%;
+        width: 45%;
         display: block;
       
         @media screen and (max-width: 200px) {
@@ -340,13 +345,13 @@
       
       .survey-progress-label {
         line-height: 21px;
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 400;
       }
       
       .survey-completes {
         line-height: 21px;
-        font-size: 15px;
+        font-size: 16px;
         vertical-align: middle;
       }  
       
