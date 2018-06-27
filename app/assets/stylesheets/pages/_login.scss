@@ -6,7 +6,8 @@
   background-size: cover;
   background: linear-gradient(271.2deg, #355C7D 1.35%, #6C5B7B 49.91%, #C06C84 99.02%);
   color: white;
-  padding-top: 6%;
+  padding-top: 10%;
+  height: 100vh;
 }
 
 .row {
@@ -19,6 +20,7 @@ font-weight: 200;
 font-size: 20px;
 color: #FFFFFF;
 text-align: center;
+margin-bottom: 10%;
 }
 
 #user_email {
@@ -60,7 +62,6 @@ label {
   border-radius: 0px;
   height: 50px;
   width: 100%;
-  background: transparent;
   border: none;
   border-bottom: rgba(225, 255, 255, 0.6) 1px solid;
   margin-bottom: 20px;
@@ -248,20 +249,7 @@ font-family: 'Montserrat', sans-serif;
 .form-login p{
   margin-top: 30px;
 }
-// .form-actions{
-//   background: transparent;
-//   text-align: center;
-//   color: #999999;
-//   border: 1px solid #999999;
-//   padding: 10px 15px;
-//   border-radius: 50px;
-//   font-weight: lighter;
-// }
 
-// .form-actions:hover {
-//   opacity: 1;
-//   color: white;
-// }
 
 .button-login {
   background: transparent;

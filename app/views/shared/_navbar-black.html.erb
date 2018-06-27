@@ -5,9 +5,8 @@
           <div class="drop-down">
             <button class="drop-down black-burguer pulse"></button>
             <div class="dropdown-content">
-            <a href="/users/sign_out">Log Out</a>
-            <a href="#">Profile</a>
-            <a href="#">My Checks</a>
+            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <%= link_to 'My dashboard', dashboard_profile_path %>
             <a href="/pages/glossary">Glossary</a>
           </div>
         </div>
@@ -22,7 +21,7 @@
             <div class="drop-down">
               <button class="drop-down black-burguer pulse"></button>
               <div class="dropdown-content without-user">
-              <a href="/users/sign_in">Log In</a>
+              <%= link_to 'Log In', new_user_session_path %>
               <a href="/pages/glossary">Glossary</a>
             </div>
           </div>

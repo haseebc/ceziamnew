@@ -35,7 +35,7 @@
               </g>
               </svg>
               <svg viewBox="-10 -10 220 220">
-              <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="<%= @check.score + 71 %>%"></path>
+              <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="<%= @check.score * 3 %>%"></path>
               </svg>
           </li>
         </li>
@@ -75,6 +75,7 @@
         <div class="scan-duration">Detection Time</div>
       </div>
     </div>
+    <% unless @check.attacksurface.nil? %>
     <div class="wrapper-clock orange-circle">
       <div class="style-clock"><%= @check.attacksurface["hosts"].count %>
         <div class="scan-duration" id="subdomains-found">Attack Surface Points
@@ -82,6 +83,7 @@
         </div>
       </div>
     </div>
+    <% end %>
     <div class="wrapper-clock blue-circle">
       <div class="style-clock" id="ip"><%= @check.ip %>
         <div class="scan-duration">IP Address</div>
@@ -126,6 +128,7 @@
 <h3 id="result-full-report">Attack Surface</h3>
 
 <section>
+<% unless @check.attacksurface.nil? %>
   <!--for demo wrap-->
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -138,6 +141,7 @@
       </thead>
     </table>
   </div>
+
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
@@ -159,6 +163,7 @@
       </tbody>
     </table>
   </div>
+
   <p id="scanned-by">Need some help understanding your data?</p>
   <div class="buttons-full-report-table">
     <div>
@@ -171,7 +176,12 @@
       <a href="/pages/glossary" class="blue-buttons">Go to Glossary</a>
     </div>
   </div>
+
+  <% end %>
+
 </section>
+
+
 
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>

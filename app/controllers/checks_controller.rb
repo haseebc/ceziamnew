@@ -8,7 +8,7 @@ class ChecksController < ApplicationController
   def create
     if hostname_valid?(params[:hostname]).nil?
       # feeback about non valid hostname
-      flash[:notice] = "Please remove the \"http://\" or enter a valid hostname to run the check."
+      flash[:notice] = "Please remove \"http://\" or enter a valid hostname to run the check."
       render 'pages/home'
 
     else
@@ -56,7 +56,7 @@ class ChecksController < ApplicationController
 
     if user_input.end_with? "/"
       user_input.tr!("/", "")
-    end 
+    end
 
     user_input.match(valid_hostname_regex)
   end

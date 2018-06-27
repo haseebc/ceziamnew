@@ -27,7 +27,6 @@ class CheckService
         @jumphost = "websec.app"
         @username = "root"
         @password = ENV["PASS_SECRET"] 
-        # @password = "m1am1100"
         @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{@target}"
     
         begin

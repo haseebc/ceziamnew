@@ -46,8 +46,7 @@
   <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
   </div>
 </div>
-
-<div class="card-container" id="card-1">
+<div class="card-container" id="card-1"> 
   <%= render 'shared/navbar-black' %>
   <div class="card-wrapper">
     <div class="card">
@@ -62,10 +61,14 @@
   </div>
   <div class="text-description">
     <p>How it works</p>
-    <p id="description-paragraph">We use top of the knotch algorithms
-    to analize your websites structure and
-    find small cracks that hackers can
-    take advantage off.</p>
+    <p id="description-paragraph">With Ceziam, talk about cyber security risks has transformed into actionable steps.</p>
+    <!-- 
+    With Ceziam, talk about cyber security risks has transformed into actionable steps.
+    Step 1. We ask you to provide us the hostname of your website. With this we connect to our distributed environment and perform our analysis. This detection phase often takes between 30 and 120 seconds.
+    Step 2. The most important information is captured against risks identified. You are then invited to login t obtain more detailed resuts.
+    Step 3. An overall risk metric is presented and the full possible attack surface friom the internet is shown.
+    -->
+
   </div>
   <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>);">
   </div>
@@ -75,13 +78,15 @@
   <%= render 'shared/navbar' %>
   <div class="text-description white">
     <p>What is cybersecurity?</p>
-    <p class="white" id="description-paragraph">Cybersecurity is one of the most important aspects of the internet but also one of the most obscure ones. Here, you can find clear information to understand better what it entails.</p>
+    <p class="white" id="description-paragraph">Cybersecurity is one of the most important aspects of the internet but also one of the most obscure ones. <a href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96">Here</a>, you can find clear information to understand better what it entails.</p>
   </div>
+  
   <div class="card-wrapper">
     <div class="card-white">
       <div class="card-description grey">
-        <p>Step 1</p>
-        <p class= "grey" id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+        <a href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96">What is Cyber Security</a>
+        <p class= "grey" id="card-description-paragraph">
+        </p>
       </div>
     <div class="card-2-image" style="background-image: url(<%= image_path('cybersecurity.png') %>);">
     </div>
@@ -91,15 +96,14 @@
   <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
   </div>
 </div>
-
-
 <div class="card-container" id="card-3">
   <%= render 'shared/navbar-black' %>
   <div class="card-wrapper">
     <div class="green-card">
       <div class="card-description">
-        <p>Step 1</p>
-        <p id="card-description-paragraph">Enter your website on the check-bar at the top of the page.</p>
+        <p><a href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96">Why you need it</a></p>
+        <p id="card-description-paragraph">
+        </p>
       </div>
       <div class="card-3-image" style="background-image: url(<%= image_path('hacker.png') %>);">
       </div>
@@ -108,9 +112,7 @@
   </div>
   <div class="text-description">
     <p>Why do you need it?</p>
-    <p id="description-paragraph">Checking your websites vulnerability
-    is very neccesary if you want hackers
-    to have a really difficult time trying to harm you. Remember that a kick-ass website is no good with lame security. Nobody will trust it!</p>
+    <p id="description-paragraph">Many businesses today have strong online presence, quite often the whole business is the web application (mobile, desktop or Internet of Things).</p>
   </div>
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
@@ -123,4 +125,3 @@
       gif.hidden = false;
   });
 </script>
-

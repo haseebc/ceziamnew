@@ -1,0 +1,65 @@
+.container-edit-profile{
+  background: linear-gradient(271.29deg, rgba(211, 131, 18, 0.8) 1.56%, rgba(168, 50, 121, 0.8) 98.87%);
+  // display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  color: white;
+  padding-top: 10%;
+  height: 100vh;
+}
+
+
+#edit-paragraph{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+.edit-profile{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.form-edit{
+  width: 40%;
+}
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition-delay: 9999s;
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
+}
+
+
+
+.avatar{
+  width: 200px;
+  border-radius: 50%;
+}
+
+.edit-icon{
+  color: white;
+  padding-left: 180px;
+  position: absolute;
+}
+.edit-icon a{
+  color: white;
+  text-decoration: none;
+}
+
+.profile-pic-edit{
+  padding-top: 50px;
+  padding-right: 100px;
+}
+
+
+

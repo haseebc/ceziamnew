@@ -1,9 +1,34 @@
-<h1>Edit your profile</h1>
+<div class="container-edit-profile">
+<%= render 'shared/navbar' %>
+        <div>
+          <p class="white" id="edit-paragraph">Please edit all the information you need.</p>
+         </div>
+        <div class="edit-profile">
+          <div class="profile-pic-edit">
+            <div class="edit-icon">
+              <a href="#"><i class="far fa-edit"></i></a>
+            </div>
+            <div class="profile-pic">
+              <img src='https://kitt.lewagon.com/placeholder/users/ssaunier' class="avatar"/>
+            </div>
+          </div>
 
-<%= simple_form_for [@user] do |f| %>
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.input :email %>
-    <%= f.input :company %>
-    <%= f.submit "save" %>
-<% end %>
+          <div class="form-edit">
+            <div class="form-inputs">
+              <%= simple_form_for [@user] do |f| %>
+              <%= f.input :firstname, placeholder: "First Name", class: "input-fields"%>
+              <%= f.input :lastname, placeholder: "Last Name", class: "input-fields" %>
+              <%# <%= f.input :email, placeholder: "E-mail", class: "input-fields" %>
+              <%# <%= f.input :password, placeholder: "Password", class: "input-fields" %>
+              <%= f.input :company, placeholder: "Company", class: "input-fields" %>
+            </div>
+          </div>
+        </div>
+          <div class="button-box">
+            <%= f.submit "Save", class: "button-white alternate-log-in" %>
+            <% end %>
+          </div>
+  </div>
+</div>
+
+
