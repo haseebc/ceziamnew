@@ -1,0 +1,59 @@
+<div class="wrapper-clock">
+  <div class="time-part-wrapper">
+    <div class="time-part minutes ones">
+      <div class="digit-wrapper">
+        <span class="digit">0</span>
+        <% (-9..0).each do |i| %>
+          <span class="digit">
+            <%= -i %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="time-part-wrapper">
+    <div class="time-part seconds tens">
+      <div class="digit-wrapper">
+        <span class="digit">0</span>
+        <% (-5..0).each do |i| %>
+          <span class="digit">
+            <%= -i %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="time-part seconds ones">
+      <div class="digit-wrapper">
+        <span class="digit">0</span>
+        <% (-9..0).each do |i| %>
+          <span class="digit">
+            <%= -i %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="time-part-wrapper">
+    <div class="time-part milliseconds hundreds">
+      <div class="digit-wrapper">
+        <span class="digit">0</span>
+        <% (-9..0).each do |i| %>
+          <span class="digit">
+            <%= -i %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="time-part milliseconds tens">
+      <div class="digit-wrapper">
+        <span class="digit">0</span>
+        <% (-9..0).each do |i| %>
+          <span class="digit">
+            <%= -i %>
+          </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <p id="scan-duration">Scan Duration</p>
+</div>

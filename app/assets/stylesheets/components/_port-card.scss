@@ -13,19 +13,31 @@
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
+    background: linear-gradient(to right, #7f7fd5, #86a8e7, #91eae4);
     background-clip: border-box;
-    border: 1px solid rgba(0,0,0,.125);
-    border-radius: .25rem;
-    height: 350px;
+    border-radius: 8px;
+    height: 550px;
     margin-bottom: 2%;
 }
+.port-card-text {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 200;
+  color: white;
+}
 
+.term-meaning-text {
+  color: white;
+  text-align: center;
+}
 .port-card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0,0,0,.03);
-    border-bottom: 1px solid rgba(0,0,0,.125);
+  font-family: 'montserrat', sans-serif;
+  font-weight: 200;
+  color: white;
+  font-size: 34px;
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid white;
 }
 
 .port-card-body {
@@ -33,7 +45,7 @@
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
     padding: 1.25rem;
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .port-card-header:first-child {
@@ -41,5 +53,5 @@
 }
 
 .text-secondary {
-    color: #6c757d!important;
+    color: white;
 }
