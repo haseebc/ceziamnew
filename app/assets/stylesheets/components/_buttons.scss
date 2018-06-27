@@ -80,7 +80,7 @@ background-color: rgba(255, 255, 255, 1);
 .thin-buttons-grey {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  color: #4F4F4F;
+  color: #4F4F4F !important;
   font-size: 20px;
   font-weight: 200;
   transition: 0.5s;
@@ -111,4 +111,59 @@ background-color: rgba(255, 255, 255, 1);
   padding-top: 20px;
   padding-left: 18px;
   width: 150px;
+}
+
+.button-glossary {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
+  border: #FFFDFD 2px solid;
+  border-radius: 50px;
+  color: #566E95;
+  text-decoration: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: 0.4s;
+  background-color: rgba(255, 255, 255, 1);
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+ .button-glossary:hover{
+  color: rgba(255, 255, 255, 1);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.blue-buttons {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: #86a8e7 2px solid;
+  transition: 0.4s;
+  background: #86a8e7;
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.blue-buttons:hover{
+  transition: 0.4s;
+  color: rgba(134, 168, 231, 1);
+  background: none;
+  text-decoration: none;
 }

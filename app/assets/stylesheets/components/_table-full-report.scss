@@ -4,17 +4,113 @@
     align-items: center;
     justify-content: space-around;
     height: 50%;
-    width: 90%;
+    width: 100%;
     margin-bottom: 2%;
   }
-  
-  
-  #result-full-report {
+
+  #ip {
+    font-size: 36px;
+  }
+
+  #or-statement {
     font-family: 'montserrat', sans-serif;
     font-weight: 200;
+    font-size: 26px;
+    margin-left: 50px;
+    margin-right:50px;
+    padding-top: 8px;
+  }
+
+  .result-graph {
+    position: absolute;
+    color: #4F4F4F !important;
+    padding-left: 0px !important;
+    padding-top: 0px !important;
+    left: 20px;
+  }
+
+  .result-graph-attack {
+    position: absolute;
+    color: #4F4F4F !important;
+    padding-left: 0px !important;
+    padding-top: 0px !important;
+    left: 48px;
+  }
+
+  .buttons-full-report-table {
+    margin-top: 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .orange-circle {
+    background: linear-gradient(to right, #fc4a1a, #f7b733) !important;
+  }
+
+  .blue-circle {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
+    margin-right: 5px !important;
+  }
+  .margin-graph {
+    margin-left: 10px;
+  }
+  #scanned-by {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 26px;
+  }
+
+  #subdomains-found {
+    width: 200px;
+  }
+
+.style-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 275px;
+  width: 275px;
+  color: white;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  font-family: 'montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 60px;
+  color: #4F4F4F;
+  position: absolute;
+  z-index: 999;
+  margin: auto;
+}
+
+.scan-duration {
+  position: relative;
+  font-family: 'montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    color: #4F4F4F;
+
+}
+
+.title-full-report {
+  margin-top: 40px;
+  width: 40%;
+  height: 10%;
+  text-align: center;
+}
+
+#full-report-header-description {
+  margin-left: 30px;
+}
+  #result-full-report {
+    font-family: 'montserrat', sans-serif;
+    font-weight: 400;
     font-size: 50px;
     color: #4F4F4F;
-    margin-top: 50%;
+    margin-top: 40px;
   }
   .full-report-page {
     display: flex;
@@ -31,8 +127,9 @@
     border: none;
     margin-bottom: 0px;
   }
-  
+
   .risk-factor {
+    position: relative;
     text-align: center;
     font-family: 'montserrat', sans-serif;
     font-weight: 200;
@@ -42,7 +139,35 @@
     z-index: 999;
     margin: auto;
   }
-  
+
+  .circle-description-container {
+    font-family: 'montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: #4F4F4F;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  #graph-description {
+    margin-right: 25px;
+    text-align: justify;
+    width: 22.8%;
+    height: 120px;
+    padding-left: 1%;
+  }
+
+  .no-margin-desc-start {
+    margin-left: 0px !important;
+  }
+
+  .no-margin-desc-end {
+   padding-right: 1% !important;
+    border: none !important;
+  }
   .risk-title {
     font-family: 'montserrat', sans-serif;
     font-weight: 300;
@@ -56,7 +181,7 @@
     align-items: center;
     justify-content:center;
   }
-  
+
   #result-font-report {
     font-family: 'montserrat', sans-serif;
     font-weight: 300 !important;
@@ -76,8 +201,8 @@
     font-size: 42px;
     margin-top: 20px;
   }
-  
-  
+
+
   @keyframes load{0%{stroke-dashoffset:0}}
   .progress {
       display: inline-block;
@@ -124,9 +249,13 @@
           }
       }
   }
-  
+
   @media (min-width: 1200px) {
   .container {
     width: 1270px;
+  }
+
+  .row {
+    margin-left: 0px;
   }
 }

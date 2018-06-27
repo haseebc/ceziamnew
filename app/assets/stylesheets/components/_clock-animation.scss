@@ -1,0 +1,155 @@
+
+
+/* Play with speed and easing of the animation */
+$one-second: 1s;
+$easing: cubic-bezier(1,0,1,0);
+/* =========================================== */
+
+@mixin animate($count) {
+  $step: (100 / $count);
+  $progress: 0%;
+  $translate: -$digit-height;
+  @while $progress < 100 {
+    #{$progress} { transform: translateY($translate); }
+    $progress: $progress + $step;
+    $translate: $translate - $digit-height;
+  }
+}
+
+$digit-height: 30px;
+
+.digit {
+  font-family: 'montserrat', sans-serif;
+  font-weight:200;
+  display: inline-block;
+  font-size: 30px;
+  color: white;
+  height: 100%;
+  line-height: 1;
+}
+
+.time-part-wrapper {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+
+  &:not(:last-child):after {
+    content: ":";
+    display: block;
+    width: 40px;
+    height:30px;
+    position: absolute;
+    top: 0px;
+    right: -47px;
+    color: white;
+    font-size: 30px;
+    line-height: 0.9;
+  }
+}
+
+.time-part {
+  width: 20px;
+  text-align: center;
+  height: $digit-height;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 0px;
+  box-sizing: border-box;
+
+  .digit-wrapper {
+    animation-timing-function: $easing;
+  }
+  &.minutes {
+    &.tens .digit-wrapper {
+      animation-name: minutes-tens;
+      animation-duration: $one-second * 10 * 6 * 10 * 6;
+      animation-iteration-count: 1;
+    }
+    &.ones .digit-wrapper {
+      animation-name: minutes-ones;
+      animation-duration: $one-second * 10 * 6 * 10;
+      animation-iteration-count: 6;
+    }
+  }
+
+  &.seconds {
+    &.tens .digit-wrapper {
+      animation-name: seconds-tens;
+      animation-duration: $one-second * 10 * 6;
+      animation-iteration-count: 60;
+    }
+    &.ones .digit-wrapper {
+      animation-name: seconds-ones;
+      animation-duration: $one-second * 10;
+      animation-iteration-count: 360;
+    }
+  }
+
+  &.milliseconds {
+    &.hundreds .digit-wrapper {
+      animation-name: hundredths-tens;
+      animation-duration: $one-second;
+      animation-iteration-count: 3600;
+    }
+    &.tens .digit-wrapper {
+      animation-name: hundredths-ones;
+      animation-duration: $one-second / 10;
+      animation-iteration-count: 36000;
+    }
+    &.ones .digit-wrapper {
+      animation-name: milliseconds;
+      animation-duration: $one-second / 100;
+      animation-iteration-count: 360000;
+    }
+  }
+}
+@keyframes minutes-tens {
+  @include animate(6);
+}
+@keyframes minutes-ones {
+  @include animate(10);
+}
+
+@keyframes seconds-tens {
+  @include animate(6);
+}
+@keyframes seconds-ones {
+  @include animate(10);
+}
+
+@keyframes hundredths-tens {
+  @include animate(10);
+}
+@keyframes hundredths-ones {
+  @include animate(10);
+}
+@keyframes milliseconds {
+  @include animate(10);
+}
+
+.wrapper-clock {
+  margin-right: 20px;
+  height: 300px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #348f50, #56b4d3);
+  opacity: 0.9;
+  border-radius: 50%;
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 20px;
+    z-index: 10;
+  }
+}
+
+#scan-duration {
+  position: absolute;
+}
