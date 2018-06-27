@@ -7,7 +7,7 @@
     <a href="" class="profile-button-white">Contact us</a>
   </div>
    <div class="page-description user-details">
-   <p>Edit my profile <a href="<%= edit_user_path(current_user) %>"><i class="far fa-edit white"></i></a></p>
+   <p>Edit profile <a href="<%= edit_user_path(current_user) %>"><i class="far fa-edit white"></i></a></p>
    <% if current_user.firstname && current_user.lastname %>
     <p><%= current_user.firstname %> <%= current_user.lastname %></p>
    <% end %>
