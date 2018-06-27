@@ -7,8 +7,7 @@
             <button class="drop-down pulse"></button>
             <div class="dropdown-content">
             <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-            <%= link_to 'Profile', edit_user_path(current_user) %>
-            <%= link_to 'My checks', dashboard_checks_path %>
+            <%= link_to 'My dashboard', dashboard_profile_path %>
             <a href="/pages/glossary">Glossary</a>
           </div>
         </div>
