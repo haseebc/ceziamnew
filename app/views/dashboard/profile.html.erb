@@ -2,17 +2,17 @@
 <div class="banner-green glossary">
   <%= render 'shared/navbar' %>
   <div class="profile-header-container">
-    <p class="page-description profile-title">Welcome back <%= current_user.firstname %>.</p>
+    <p class="page-description profile-title">Welcome back!</p>
     <p class="page-description profile-small-title">Good to see you.</p>
-    <a href="#" class="profile-button-white">Contact us</a>
+    <a href="" class="profile-button-white">Contact us</a>
   </div>
    <div class="page-description user-details">
-   <p>Edit my profile</p>
-   <% unless current_user.firstname %>
-    <p><%= current_user.firstname %></p>
+   <p>Edit my profile <a href="<%= edit_user_path(current_user) %>"><i class="far fa-edit white"></i></a></p>
+   <% if current_user.firstname && current_user.lastname %>
+    <p><%= current_user.firstname %> <%= current_user.lastname %></p>
    <% end %>
    <p><%= current_user.email %></p>
-    <% unless current_user.company %>
+    <% if current_user.company %>
     <p><%= current_user.company %></p>
    <% end %>
    </div>
@@ -25,7 +25,11 @@
 
 <ul class="surveys grid">
 
-<div class="survey-text-description white"><h2>My checks: (click to access the full report)</h2></div>
+<div class="card-container-profile">
+<div class="survey-text-description"><h2>My checks</h2><p>click to access the full report</p></div>
+<div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>);">
+  </div>
+</div>
 
 <% @checks.each do |check| %>
 
@@ -85,7 +89,12 @@
   </ul>  
 
 
+<div class="card-container">
 
+
+<div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
+  </div>
+</div>
   
 
 <%= render 'shared/footer' %>
