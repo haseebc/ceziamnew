@@ -18,6 +18,7 @@
 #title:hover {
   opacity: 0.6;
 }
+
 .drop-down {
   background-image: url('drop-down.png');
   background-color: transparent;
@@ -30,18 +31,6 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.dropdown {
-  transition: 0.2s 0 ease;
-}
-
-.dropdown:hover .dropdown-content {
-  color: rgba(104, 166, 117, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition-delay: 1s !important;
 }
 
 .buttons-header {
@@ -57,6 +46,7 @@
 .black-burguer {
   background-image: url('drop-down2.png');
   transition: 0.4s;
+
 }
 
 .dropdown-content {
@@ -73,7 +63,8 @@
   box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
   z-index: 1;
   border-radius: 4px;
-  transition: 0.4s;
+  opacity: 0;
+  transition: 2s;
 }
 
 .without-user {
@@ -87,19 +78,25 @@
     opacity: 1;
 }
 
-.dropdown-content a:hover {
-  background-color: white;
-  color: #C04C5D;
-  transition: 0.4s;
+
+.dropdown:hover .dropdown-content {
+  color: rgba(104, 166, 117, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.drop-down:hover~.dropdown-content{
+  opacity: 1 !important;
+}
 
-// .dropdown:hover .dropdown-content {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   opacity: 1 !important;
-// }
+.dropdown-content:hover {
+  opacity: 1 !important;
+}
+
+.dropdown-content a:hover {
+  color: #C04C5D;
+}
 
 // animation for button/
 
@@ -118,6 +115,7 @@
     animation-name: pulse_animation;
     animation-duration: 3000ms;
     transform-origin:70% 70%;
-    animation-iteration-count: 5;
+    animation-iteration-count: 3;
     animation-timing-function: linear;
 }
+

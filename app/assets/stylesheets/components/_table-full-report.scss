@@ -1,5 +1,4 @@
 .data-container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -86,6 +85,15 @@
   margin: auto;
 }
 
+.general-info-container {
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .scan-duration {
   position: relative;
   font-family: 'montserrat', sans-serif;
@@ -96,9 +104,8 @@
 }
 
 .title-full-report {
-  margin-top: 40px;
   width: 40%;
-  height: 10%;
+  height: 220px;
   text-align: center;
 }
 
@@ -110,7 +117,10 @@
     font-weight: 400;
     font-size: 50px;
     color: #4F4F4F;
-    margin-top: 40px;
+  }
+
+  .vuln {
+    margin-top: -150px !important;
   }
   .full-report-page {
     display: flex;
@@ -143,13 +153,14 @@
   .circle-description-container {
     font-family: 'montserrat', sans-serif;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 18px;
     color: #4F4F4F;
     width: 100%;
     height: 30%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin-top: -50px;
   }
 
   #graph-description {
