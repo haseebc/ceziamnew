@@ -8,7 +8,7 @@
             <div class="dropdown-content">
             <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
             <%= link_to 'My dashboard', dashboard_profile_path %>
-            <a href="/pages/glossary">Glossary</a>
+            <%= link_to 'Glossary', pages_glossary_path(anchor: 'glossary-anchor') %>
           </div>
         </div>
       </div>

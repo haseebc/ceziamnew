@@ -120,7 +120,7 @@
             <p class="port-card-text"><strong>Recommandation:</strong> <%= vuln.recommandation %></p>
         </div>
         <p class="port-card-text term-meaning-text"><strong>Not sure of what this means?</strong></p>
-        <a href="/pages/glossary" class="button-glossary">Go to Glossary</a>
+        <a href="/pages/glossary#glossary-anchor" class="button-glossary">Go to Glossary</a>
       </div>
     </div>
     <% end %>
@@ -175,7 +175,7 @@
       <p id="or-statement">Or</p>
     </div>
     <div>
-      <a href="/pages/glossary" class="blue-buttons">Go to Glossary</a>
+      <%= link_to 'Go to Glossary', pages_glossary_path(anchor: 'glossary-anchor'), class: "blue-buttons" %>
     </div>
   </div>
 
