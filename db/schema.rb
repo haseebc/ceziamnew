@@ -58,9 +58,15 @@ ActiveRecord::Schema.define(version: 2018_06_25_082358) do
     t.bigint "check_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "version"
+    t.string "reason"
+    t.string "product"
     t.string "weakness"
     t.string "risk"
     t.string "recommandation"
+    t.integer "impact"
+    t.integer "likelihood"
+    t.integer "netrisk"
     t.index ["check_id"], name: "index_vulnerabilities_on_check_id"
   end
 
