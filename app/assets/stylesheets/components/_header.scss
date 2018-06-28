@@ -18,8 +18,9 @@
 #title:hover {
   opacity: 0.6;
 }
+
 .drop-down {
-  background-image: url('drop-down.png');
+  background-image: url(image_path("drop-down.png")); 
   background-color: transparent;
   border: none;
   position: relative;
