@@ -1,7 +1,6 @@
 class Check < ApplicationRecord
   belongs_to :user, required: false
-  after_create :set_vulnerabilities, :set_check
-
+  after_create :run_async_check
   has_many :vulnerabilities
 
   def set_global_score
@@ -9,7 +8,17 @@ class Check < ApplicationRecord
     self.save
   end
 
-  private
+  def run_async_check
+    HardWorker.perform_async(self.id)
+  end
+
+  def complete!
+    self.state = "completed"
+  end
+
+  def completed?
+    self.state == "completed"
+  end
 
   def set_vulnerabilities
     JSON.parse(self.fullresponse)["nmaprun"]["host"]["ports"]["port"].each do |info|

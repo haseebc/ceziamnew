@@ -13,8 +13,10 @@ class ChecksController < ApplicationController
 
     else
 
-      @check = CheckService.new(params[:hostname]).run
-
+      # @check = CheckService.new(params[:hostname]).run
+      @check = Check.new
+      @check.hostname = params[:hostname]
+      
       if current_user 
         @check.user = current_user
           if @check.save
