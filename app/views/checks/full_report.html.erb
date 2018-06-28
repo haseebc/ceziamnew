@@ -10,7 +10,7 @@
       <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
     </div>
   </div>
-
+<div class="general-info-container" id="report-banner-1">
   <div class="title-full-report">
     <p id="result-full-report">Full report</p>
     <p id="result-font-report">Check For:  <%= @check.hostname %></p>
@@ -20,7 +20,7 @@
     <div class="risk-chart">
       <div class="risk-factor"> <%= @check.score %>%
       <div class="risk-title">Risk Factor</div>
-      <a href=".container" class="thin-buttons scroll result-graph">See Report</a>
+      <a href="#report-banner-2" class="thin-buttons scroll result-graph">See Report</a>
     </div>
       <ul class="progress">
           <li>
@@ -79,7 +79,7 @@
     <div class="wrapper-clock orange-circle">
       <div class="style-clock"><%= @check.attacksurface["hosts"].count %>
         <div class="scan-duration" id="subdomains-found">Attack Surface Points
-          <a href="table" class="thin-buttons scroll result-graph-attack">See Report</a>
+          <a href="#report-banner-3" class="thin-buttons scroll result-graph-attack">See Report</a>
         </div>
       </div>
     </div>
@@ -91,13 +91,15 @@
     </div>
   </div>
 <div class="circle-description-container">
-  <div class="no-margin-desc-start" id="graph-description">The number displayed above indicates the likelyhood of a dangerous port in your website being hacked.
- </div>
-  <div id="graph-description">The amount of time we took detecting the weaknesses in the hostname you provided.</div>
-  <div id="graph-description">The attack surface is the sum of of the entry points (subdomains) in your main domain. </div>
-  <div class="no-margin-desc-end" id="graph-description">The IP address is the "id" of the device you used for this search.</div>
+    <div class="no-margin-desc-start" id="graph-description">The number displayed above indicates the likelyhood of a dangerous port in your website being hacked.
+   </div>
+    <div id="graph-description">The amount of time we took detecting the weaknesses in the hostname you provided.</div>
+    <div id="graph-description">The attack surface is the sum of of the entry points (subdomains) in your main domain. </div>
+    <div class="no-margin-desc-end" id="graph-description">The IP address is the "id" of the device you used for this search.</div>
+  </div>
 </div>
-<div class="risks-title"<h3 id="result-full-report">Vulnerabilities</h3></div>
+<div class="general-info-container" id="report-banner-2">
+<div class="risks-title vuln" id="result-full-report">Vulnerabilities</div>
 <br>
 
 <div class="container">
@@ -118,15 +120,15 @@
             <p class="port-card-text"><strong>Recommandation:</strong> <%= vuln.recommandation %></p>
         </div>
         <p class="port-card-text term-meaning-text"><strong>Not sure of what this means?</strong></p>
-        <a href="/pages/glossary" class="button-glossary">Go to Glossary</a>
+        <a href="/pages/glossary#glossary-anchor" class="button-glossary">Go to Glossary</a>
       </div>
     </div>
     <% end %>
   </div>
 </div>
-
+</div>
+<div class="general-info-container" id="report-banner-3">
 <h3 id="result-full-report">Attack Surface</h3>
-
 <section>
 <% unless @check.attacksurface.nil? %>
   <!--for demo wrap-->
@@ -173,16 +175,13 @@
       <p id="or-statement">Or</p>
     </div>
     <div>
-      <a href="/pages/glossary" class="blue-buttons">Go to Glossary</a>
+      <%= link_to 'Go to Glossary', pages_glossary_path(anchor: 'glossary-anchor'), class: "blue-buttons" %>
     </div>
   </div>
 
   <% end %>
-
 </section>
-
-
-
+</div>
   <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
 </div>

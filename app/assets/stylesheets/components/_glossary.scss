@@ -9,7 +9,7 @@
 }
 
 .glossary {
-  height: 60vh;
+  height: 70vh;
   width: 100%;
 }
 
@@ -76,7 +76,7 @@ margin: auto;
   font-size: 18px;
   font-weight: 200;
   color: #4F4F4F;
-  word-break: break-all;
+  word-break: normal;
   word-wrap: break-all;
   text-align: left;
 }
@@ -92,4 +92,3 @@ margin: auto;
   transition: 0.4s;
   opacity: 0.6;
 }
-

@@ -76,10 +76,10 @@ background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 
 position: absolute;
 font-family: 'Montserrat', sans-serif;
 font-weight: 300;
-font-size: 34px;
+font-size: 26px;
 text-align: left;
 color: #FFFFFF;
-width: 40%;
+width: 50%;
 bottom: 0px;
 left: 17px;
 }
@@ -87,13 +87,13 @@ left: 17px;
 #card-description-paragraph {
 font-family: 'Montserrat', sans-serif;
 font-weight: 200;
-font-size: 20px;
+font-size: 18px;
 color: #FFFFFF;
 }
 
 .card-1-image {
   height: 100%;
-  width: 85%;
+  width: 75%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -106,7 +106,7 @@ color: #FFFFFF;
 
 .card-2-image {
   height: 100%;
-  width: 68%;
+  width: 65%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -125,7 +125,7 @@ color: #FFFFFF;
   background-repeat: no-repeat;
   background-size: contain;
   transition: 0.5s;
-  margin-right: 15px;
+  margin-right: 8px;
 }
 
 .card-3-image:hover {
@@ -139,6 +139,14 @@ color: #FFFFFF;
   text-align: left;
   color: #4F4F4F;
   width: 35%;
+}
+
+#what-is-cybersecurity {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 42px;
+  text-align: left;
+  color: white;
 }
 
 #description-paragraph {
@@ -156,5 +164,10 @@ text-align: left;
   background-repeat: no-repeat;
   background-position: center;
   bottom: 0px;
+}
+
+.grey-box {
+  width: 40% !important;
+  font-size: 12px;
 }
 

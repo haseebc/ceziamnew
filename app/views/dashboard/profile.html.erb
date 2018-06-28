@@ -2,9 +2,10 @@
 <div class="banner-green glossary">
   <%= render 'shared/navbar' %>
   <div class="profile-header-container">
-    <p class="page-description profile-title">Welcome back!</p>
+    <p class="page-description profile-title">Welcome back, <%= current_user.firstname %>! </p>
     <p class="page-description profile-small-title">Good to see you.</p>
-    <a href="" class="profile-button-white">Contact us</a>
+    <p class="page-description profile-question">Need any help? </p>
+    <a href="" class="profile-button-white profile-button-contact">Contact us</a>
   </div>
    <div class="page-description user-details">
    <p>Edit profile <a href="<%= edit_user_path(current_user) %>"><i class="far fa-edit white"></i></a></p>
@@ -26,17 +27,21 @@
 <ul class="surveys grid">
 
 <div class="card-container-profile">
-<div class="survey-text-description"><h2>My checks</h2><p>click to access the full report</p></div>
+<div class="survey-text-description">
+  <p id="check-list">My checks</p>
+  <p id="check-click">click on any card access the full report</p>
+</div>
 <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>);">
   </div>
 </div>
 
+<div class="dashboard-container">
 <% @checks.each do |check| %>
 
-<%= link_to check_full_report_path(check) do %>
+<%= link_to check_full_report_path(check, anchor: 'report-banner-1' ) do %>
 
 <li class="survey-item">
-    
+
     <p class="survey-name">
       <%= check.hostname %>
     </p>
@@ -50,18 +55,17 @@
         Subdomains found: <%= check.attacksurface["hosts"].count %>
         </p>
     <% end %>
-    
+
     <p class="survey-country grid-only">
       Detected at: <%= check.created_at.strftime("%Y-%m-%d") %>
     </p>
-    
     <div class="pull-right">
-      
+
       <span class="survey-progress">
         <span class="survey-progress-bg">
           <span class="survey-progress-fg" style="width: <%= check.score %>%;"></span>
         </span>
-        
+
         <span class="survey-progress-labels">
           <span class="survey-progress-label">
             <%= check.score %>%
@@ -72,30 +76,32 @@
           </span>
         </span>
       </span>
-      
-      
+      <div class="orange-circle-mini">
+      <div class="style-clock-mini"><%= check.attacksurface["hosts"].count %>
+        <div class="scan-duration" id="subdomains-found-mini">Attack Surface Points
+        </div>
+      </div>
+    </div>
+
       <span class="survey-stage">
         <span class="stage draft">Draft</span>
         <span class="stage awarded">Awarded</span>
         <span class="stage live">Live</span>
-        <span class="stage ended active">Ended</span>        
+        <span class="stage ended active">Ended</span>
       </span>
     </div>
   </li>
 
  <% end %>
   <% end %>
-
-  </ul>  
-
-
+  </ul>
+</div>
 <div class="card-container">
-
 
 <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
   </div>
 </div>
-  
+
 
 <%= render 'shared/footer' %>
 
