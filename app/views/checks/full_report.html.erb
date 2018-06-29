@@ -207,34 +207,3 @@ $(window).on("load resize ", function() {
 
 <% end %>
 
-<%# <style>
-.loading-div {
-  background: url('https://media0.giphy.com/media/TlK63EEDBaUA4aFuL3G/giphy.gif'); 
-  background-size: cover;
-  width: 100%; 
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-</style>
-
-
-<div class="loading-div"> 
-  <h1 style="display: flex;"> Running super important checks in .... <div id="loading-in">0</div> </h1> 
-   
-</div>
-
-<script>
-    setTimeout(function(){
-      window.location.reload(1);
-    }, 30000);
-    const count = document.getElementById("loading-in");
-    setInterval(function(){
-      let currentCount =  Number.parseInt(count.innerText);
-      currentCount++;
-      count.innerHTML = currentCount.toString();
-    }, 1000);
-</script> %>
-
