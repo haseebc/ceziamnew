@@ -25,7 +25,7 @@ class CheckService
     end
 
     def ports_check(target)
-        ports_to_check = "20,21,25,53,67,80,135,137,138,139,161,389,445,548,1433,3389"
+        ports_to_check = "7,9,13,19,20,21,23,25,37,53,67,69,80,113,115,135,137,138,139,161,389,445,548,1433,3389"
     
         @jumphost = "websec.app"
         @username = "root"
