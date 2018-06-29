@@ -1,4 +1,5 @@
 .container-log-in{
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,7 +8,7 @@
   background: linear-gradient(271.2deg, #355C7D 1.35%, #6C5B7B 49.91%, #C06C84 99.02%);
   color: white;
   padding-top: 10%;
-  height: 100vh;
+  height: 100%;
 }
 
 .row {
@@ -121,6 +122,10 @@ label {
   border: none;
   border-bottom: rgba(225, 255, 255, 0.6) 1px solid;
   margin-bottom: 40px;
+}
+
+.alert-danger {
+  background-color: transparent !important;
 }
 
 #user_lastname[type="text"] {
@@ -275,6 +280,9 @@ font-family: 'Montserrat', sans-serif;
   color: white;
 }
 
+.invalid-feedback {
+  font-family: 'Montserrat', sans-serif !important;
+}
 .alert {
 
   padding-top: 7%;
@@ -286,5 +294,5 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .alert-warning {
-  background: linear-gradient(271.2deg, #355C7D 1.35%, #6C5B7B 49.91%, #C06C84 99.02%) !important;
+  background: linear-gradient(to right, #ff416c, #ff4b2b) !important;
 }

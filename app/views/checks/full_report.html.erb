@@ -98,14 +98,14 @@
     <div class="no-margin-desc-end" id="graph-description">The IP address is the "id" of the device you used for this search.</div>
   </div>
 </div>
-<div class="general-info-container" id="report-banner-2">
+<div class="general-info-container-vuln" id="report-banner-2">
 <div class="risks-title vuln" id="result-full-report">Vulnerabilities</div>
 <br>
 
 <div class="container">
   <div class="row">
   <% @check.vulnerabilities.each do |vuln| %>
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+    <div class="col-xs-12  col-sm-4">
       <!-- insert <div class="card"> -->
       <div class="port-card border-secondary mb-3">
         <div class="port-card-header">Port: <%= vuln.port %></div>
@@ -169,7 +169,7 @@
   <p id="scanned-by">Need some help understanding your data?</p>
   <div class="buttons-full-report-table">
     <div>
-      <a href="/pages/glossary" class="blue-buttons">Contact Us</a>
+      <a href="/dashboard/profile#contact-us-page" class="blue-buttons">Contact Us</a>
     </div>
     <div>
       <p id="or-statement">Or</p>
