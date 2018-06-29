@@ -6,9 +6,9 @@ require "json"
 require 'open-uri'
 
 class CheckService 
-    def initialize(target)
-        @target = target
-        @check = Check.new(hostname: target)
+    def initialize(check_id)
+        @check = Check.find(check_id)
+        @target = @check.hostname
     end
 
     def run
@@ -17,7 +17,10 @@ class CheckService
 
         subdomain_response = subdomains_check(@target)
         @check.attacksurface = subdomain_response if subdomain_response
-
+        @check.complete!
+        @check.save
+        @check.set_vulnerabilities
+        @check.set_check
         return @check
     end
 
