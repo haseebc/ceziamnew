@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    if session[:last_check_id]
+      check = Check.find(session[:last_check_id])
+      check.user = resource
+      check.save
+    end
     dashboard_profile_path(resource)
     # request.env['omniauth.origin'] || stored_location_for(resource) || root_path
   end
