@@ -1,0 +1,48 @@
+.card-orange {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width:100%;
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 6px 6px 10px lightgrey;
+}
+
+.orange {
+background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 95, 109, 0.8) 99.66%) !important;
+height: 85% !important;
+}
+
+.card-4-image {
+  position: absolute;
+  height: 100%;
+  width: 55%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: 0.5s;
+  bottom: -26px;
+  right: -10px;
+}
+
+#contact-start {
+  height: 30px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: #FFFDFD 1px solid;
+  margin-bottom: 20px;
+}
+
+.orange-button {
+  color: #FD9DA3 !important;
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.orange-button:hover {
+  color: white !important;
+}

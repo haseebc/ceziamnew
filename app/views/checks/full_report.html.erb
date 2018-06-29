@@ -99,14 +99,14 @@
     <div class="no-margin-desc-end" id="graph-description">The IP address is the "id" of the device you used for this search.</div>
   </div>
 </div>
-<div class="general-info-container" id="report-banner-2">
+<div class="general-info-container-vuln" id="report-banner-2">
 <div class="risks-title vuln" id="result-full-report">Vulnerabilities</div>
 <br>
 
 <div class="container">
   <div class="row">
   <% @check.vulnerabilities.each do |vuln| %>
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+    <div class="col-xs-12  col-sm-4">
       <!-- insert <div class="card"> -->
       <div class="port-card border-secondary mb-3">
         <div class="port-card-header">Port: <%= vuln.port %></div>
@@ -170,7 +170,7 @@
   <p id="scanned-by">Need some help understanding your data?</p>
   <div class="buttons-full-report-table">
     <div>
-      <a href="/pages/glossary" class="blue-buttons">Contact Us</a>
+      <a href="/dashboard/profile#contact-us-page" class="blue-buttons">Contact Us</a>
     </div>
     <div>
       <p id="or-statement">Or</p>
@@ -206,35 +206,4 @@ $(window).on("load resize ", function() {
 </script>
 
 <% end %>
-
-<%# <style>
-.loading-div {
-  background: url('https://media0.giphy.com/media/TlK63EEDBaUA4aFuL3G/giphy.gif'); 
-  background-size: cover;
-  width: 100%; 
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-</style>
-
-
-<div class="loading-div"> 
-  <h1 style="display: flex;"> Running super important checks in .... <div id="loading-in">0</div> </h1> 
-   
-</div>
-
-<script>
-    setTimeout(function(){
-      window.location.reload(1);
-    }, 30000);
-    const count = document.getElementById("loading-in");
-    setInterval(function(){
-      let currentCount =  Number.parseInt(count.innerText);
-      currentCount++;
-      count.innerHTML = currentCount.toString();
-    }, 1000);
-</script> %>
 
