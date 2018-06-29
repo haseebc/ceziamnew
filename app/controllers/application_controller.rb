@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:firstname, :lastname, :company])
   end
+
+  def after_sign_in_path_for(resource)
+    dashboard_profile_path(resource)
+    # request.env['omniauth.origin'] || stored_location_for(resource) || root_path
+  end
 end
