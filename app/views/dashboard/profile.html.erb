@@ -104,22 +104,19 @@
   </ul>
 </div>
 <div class="card-container-contact" id="contact-us-page">
-  <%= render 'shared/navbar-black' %>
 <div class="card-wrapper">
     <div class="green-card orange">
       <div class="card-description">
         <p>
         Contact Us
-        <form id="search" action="#contact-us-page" method="post">
+        <form id="search" action="mailto:info@ceziam.com" method="post">
       <div>
-       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Full Name" autocomplete="off"/>
-      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Company" autocomplete="off"/>
-      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="E-mail" autocomplete="off"/>
-      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Subject" autocomplete="off"/>
+      <input class="string required" id="contact-start" maxlength="255" size="50" type="text" placeholder="Full Name" autocomplete="off"/>
+      <input class="string required" id="contact-start" maxlength="255" size="50" type="text" placeholder="E-mail" autocomplete="off"/>
+      <input class="string required" id="contact-start" maxlength="255" size="50" type="text" placeholder="Subject" autocomplete="off"/>
       </div>
       <div class="button-loader-container">
-        <input class="button-white orange-button" id="button-banner" name="commit" type="submit" value="I'm Done" />
+        <input class="button-white orange-button" id="button-banner" type="submit" value="Send" />
       </div>
     </form></p>
         <p id="card-description-paragraph">
@@ -141,11 +138,3 @@
 
 <%= render 'shared/footer' %>
 
-<%# <script>
-$ ->
-  $('[data-toggle]').on('click', ->
-    toggle = $(this).addClass('active').attr('data-toggle')
-    $(this).siblings('[data-toggle]').removeClass('active')
-    $('.surveys').removeClass('grid list').addClass(toggle)
-  )
-</script> %>
