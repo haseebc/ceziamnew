@@ -35,6 +35,8 @@ module Ceziamnew
     # the framework and any gems in your application.
 
     # Don't generate system test files.
+    config.active_job.queue_adapter = :sidekiq
     config.generators.system_tests = nil
   end
+
 end
