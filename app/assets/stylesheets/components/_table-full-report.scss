@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: space-around;
     height: 50%;
-    width: 100%;
+    width: 97%;
     margin-bottom: 2%;
   }
 
@@ -61,6 +61,7 @@
     background: linear-gradient(to right, #fc4a1a, #f7b733) !important;
   }
 
+
   .blue-circle {
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
     margin-right: 5px !important;
@@ -105,6 +106,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .scan-duration {
@@ -133,7 +135,8 @@
   }
 
   .vuln {
-    margin-top: -150px !important;
+    text-align: center;
+    margin-top: 0px !important;
   }
   .full-report-page {
     display: flex;
@@ -174,6 +177,7 @@
     align-items: flex-start;
     justify-content: space-between;
     margin-top: -50px;
+    margin-left: 15px;
   }
 
   #graph-description {

@@ -5,7 +5,7 @@
     <p class="page-description profile-title">Welcome back, <%= current_user.firstname %>! </p>
     <p class="page-description profile-small-title">Good to see you.</p>
     <p class="page-description profile-question">Need any help? </p>
-    <a href="" class="profile-button-white profile-button-contact">Contact us</a>
+    <a href="#contact-us-page" class="profile-button-white profile-button-contact scroll contact-button">Contact us</a>
   </div>
    <div class="page-description user-details">
    <p>Edit profile <a href="<%= edit_user_path(current_user) %>"><i class="far fa-edit white"></i></a></p>
@@ -91,20 +91,55 @@
       </span>
     </div>
   </li>
-
  <% end %>
   <% end %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="orange-vector" style="background-image: url(<%= image_path('white-vector.png') %>);">
+  </div>
   </ul>
 </div>
-<div class="card-container">
-
-<div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
+<div class="card-container-contact" id="contact-us-page">
+  <%= render 'shared/navbar-black' %>
+<div class="card-wrapper">
+    <div class="green-card orange">
+      <div class="card-description">
+        <p>
+        Contact Us
+        <form id="search" action="#contact-us-page" method="post">
+      <div>
+       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Full Name" autocomplete="off"/>
+      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Company" autocomplete="off"/>
+      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="E-mail" autocomplete="off"/>
+      <input class="string required" id="contact-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Subject" autocomplete="off"/>
+      </div>
+      <div class="button-loader-container">
+        <input class="button-white orange-button" id="button-banner" name="commit" type="submit" value="I'm Done" />
+      </div>
+    </form></p>
+        <p id="card-description-paragraph">
+        </p>
+      </div>
+      <div class="card-4-image" style="background-image: url(<%= image_path('contact.png') %>);">
+      </div>
+    </div>
   </div>
+  <div class="text-description">
+    <p>Why contact us?</p>
+    <p id="description-paragraph">Because we care about you! We want you to have the best website security guidence possible.</p>
+  </div>
+  <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
+  </div>
+
 </div>
 
 
 <%= render 'shared/footer' %>
-
 
 <%# <script>
 $ ->
