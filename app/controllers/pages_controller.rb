@@ -6,7 +6,4 @@ class PagesController < ApplicationController
 
   def glossary
   end
-
-  def about
-  end
 end
