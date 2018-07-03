@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get 'dashboard/profile'
   get 'pages/glossary'
-  
+  get 'pages/about'
+
   devise_for :users, controllers: { registrations: "registrations" }
 
   root to: 'pages#home'

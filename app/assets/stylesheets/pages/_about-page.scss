@@ -1,0 +1,62 @@
+
+.about-content-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.about-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 20%;
+  width: 80%;
+  border: 0.25px solid #4F4F4F;
+  color: #4F4F4F;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px lightgrey;
+}
+
+#title-about {
+  height: 20%;
+  width: 80%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #4F4F4F;
+}
+
+.first {
+  margin-top: 30px;
+}
+
+.profile-pic {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid #63987C;
+  margin-right: 30px;
+  transition: 0.4s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease;
+}
+
+.founder-story {
+  font-size: 18px;
+}
+
+
+
