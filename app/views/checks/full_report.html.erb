@@ -1,10 +1,14 @@
+<!-- SEO Meta-tags -->
+<% set_meta_tags title: 'Full report',
+              description: 'Here you will find all the information related to your website security that we have detected.' %>
+
 <% if @check.completed? %>
 
 <div class="card-container full-report-page">
   <div class="banner-green glossary">
   <%= render 'shared/navbar' %>
   <div class="glossary-header-container">
-      <p class="page-description glossary-description" id="full-report-header-description">This is your full report page. You'll find all the information related to your site's security that we've detected.</p>
+      <p class="page-description glossary-description" id="full-report-header-description">This is your full report page. You will find all the information related to your website's security that we have detected.</p>
       </div>
       <div class="logo-banner static-logo" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
       </div>
