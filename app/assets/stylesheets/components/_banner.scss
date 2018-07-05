@@ -53,3 +53,17 @@
   background-position: center;
   bottom: 0px;
 }
+
+@media (max-width: 767.98px) { 
+  .page-description {
+    font-size: 24px;
+  }
+
+  .logo-banner {
+    margin-bottom: 100%;
+  }
+
+  .header-description {
+    width: unset;
+  }
+ }
