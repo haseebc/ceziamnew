@@ -171,3 +171,32 @@ text-align: left;
   font-size: 12px;
 }
 
+@media (max-width: 767.98px) {
+  .text-description {
+    font-size: 20px;
+  }
+
+  #description-paragraph {
+    font-size: 16px;
+  }  
+
+  #card-description-paragraph {
+    font-size: 14px;
+  }
+
+  #what-is-cybersecurity {
+    font-size: 20px;
+  }
+
+  .thin-buttons-grey {
+    visibility: hidden;
+  }
+
+  .thin-buttons {
+    visibility: hidden;
+  }
+
+  .card p {
+    font-size: 19px;
+  }
+}
