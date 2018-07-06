@@ -1,6 +1,6 @@
 <!-- SEO Meta-tags -->
-<% set_meta_tags title: 'Dashboard',
-              description: 'Welcome back ' + current_user.firstname %>
+<% set_meta_tags title: current_user.firstname + "'s dashboard",
+              description: 'Welcome back ' + current_user.firstname + '. Good to see you.' %>
 
 <div class="banner-green glossary">
   <%= render 'shared/navbar' %>
