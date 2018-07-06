@@ -10,22 +10,21 @@
 
       gtag('config', 'UA-121868609-1');
     </script>
+
     <%= favicon_link_tag 'favicon.ico' %>
-    <title>CEZIAM</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,500|Titillium+Web|Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= display_meta_tags site: 'Ceziam' %>
+    <%= display_meta_tags site: 'CEZIAM' %>
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+      <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>
