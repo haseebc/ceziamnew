@@ -44,7 +44,7 @@
 </div>
 
 <div class="dashboard-container">
-<% @checks.reverse_each do |check| %>
+<% @checks.each do |check| %>
 
 <%= link_to check_full_report_path(check, anchor: 'report-banner-1' ) do %>
 
