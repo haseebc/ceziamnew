@@ -145,11 +145,11 @@
   }
 
   .risk-factor {
-    font-size: 30px !important;
+    font-size: 50px !important;
   }
   
   .risk-title {
-    font-size: 15px !important;;
+    font-size: 30px !important;;
   }
 
   .info-table p {
@@ -158,5 +158,18 @@
 
   .risk-chart {
     height: 100%;
+  }
+
+  .summary-page {
+    height: 100%;
+  }
+
+  #button-purple {
+    margin: 0 auto;
+  }
+
+  .info-table {
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
