@@ -61,18 +61,19 @@
     background: linear-gradient(to right, #fc4a1a, #f7b733) !important;
   }
 
-
   .blue-circle {
     background: linear-gradient(to right, #0f0c29, #302b63, #24243e) !important;
     margin-right: 5px !important;
   }
+
   .margin-graph {
     margin-left: 10px;
   }
+
   #scanned-by {
-  font-family: 'montserrat', sans-serif;
-  font-weight: 200;
-  font-size: 26px;
+    font-family: 'montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 26px;
   }
 
   #subdomains-found {
@@ -127,17 +128,19 @@
 #full-report-header-description {
   margin-left: 30px;
 }
-  #result-full-report {
-    font-family: 'montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 50px;
-    color: #4F4F4F;
-  }
+
+#result-full-report {
+  font-family: 'montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  color: #4F4F4F;
+}
 
   .vuln {
     text-align: center;
     margin-top: 0px !important;
   }
+
   .full-report-page {
     display: flex;
     flex-direction: column;
@@ -145,6 +148,7 @@
     justify-content: center;
     height: 100%;
   }
+
   .progress {
     width: 100%;
     height: 100%;
@@ -216,6 +220,7 @@
     font-size: 42px;
     color: #4F4F4F;
   }
+
   .info-table {
     font-family: 'montserrat', sans-serif !important;
     font-weight: 200;
@@ -229,7 +234,6 @@
     font-size: 42px;
     margin-top: 20px;
   }
-
 
   @keyframes load{0%{stroke-dashoffset:0}}
   .progress {
@@ -285,5 +289,79 @@
 
   .row {
     margin-left: 0px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #full-report-header-description {
+    margin-left: 10%;
+    width: 300px;
+    text-align: right;
+  }
+
+  .title-full-report {
+    width: 100%;
+  }
+
+  #result-full-report {
+    font-size: 40px;
+    margin-top: 8% !important;
+  }
+
+  #result-font-report {
+    font-size: 25px;
+  }
+
+  #scanned-by {
+    font-size: 20px;
+  }
+
+  .data-container {
+    flex-direction: column;
+  }
+
+  .general-info-container {
+    height: 100%;
+  }
+
+  .circle-description-container {
+    display: none;
+  }
+
+  .data-container {
+    height: 100%;
+  }
+
+  .white-vector {
+    bottom: -1px;
+  }
+
+  .button-glossary {
+    margin-top: 0px;
+  }
+
+  .wrapper-clock {
+    margin-top: 10%
+  }
+
+  section {
+    width: 90%;
+    height: 100vh;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  th {
+    font-size: 14px;
+  }
+
+  .buttons-full-report-table {
+    display: flow-root;
+  }
+
+  .general-info-container {
+    margin-top: 5%;
   }
 }
