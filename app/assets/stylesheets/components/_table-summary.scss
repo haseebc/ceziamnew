@@ -136,6 +136,7 @@
 @media (max-width: 767.98px) {
   #result-summary {
     font-size: 35px;
+    margin-top: 20%;
   }
 
   #result-font {
@@ -153,5 +154,9 @@
 
   .info-table p {
     padding-left: 2%;
+  }
+
+  .risk-chart {
+    height: 100%;
   }
 }
