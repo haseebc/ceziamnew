@@ -30,6 +30,35 @@
 }
 
 
+@media (max-width: 767.98px) {
+  .orange-circle-mini {
+    display: none;
+  }
+
+  .profile-button-white {
+    display: none;
+  }
+
+  .profile-question {
+    display: none;
+  }
+
+  .card-4-image {
+    display: none;
+  }
+
+  .card-description {
+    width: 75%;
+  }
+
+  .user-details {
+    margin-right: 0px;
+  }
+
+  .profile-header-container {
+    margin-left: 8%;
+  }
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
