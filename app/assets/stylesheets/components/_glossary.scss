@@ -52,7 +52,6 @@ margin: auto;
   word-break: break-all;
   word-wrap: break-all;
   table-layout: fixed;
-
 }
 
 .glossary-th {
@@ -91,4 +90,19 @@ margin: auto;
 #key-word:hover {
   transition: 0.4s;
   opacity: 0.6;
+}
+
+@media (max-width: 767.98px) {
+  .glossary-table {
+    overflow-x: auto;
+  }
+
+  .glossary-header-container {
+    max-width: 80%;
+  }
+
+  .table-title {
+    font-size: 30px;
+    word-break: keep-all;
+  }
 }
