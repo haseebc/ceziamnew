@@ -119,9 +119,16 @@
     // padding: 70px 20px;
     padding-top: 10%;
     flex-direction: column;
+    margin-bottom: 5%;
   }
 
   .copyrights {
     width: 100%;
+    bottom: 12px;
+  }
+
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
   }
  }
