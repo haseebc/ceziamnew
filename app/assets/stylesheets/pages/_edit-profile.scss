@@ -10,7 +10,6 @@
   height: 100vh;
 }
 
-
 #edit-paragraph{
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -58,6 +57,14 @@
   .profile-header-container {
     margin-left: 8%;
   }
+
+  .form-edit{
+    width: 100%;
+  }
+  
+  #edit-paragraph {
+    margin-top: 10%;
+  }
 }
 
 input:-webkit-autofill,
@@ -67,8 +74,6 @@ input:-webkit-autofill:active {
     -webkit-transition-delay: 9999s;
     -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
 }
-
-
 
 .avatar{
   width: 200px;
@@ -89,6 +94,8 @@ input:-webkit-autofill:active {
 .profile-pic-edit{
   padding-top: 50px;
   padding-right: 100px;
+  // Profile picture hidden
+  display: none;
 }
 
 
