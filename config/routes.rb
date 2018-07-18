@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
-  # match urls where the host starts with 'www.' as long it's not followed by 'cute.'
-  constraints(host: /^www\.(?!cute\.)/i) do 
 
-    match '(*any)', via: :all, to: redirect { |params, request|
-
-      # parse the current request url
-      # tap in and remove www. 
-      URI.parse(request.url).tap { |uri| uri.host.sub!(/^www\./i, '') }.to_s }
+  # www to non-www redirect
+  constraints(host: /^www\./i) do 
+    match '(*any)' => redirect { |params, request| 
+    URI.parse(request.url).tap { |uri| uri.host.sub!(/^www\./i, '') }.to_s }, via: [:get, :post] 
   end
 
   get 'dashboard/profile'
