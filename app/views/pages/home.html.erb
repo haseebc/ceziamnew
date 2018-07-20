@@ -10,7 +10,7 @@
     <form id="search" action="/checks#report-banner-1" method="post">
       <div>
        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your hostname..." autocomplete="off"/>
+      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your hostname e.g. cnn.com" autocomplete="off"/>
       </div>
       <div class="button-loader-container">
         <input class="button-white" id="button-banner" name="commit" type="submit" value="Detect" />
