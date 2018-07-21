@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_07_17_174145) do
     t.jsonb "attacksurface"
     t.string "state", default: "pending"
     t.string "duration"
+    t.integer "domcheck_duration"
     t.index ["user_id"], name: "index_checks_on_user_id"
   end
 
