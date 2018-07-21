@@ -78,7 +78,11 @@
       </svg>
     </div>
     <div class="wrapper-clock margin-graph">
+    <% if @check.duration %>
+      <div class="style-clock"><%= @check.duration %> s
+    <% else %>
       <div class="style-clock"><%= @check.scandur %> s
+    <% end %>
         <div class="scan-duration">Detection Time</div>
       </div>
     </div>

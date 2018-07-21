@@ -69,7 +69,11 @@
       <h1 id="result-font">Check For:  <%= @check.hostname %></h1>
 
         <p>IP: <%= @check.ip %></p>
-        <p>Scan duration: <%= @check.scandur %> seconds</p>
+        <% if @check.duration %>
+            <p>Check duration: <%= @check.duration %> seconds</p>
+        <% else %>
+            <p>Check duration: <%= @check.scandur %> seconds</p>
+        <% end %>
         <p>Dangerous ports found: <%= @check.vulnerabilities.count %></p>
         <p id="subdomains">Subdomains found: <%= @check.attacksurface["hosts"].count %></p>
 

@@ -12,11 +12,18 @@ class CheckService
     end
 
     def run
+        begin_checks = Time.now
+
         ports_check_response = ports_check(@target)  
         @check.fullresponse = ports_check_response if ports_check_response
 
         subdomain_response = subdomains_check(@target)
         @check.attacksurface = subdomain_response if subdomain_response
+
+        end_checks = Time.now
+        duration_checks = (end_checks - begin_checks)
+
+        @check.duration = duration_checks.round(2).to_s
         @check.complete!
         @check.save
         @check.set_vulnerabilities
