@@ -54,7 +54,7 @@ class ChecksController < ApplicationController
 
     if user_input.end_with? "/"
       user_input.tr!("/", "")
-    end
+    end 
 
     user_input.match(valid_hostname_regex)
   end
