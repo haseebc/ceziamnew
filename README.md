@@ -7,7 +7,7 @@
 - **dangerous port check** 
 - **attack surface check by enumaerating subdomains**  
 - **displays the results spontaneously**
-- **Future versions will include API checker and WebApplication Vuln Checks**
+- **Future versions will include API security verification and WebApplication OWASP top10 checks**
 - saves a lot of time, **indeed a lot time!**
 
 ## Bug Reports
