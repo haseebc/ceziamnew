@@ -1,7 +1,137 @@
+<!--
 <%= link_to "Home Page", root_path %>
 
 <h1> This will be the new healthcheck page <h2>
 <p> Hello world </p>
-<p> .....under construction </p>
+<p> .....under construction </p> -->
 
-<!–– This is simple way how to add a link––>
+<!-- SEO Meta-tags -->
+<% set_meta_tags title: 'Cyber-security checker',
+                description: 'Detect your core cyber security risks including dangerous ports and attack surface with a simple website freely available to all.' %>
+
+<div class="banner-green">
+  <%= render 'shared/navbar-centred' %>
+  <div class="header-description">
+<!--<h1><p class="header-title">Welcome to Ceziam</p></h1> --> 
+    <h2><p class="page-description">Uncover Your Cyber Security Threats with a Security Checkup</p><h2>
+    <form id="search" action="/checks#report-banner-1" method="post">
+      <div>
+       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your hostname e.g. cnn.com" autocomplete="off"/>
+      </div>
+      <div class="button-loader-container">
+        <input class="button-white" id="button-banner" name="commit" type="submit" value="Detect" />
+        <div class="container-animation">
+        <div class="circles" id="loading-symbol" hidden>
+          <div class="circle-multiple">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+          <div class="start-screen">
+            <div class="loading">
+              <div class="loading__element el1">D</div>
+              <div class="loading__element el2">E</div>
+              <div class="loading__element el3">T</div>
+              <div class="loading__element el4">E</div>
+              <div class="loading__element el5">C</div>
+              <div class="loading__element el6">T</div>
+              <div class="loading__element el7">I</div>
+              <div class="loading__element el8">N</div>
+              <div class="loading__element el9">G</div>
+              <div class="loading__element el13">.</div>
+              <div class="loading__element el14">.</div>
+              <div class="loading__element el15">.</div>
+            </div>
+          </div>
+          <p class="disclamer">This could take up to 2 minutes...</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </form>
+    <a href="#card-1" class="thin-buttons scroll">Learn More</a>
+  </div>
+  <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
+  </div>
+  <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
+  </div>
+</div>
+<div class="card-container" id="card-1">
+  <%= render 'shared/navbar-black' %>
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-description">
+        <p>How we do it</p>
+        <p id="card-description-paragraph">We detect any weakspots in your domain with top-of-the-notch algorithms.</p>
+      </div>
+      <div class="card-1-image" style="background-image: url(<%= image_path('card-1.png') %>);">
+      </div>
+    </div>
+    <a href="#card-2" class="thin-buttons-grey scroll">Learn More</a>
+  </div>
+  <div class="text-description">
+    <p>What we do</p>
+    <p id="description-paragraph">With Ceziam, Cyber-Security risks are easier to detect and prevent. We present complex information in an easy way, always striving to give users a meaningful but simple analysis.    </p>
+    <!--
+    With Ceziam, talk about cyber security risks has transformed into actionable steps.
+    Step 1. We ask you to provide us the hostname of your website. With this we connect to our distributed environment and perform our analysis. This detection phase often takes between 30 and 120 seconds.
+    Step 2. The most important information is captured against risks identified. You are then invited to login t obtain more detailed resuts.
+    Step 3. An overall risk metric is presented and the full possible attack surface friom the internet is shown.
+    -->
+
+  </div>
+  <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>);">
+  </div>
+</div>
+
+<div class="card-container alternate" id="card-2">
+  <%= render 'shared/navbar' %>
+  <div class="text-description white">
+    <p id="what-is-cybersecurity">What is cybersecurity?</p>
+    <p class="white" id="description-paragraph">Cybersecurity is one of the most important aspects of the internet but also one of the most obscure ones. Here, you can find clear information to understand better what it entails.</p>
+  </div>
+
+  <div class="card-wrapper">
+    <div class="card-white">
+      <div class="card-description grey grey-box">
+        <a target="_blank" href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96" class="thin-buttons-grey">Click here for a very comprehensive look into the world of Cyber-Security</a>
+        <p class= "grey" id="card-description-paragraph">
+        </p>
+      </div>
+    <div class="card-2-image" style="background-image: url(<%= image_path('cybersecurity.png') %>);">
+    </div>
+  </div>
+  <a href="#card-3" class="thin-buttons scroll">Learn More</a>
+  </div>
+  <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
+  </div>
+</div>
+<div class="card-container" id="card-3">
+  <%= render 'shared/navbar-black' %>
+  <div class="card-wrapper">
+    <div class="green-card">
+      <div class="card-description">
+        <p><a target="_blank" href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96" class="thin-buttons">Click here to know why you need it</a></p>
+        <p id="card-description-paragraph">
+        </p>
+      </div>
+      <div class="card-3-image" style="background-image: url(<%= image_path('hacker.png') %>);">
+      </div>
+    </div>
+    <a href=".banner-green" class="thin-buttons-grey scroll">Let's try!</a>
+  </div>
+  <div class="text-description">
+    <p>Why do you need it?</p>
+    <p id="description-paragraph">Many businesses today have strong online presence. Quite often the whole business is the web application (mobile, desktop or Internet of Things).</p>
+  </div>
+  <div class="orange-vector" style="background-image: url(<%= image_path('purple-vector.png') %>);">
+  </div>
+</div>
+<%= render 'shared/footer' %>
+<script>
+  const form = document.querySelector('#search');
+  const gif = document.querySelector("#loading-symbol");
+  form.addEventListener('submit', function(event) {
+      gif.hidden = false;
+  });
+</script>

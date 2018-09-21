@@ -1,0 +1,35 @@
+
+<% if user_signed_in?  %>
+    <div class="header">
+        <div class="buttons-header">
+        <!--<div class="dropdown">
+                <div class="drop-down-menu">
+                  <button class="drop-down pulse"></button>
+                    <div class="dropdown-content">
+                      <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+                      <%= link_to 'My dashboard', dashboard_profile_path %>
+                      <%= link_to 'Glossary', pages_glossary_path(anchor: 'glossary-anchor') %>
+                    </div>
+                </div>
+            </div> --> 
+        </div>
+            <div class="title"><a href="/" class="thin-buttons main">CEZIAM</a>
+            </div>
+    </div>
+  <% else %>
+    <div class="header">
+        <div class="buttons-header">
+        <!--<div class="dropdown">
+                <div class="drop-down">
+                  <button class="drop-down pulse"></button>
+                    <div class="dropdown-content without-user">
+                      <%= link_to 'Log In', new_user_session_path %>
+                      <a href="/pages/glossary">Glossary</a>
+                    </div>
+                </div>  
+            </div> --> 
+        </div>
+            <div class="title"><a href="/" class="thin-buttons main">CEZIAM</a>
+            </div>
+    </div>
+  <% end %>
