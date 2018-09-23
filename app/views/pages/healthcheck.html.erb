@@ -30,44 +30,76 @@
 
 <div class="card-container2 white" >
   <%= render 'shared/navbar-black' %>
-  <div class="text-description">
+    <div class="text-description">
     <p id="cybersecurity-healthcheck">Time to Give Your Enterprise a Cyber Security Checkup</p>
     <p class="grey" id="description-paragraph">89% of all organisation are not protected against cyber attacks.<br />
 
-The best way to resolve these problems is with a no-cost Security CheckUp.<br /> The experts from Ceziam will analyse your internet facing applications and network.<br /> After the analysis you will recieve a comprehensive report, if high risk issues are found we will ask you to consider booking a meeting with us to discuss how we can assist you to resolve threats discovered. You’re under no obligation though!</p>
+    The best way to resolve these problems is with a no-cost Security CheckUp.<br /> The experts from Ceziam will analyse your internet facing applications and network.<br /> After the analysis you will recieve a comprehensive report, if high risk issues are found we will ask you to consider booking a meeting with us to discuss how we can assist you to resolve threats discovered. You’re under no obligation though!</p>
+        <div class="grey" id="description-paragraph"><p id="cybersecurity-healthcheck">Cyber Security Check includes:</p>
+        <ul>
+            <li><a href="#">Web Application risks</a></li>
+            <li><a href="#">Dangerous IT infrastructure</a></li>
+            <li><a href="#">Attack surface you have exposed</a></li>
+            <li><a href="#">Key Cyber Security recommendations</a></li>
+        </ul>
+        </div>
+    </div> 
 
-<div class="grey" id="description-paragraph">
+    <div class="card-wrapper">
+        <div class="card-white">
+            <div class="card-description">
+            <p>SIGN UP FOR A FREE SECURITY CHECKUP TODAY</p>
+            <form action="https://formspree.io/info@ceziam.com" method="POST">
+            First name:<br>
+            <input 
+                type="text" 
+                name="firstname"
+                style="background-color:white; 
+              vertical-align:9px;color:black">
+              <br>
+            Last name:<br>
+            <input 
+                type="text" 
+                name="lastname"
+                style="background-color:white; 
+              vertical-align:9px;color:black">
+              <br>
+            Telephone:<br>
+            <input 
+                type="text" 
+                name="telephone"
+                style="background-color:white; 
+              vertical-align:9px;color:black">
+            <br>
+            Country:<br>
+            <input 
+                type="text" 
+                name="Country"
+                style="background-color:white; 
+              vertical-align:9px;color:black"> 
+            <br>
+            Company:<br>
+            <input 
+                type="text" 
+                name="Company"
+                style="background-color:white; 
+              vertical-align:9px;color:black">    
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+            </form>
 
-<p id="cybersecurity-healthcheck">Cyber Security Check includes:</p>
-  <ul>
-    <li><a href="#">Web Application risks</a></li>
-    <li><a href="#">Dangerous IT infrastructure</a></li>
-    <li><a href="#">Attack surface you have exposed</a></li>
-    <li><a href="#">Key Cyber Security recommendations</a></li>
-  </ul>
-  </div>
+            
 
-  
-</div> 
-
-  <div class="card-wrapper">
-    <div class="card-white">
-      <div class="card-description grey grey-box">
-        <a target="_blank" href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96" class="thin-buttons-grey">Click here for a very comprehensive look into the world of Cyber-Security</a>
-        <p class= "grey" id="card-description-paragraph">
-        
-        </p>
-
-
-
-      </div>
-    <div class="card-2-image" style="background-image: url(<%= image_path('cybersecurity.png') %>);">
+            
+            <p class= "grey" id="card-description-paragraph"></p>
+            </div>
+            
+        </div>
+    <a href="#card-3" class="thin-buttons scroll">Learn More</a>
     </div>
-  </div>
-  <a href="#card-3" class="thin-buttons scroll">Learn More</a>
-  </div>
-  <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>)";>
-  </div>
+    <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>)";>
+    </div>
 </div>
 
 
