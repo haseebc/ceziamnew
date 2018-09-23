@@ -9,49 +9,68 @@
 <% set_meta_tags title: 'Cyber-security checker',
                 description: 'Detect your core cyber security risks including dangerous ports and attack surface with a simple website freely available to all.' %>
 
-<div class="banner-green">
-<!-- Here I just created _navbar-centred in /shared -->
-<%= render 'shared/navbar-centred' %>
-    <div class="header-description">
-    
-        <h1><p class="page-description">Uncover Your Cyber Security Risks with a Security Checkup</p></h1>
 
+
+<div class="banner-green">
+    <!-- Here I just created _navbar-centred in /shared -->
+    <%= render 'shared/navbar-centred' %>
+    <div class="header-description">
+        <h1><p class="page-description">Uncover Your Cyber Security Risks with a Security Checkup</p></h1>
         <div class="seccheck-banner" style="background-image: url(<%= image_path('seccheckup3.png') %>);">
         </div>
-
     </div>
-    
-    
     <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
     </div>
-
-
     <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
     </div>
-
-
 </div>
-<div class="card-container" id="card-1">
+
+
+
+
+<div class="card-container2 white" >
   <%= render 'shared/navbar-black' %>
-  <div class="card-wrapper">
-    <div class="card">
-      <div class="card-description">
-        <p>How we do it</p>
-        <p id="card-description-paragraph">We detect any weakspots in your domain with top-of-the-notch algorithms.</p>
-      </div>
-      <div class="card-1-image" style="background-image: url(<%= image_path('card-1.png') %>);">
-      </div>
-    </div>
-    <a href="#card-2" class="thin-buttons-grey scroll">Learn More</a>
-  </div>
   <div class="text-description">
-    <p>What we do</p>
-    <p id="description-paragraph">With Ceziam, Cyber-Security risks are easier to detect and prevent. We present complex information in an easy way, always striving to give users a meaningful but simple analysis.    </p>
-   
+    <p id="cybersecurity-healthcheck">Time to Give Your Enterprise a Cyber Security Checkup</p>
+    <p class="grey" id="description-paragraph">89% of all organisation are not protected against cyber attacks.<br />
+
+The best way to resolve these problems is with a no-cost Security CheckUp.<br /> The experts from Ceziam will analyse your internet facing applications and network.<br /> After the analysis you will recieve a comprehensive report, if high risk issues are found we will ask you to consider booking a meeting with us to discuss how we can assist you to resolve threats discovered. You’re under no obligation though!</p>
+
+<div class="grey" id="description-paragraph">
+
+<p id="cybersecurity-healthcheck">Cyber Security Check includes:</p>
+  <ul>
+    <li><a href="#">Web Application risks</a></li>
+    <li><a href="#">Dangerous IT infrastructure</a></li>
+    <li><a href="#">Attack surface you have exposed</a></li>
+    <li><a href="#">Key Cyber Security recommendations</a></li>
+  </ul>
   </div>
-  <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>);">
+
+  
+</div> 
+
+  <div class="card-wrapper">
+    <div class="card-white">
+      <div class="card-description grey grey-box">
+        <a target="_blank" href="https://blog.usejournal.com/cyber-security-why-you-need-it-7adf0d07b96" class="thin-buttons-grey">Click here for a very comprehensive look into the world of Cyber-Security</a>
+        <p class= "grey" id="card-description-paragraph">
+        
+        </p>
+
+
+
+      </div>
+    <div class="card-2-image" style="background-image: url(<%= image_path('cybersecurity.png') %>);">
+    </div>
+  </div>
+  <a href="#card-3" class="thin-buttons scroll">Learn More</a>
+  </div>
+  <div class="orange-vector" style="background-image: url(<%= image_path('vector-orange.png') %>)";>
   </div>
 </div>
+
+
 
 <div class="card-container alternate" id="card-2">
   <%= render 'shared/navbar' %>
@@ -104,3 +123,5 @@
       gif.hidden = false;
   });
 </script>
+
+

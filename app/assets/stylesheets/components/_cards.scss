@@ -1,9 +1,20 @@
+
+
 .card-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100vh;
+  background: #FFFDFD;
+}
+
+.card-container2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 115vh;
   background: #FFFDFD;
 }
 
@@ -138,15 +149,23 @@ color: #FFFFFF;
   font-size: 42px;
   text-align: left;
   color: #4F4F4F;
-  width: 35%;
+  width: 45%;
 }
 
 #what-is-cybersecurity {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  font-size: 42px;
+  font-size: 30px;
   text-align: left;
   color: white;
+}
+
+#cybersecurity-healthcheck {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: left;
+  color: grey;
 }
 
 #description-paragraph {
