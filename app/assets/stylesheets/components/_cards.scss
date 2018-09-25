@@ -17,6 +17,14 @@
   height: 135vh;
   background: #FFFDFD;
 }
+.card-container3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  background: #FFFDFD;
+}
 
 .alternate {
 background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 95, 109, 0.8) 99.66%);
@@ -78,7 +86,19 @@ background: linear-gradient(270.7deg, rgba(255, 195, 113, 0.8) 0.46%, rgba(255, 
   justify-content: flex-end;
   height: 100%;
   width: 100%;
-  background: rgb(212, 145, 145);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 20px rgb(129, 96, 96);
+}
+
+.card-pink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  background: rgb(247, 132, 132);
   border-radius: 8px;
   box-shadow: 2px 2px 20px rgb(129, 96, 96);
 }
@@ -94,6 +114,18 @@ width: 90%;
 bottom: 0px;
 left: 17px;
 }
+
+.card-description2 {
+  position: absolute;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 26px;
+  text-align: left;
+  color: rgb(53, 53, 55);
+  width: 90%;
+  bottom: 0px;
+  left: 17px;
+  }
 
 #card-description-paragraph {
 font-family: 'Montserrat', sans-serif;
@@ -200,6 +232,10 @@ text-align: left;
   }  
 
   #card-description-paragraph {
+    font-size: 14px;
+  }
+
+  #card-description2-paragraph {
     font-size: 14px;
   }
 
