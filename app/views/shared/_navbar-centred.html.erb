@@ -9,7 +9,6 @@
                       <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
                       <%= link_to 'My dashboard', dashboard_profile_path %>
                       <%= link_to 'Glossary', pages_glossary_path(anchor: 'glossary-anchor') %>
-                      <%= link_to 'Security Checkup', pages_healthcheck_path %>
                     </div>
                 </div>
             </div> --> 
@@ -26,7 +25,6 @@
                     <div class="dropdown-content without-user">
                       <%= link_to 'Log In', new_user_session_path %>
                       <a href="/pages/glossary">Glossary</a>
-                      <%= link_to 'Security Checkup', pages_healthcheck_path %>
                     </div>
                 </div>  
             </div> --> 
