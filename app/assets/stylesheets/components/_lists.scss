@@ -16,13 +16,19 @@
   }
   
   ul {
+    color: #4F4F4F !important;
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
   
   li {
-    font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #4F4F4F;
+    font-weight: 200;
+    font-size: 20px;
     border-bottom: 1px solid #ccc;
   }
   
@@ -31,9 +37,11 @@
   }
   
   li a {
+    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    color: #000;
-  
+    color: #4F4F4F;
+    font-weight: 200;
+    font-size: 20px;
     -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
     -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
     -o-transition: font-size 0.3s ease, background-color 0.3s ease;
