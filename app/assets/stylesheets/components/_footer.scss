@@ -21,6 +21,7 @@
 
 
 .footer-links {
+  text-decoration: none;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -38,10 +39,11 @@
 }
 
 .footer-links a {
-  text-decoration: none;
+
   color: #FFFFFF;
   display: inline;
   justify-content: space-between;
+  font-size: 20px;
 }
 
 .footer-sns {

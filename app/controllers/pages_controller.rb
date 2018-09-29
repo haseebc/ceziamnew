@@ -10,4 +10,7 @@ class PagesController < ApplicationController
   def healthcheck
   end
 
+  def privacy
+  end
+
 end
