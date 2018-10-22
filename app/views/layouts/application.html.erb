@@ -27,5 +27,12 @@
       <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    
+    <% flash.each do |name, msg| %>
+    <ul>
+     <li><%= msg %></li>
+    </ul>
+<% end %>
+
   </body>
 </html>

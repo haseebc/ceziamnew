@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'pages/glossary'
   get 'pages/healthcheck'
   get 'pages/privacy'
+  get 'blog', to: 'pages#blog'
 
   devise_for :users, controllers: { registrations: "registrations" }
 
@@ -23,4 +24,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :articles
+
 end
