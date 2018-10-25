@@ -1,19 +1,44 @@
-<h1>Listing all articles</h1>
-<p>
-<%= link_to "Create new article", new_article_path %>
-</p>
-<table>
- <tr>
-  <th><font color="black">Title</font></th>
-  <th><font color="black">Description</font></th>
- </tr>
- <% @articles.each do |article| %>
- <tr>
-  <td class="articles-table-title"><%= article.title %></td>
-  <td class="articles-table-desc"><%= article.description %></td>
-  <td><%= link_to 'Edit', edit_article_path(article) %></td>
-  <td><%= link_to 'Show', article_path(article) %></td>
-  <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
- </tr>
- <% end %>
-</table>
+<% if current_user && current_user.firstname=="Haseeb" %>
+  <p> HELLO <%= current_user.firstname %></p>
+
+    <h1>Listing all articles</h1>
+    <p>
+    <%= link_to "Create new article", new_article_path %>
+    </p>
+    <table>
+    <tr>
+    <th><font color="black">Title</font></th>
+    <th><font color="black">Description</font></th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+    <td class="articles-table-title"><%= article.title %></td>
+    <td class="articles-table-desc"><%= article.description %></td>
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+    <td><%= link_to 'Show', article_path(article) %></td>
+    <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
+    </tr>
+    <% end %>
+    </table>
+
+<% else %>
+
+    <h1>Listing all articles</h1>
+    <p>
+    </p>
+    <table>
+    <tr>
+    <th><font color="black">Title</font></th>
+    <th><font color="black">Description</font></th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+    <td class="articles-table-title"><%= article.title %></td>
+    <td class="articles-table-desc"><%= article.description %></td>
+
+    </tr>
+    <% end %>
+    </table>
+
+<% end %>
+
