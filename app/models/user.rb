@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :checks
 
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true
 end
