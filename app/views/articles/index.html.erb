@@ -1,6 +1,5 @@
 <% if current_user && current_user.firstname=="Haseeb" %>
   <p> HELLO <%= current_user.firstname %></p>
-
     <h1>Listing all articles</h1>
     <p>
     <%= link_to "Create new article", new_article_path %>
@@ -20,9 +19,7 @@
     </tr>
     <% end %>
     </table>
-
 <% else %>
-
     <h1>Listing all articles</h1>
     <p>
     </p>
@@ -35,10 +32,9 @@
     <tr>
     <td class="articles-table-title"><%= article.title %></td>
     <td class="articles-table-desc"><%= article.description %></td>
-
+    <td><%= link_to 'Show', article_path(article) %></td>
     </tr>
     <% end %>
     </table>
-
 <% end %>
 
