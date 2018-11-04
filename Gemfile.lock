@@ -124,6 +124,8 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     puma (3.11.4)
+    pygments.rb (1.2.1)
+      multi_json (>= 1.0.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
@@ -249,6 +251,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma
+  pygments.rb
   rails (= 5.2.0)
   redcarpet
   redis
