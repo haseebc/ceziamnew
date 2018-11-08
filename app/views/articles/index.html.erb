@@ -1,40 +1,46 @@
-<% if current_user && current_user.firstname=="Haseeb" %>
-  <p> HELLO <%= current_user.firstname %></p>
-    <h1>Listing all articles</h1>
-    <p>
-    <%= link_to "Create new article", new_article_path %>
-    </p>
-    <table>
-    <tr>
-    <th><font color="black">Title</font></th>
-    <th><font color="black">Description</font></th>
-    </tr>
-    <% @articles.each do |article| %>
-    <tr>
-    <td class="articles-table-title"><%= article.title %></td>
-    <td class="articles-table-desc"><%= article.description %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Show', article_path(article) %></td>
-    <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
-    </tr>
-    <% end %>
-    </table>
-<% else %>
-    <h1>Listing all articles</h1>
-    <p>
-    </p>
-    <table>
-    <tr>
-    <th><font color="black">Title</font></th>
-    <th><font color="black">Description</font></th>
-    </tr>
-    <% @articles.each do |article| %>
-    <tr>
-    <td class="articles-table-title"><%= article.title %></td>
-    <td class="articles-table-desc"><%= article.description %></td>
-    <td><%= link_to 'Show', article_path(article) %></td>
-    </tr>
-    <% end %>
-    </table>
-<% end %>
+<% set_meta_tags title: 'Cyber-security checker',
+    description: 'Detect your core cyber security risks including dangerous ports and attack surface with a simple website freely available to all.' %>
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI components sprint</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+<!-- This is a really important link to myown css file used -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- Leave those next 4 lines if you care about users using IE8 -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <!-- -->
+     <!-- -->
+  </head>
+  <body>
+    <%= render 'shared/navbar-blog.html.erb' %>
+    <div class="container">
+      <h1 class="text-center">Articles</h1>
+        <div class="title-centre">
+            <ul>
+                <% @articles.each do |article| %>
+                <li>
+                <%= markdown article.title %>
+                <%= link_to 'read this article...', article_path(article) %>
+                </li> 
+                <% end %>
+            </ul>
+        </div>    
+    </div>
+    <!-- Including Bootstrap JS (with its jQuery dependency) so that dynamic components work -->
+    <!-- First line loads jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <!-- Now bootstrap loaded -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
