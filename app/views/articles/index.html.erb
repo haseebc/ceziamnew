@@ -22,13 +22,14 @@
     <![endif]-->
      <!-- -->
      <!-- -->
+     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   </head>
   <body>
 
     <%= render 'shared/navbar-blog.html.erb' %>
 
     <div class="container">
-      <h1 class="text-center">ARTICLES</h1>
+      <h1 class="text-center">LATEST ARTICLES</h1>
         <div class="title-centre">
             <ul>
                 <% @articles.each do |article| %>
@@ -47,3 +48,11 @@
     <!-- First line loads jquery -->
   </body>
 </html>
+
+<script>
+  const form = document.querySelector('#search');
+  const gif = document.querySelector("#loading-symbol");
+  form.addEventListener('submit', function(event) {
+      gif.hidden = false;
+  });
+</script>
