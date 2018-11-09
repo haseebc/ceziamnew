@@ -53,9 +53,11 @@ body{
   /* First simple components */
   
   .text-center {
-    text-align: center;
+    text-align: inherit;
     width: 900px;        /* Set the width */
-    margin: 60px; 
+    margin: 190px;
+    margin-bottom: 10px;
+    margin-top: 150; 
   }
 
   .blog-title{
