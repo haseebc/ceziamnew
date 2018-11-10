@@ -8,6 +8,14 @@
   background: linear-gradient(90deg, rgba(40, 60, 134, 0.8) 0%, rgba(69, 162, 71, 0.8) 100%);
 }
 
+.banner-white {
+  position: relative;
+  vertical-align: text-bottom;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #f9f9facc 0%, rgba(207, 208, 207, 0.8) 100%);
+}
+
 .logo-banner {
   opacity: 0.8;
   height: 85%;
