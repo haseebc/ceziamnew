@@ -29,17 +29,20 @@
     <%= render 'shared/navbar-blog.html.erb' %>
 
     <div class="container">
-      <h1 class="text-center">LATEST ARTICLES</h1>
-        <div class="title-centre">
-            <ul>
-                <% @articles.each do |article| %>
-                <li>
-                <%= markdown article.title %>
-                <%= link_to 'read this article...', article_path(article) %>
-                </li> 
-                <% end %>
-            </ul>
-        </div>    
+        <div class="logo-banner-blog">
+            <%= render 'shared/navbar-blog.html.erb' %>
+        </div>
+        <h1 class="text-center">LATEST ARTICLES</h1>
+            <div class="title-centre">
+                <ul>
+                    <% @articles.each do |article| %>
+                    <li>
+                    <%= markdown article.title %>
+                    <%= link_to 'read this article...', article_path(article) %>
+                    </li> 
+                    <% end %>
+                </ul>
+            </div>    
     </div>
   </body>
 </html>
