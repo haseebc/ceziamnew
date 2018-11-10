@@ -12,13 +12,17 @@ body{
   
 
   h1, h2, h3{
-    font-family: 'Varela Round', sans-serif;
-  /*  font-family: 'Montserrat', sans-serif; */
-  }
+ /*   font-family: 'Varela Round', sans-serif; 
+    font-family: 'Montserrat', sans-serif; */
+  font-family: "georgia", serif;
+}
   
   h1{
-    color: #D24949;
-    font-size: 22px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c00;
+    font-size: 14px;
+    
   }
   
   h2{
@@ -59,6 +63,23 @@ body{
     margin: 70px;
     margin-bottom: 10px;
     margin-top: 110px; 
+  }
+
+  .articles-centre {
+    text-align: inherit;
+    width: 900px;        /* Set the width */
+    margin: 70px;
+    margin-bottom: 10px;
+    margin-top: 110px; 
+
+  }
+
+  .title-blog{
+    font-family: "georgia", serif;
+    font-size: 22px;
+    line-height: 1.25;
+    color: rgb(46, 46, 46);
+
   }
 
   .blog-title{
