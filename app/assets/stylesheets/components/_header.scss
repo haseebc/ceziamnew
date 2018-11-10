@@ -33,6 +33,20 @@
   background-size: contain;
 }
 
+.drop-down-blog {
+  background-image: url(image_path("drop-down2.png")); 
+  background-color: transparent;
+  border: none;
+  position: relative;
+  display: inline-block;
+  transition: 0.4s;
+  height: 30px;
+  width: 50px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .buttons-header {
   width: 35%;
   height: 80%;
@@ -44,7 +58,7 @@
 
 
 .black-burguer {
-  background-image: url('drop-down2.png');
+  background-image: url(image_path("drop-down2.png"));
   transition: 0.4s;
 
 }
