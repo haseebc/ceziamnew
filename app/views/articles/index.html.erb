@@ -31,14 +31,18 @@
         </div>
     <div class="container">
         
-        <h1 class="text-center">LATEST ARTICLES</h1>
+        <h1 class="articles-centre">LATEST ARTICLES</h1>
             <div class="title-centre">
                 <ul>
                     <% @articles.each do |article| %>
-                    <li>
-                    <%= markdown article.title %>
-                    <%= link_to 'read this article...', article_path(article) %>
+                    <li class="title-blog">
+                    <%=  article.title %>
                     </li> 
+                    <li class="">
+                    <%=  markdown article.description.truncate_words(20) %>
+                    <%= link_to 'Read more.', article_path(article) %>
+                    </li> 
+
                     <% end %>
                 </ul>
             </div>    
