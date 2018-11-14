@@ -1,16 +1,23 @@
 <!-- This is basically saying if you're logged in and you are user Haseeb you can edit stuff 
 the && used to guard against nil errors 
 -->
+<div class="container-blog">
 <% if current_user && current_user.firstname=="Haseeb" %>
-    <h1>Showing selected article</h1>
+<!--     <h1>Showing selected article</h1> -->
     <p>Title: <%= @article.title %></p>
+    <p class="timestamp-blog"><%= @article.created_at.strftime("%d %B %Y")
+    %></p>
+    <p>Title: <%= @article.created_at.strftime("%x")
+    %></p>
     <p>Description: <%= markdown @article.description %></p>
     <%= link_to "Edit", edit_article_path(@article) %>
     <%= link_to 'Back', articles_path %>
     
 <% else %>
-    <h1>Showing selected article</h1>
-    <p>Title: <%= @article.title %></p>
-    <p>Description: <%= @article.description %></p>
+<!--     <h1>Showing selected article</h1> -->
+    <p >Title: <%= @article.title %></p>
+    <p > <%= markdown @article.description %></p>
     <%= link_to 'Back', articles_path %>
 <% end %>
+
+</div>
