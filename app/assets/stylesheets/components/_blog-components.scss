@@ -1,9 +1,18 @@
 .container-blog{	
     width: 900px;	
     margin: 90px auto;	
-
     margin-bottom: 81px;	
   }	
+
+.container-blog-medium{	
+        max-width: 850px;
+   
+        padding: 120px;
+}	
+
+.background-white{	
+    background-color: white;
+}
 
 .text-left {		
 width: 900px;
@@ -15,8 +24,6 @@ font-size: 14px;
 margin: 30px;
 font-family: "georgia", serif;
 }
-
-
 
 .title-blog{	
 font-family: "georgia", serif;
