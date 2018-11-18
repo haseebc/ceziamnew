@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UI components sprint</title>
      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   </head>
@@ -15,29 +15,32 @@
 the && used to guard against nil errors 
 -->
 
-
-
 <div class ="background-white">
-<div class="container-blog-medium">
-<% if current_user && current_user.firstname=="Haseeb" %>
-<!--     <h1>Showing selected article</h1> -->
-    <p  class="title-blog-main"><%= @article.title %></p>
-    <p><%= @article.created_at.strftime("%d %B %Y")  %> by Haseeb Chaudhary</p>
-    
- 
-    <p><%= markdown @article.description %></p>
-    <%= link_to "Edit", edit_article_path(@article) %>
-    <%= link_to 'Back', articles_path %>
-    
-<% else %>
-<!--     <h1>Showing selected article</h1> -->
-    <p  class="title-blog"><%= @article.title %></p>
-    <p><%= @article.created_at.strftime("%d %B %Y")
-    %></p>
-    <p><%= markdown @article.description %></p>
-    <%= link_to 'Back', articles_path %>
-<% end %>
+     <div class="container-blog-medium"> 
+    <!-- <div class="container text-center padded"> -->
+    <% if current_user && current_user.firstname=="Haseeb" %>
+    <!--     <h1>Showing selected article</h1> -->
+        <p  class="title-blog-main"><%= @article.title %></p>
+        <p><%= @article.created_at.strftime("%d %B %Y")  %> by Haseeb Chaudhary</p>
+        <p><%= markdown @article.description %></p>
+        <%= link_to "Edit", edit_article_path(@article) %>
+        <%= link_to 'Back', articles_path %>
+        
+    <% else %>
+    <!--     <h1>Showing selected article</h1> -->
+        <p  class="title-blog-main"><%= @article.title %></p>
+        <p><%= @article.created_at.strftime("%d %B %Y")  %> by Haseeb Chaudhary</p>
+        <p><%= markdown @article.description %></p>
+        <%= link_to 'Back', articles_path %>
+    <% end %>
 
-</div>
+    </div>
 </div>
 </html>
+<script>
+  const form = document.querySelector('#search');
+  const gif = document.querySelector("#loading-symbol");
+  form.addEventListener('submit', function(event) {
+      gif.hidden = false;
+  });
+</script>

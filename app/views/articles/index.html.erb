@@ -37,15 +37,25 @@
             
 
         <% else %>
-
+                <ul>
+                    <% @articles.each do |article| %>
+                    <li class="text-left title-blog">
+                    <%=  article.title %>
+                    </li>
+                    <h4 class="description-blog"> </h4>
+                    <%=   article.description.truncate_words(4) %>
+                    <h4 class="description-blog red"> </h4>
+                    <%= link_to 'Read more.', article_path(article) %>
+                    </li>
+                    <% end %>
+                </ul>
+            </div> 
         <% end %>
 
         </div>  
     </div>
 
 </html>
-
-
 <script>
   const form = document.querySelector('#search');
   const gif = document.querySelector("#loading-symbol");
