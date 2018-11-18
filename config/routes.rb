@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   get 'pages/glossary'
   get 'pages/healthcheck'
   get 'pages/privacy'
-  get 'blog', to: 'pages#blog'
-
+  # get 'blog', to: 'pages#blog'
+  get 'blog', to: 'articles#index'
+  
   devise_for :users, controllers: { registrations: "registrations" }
 
   root to: 'pages#home'

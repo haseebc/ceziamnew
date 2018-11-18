@@ -16,6 +16,8 @@
         <div class="text-left articles-title">
         <p>LATEST ARTICLES<p>
  
+        <% if current_user && current_user.firstname=="Haseeb" %>
+<!--     <h1>Showing selected article</h1> -->
                 <ul>
                     <% @articles.each do |article| %>
                     <li class="text-left title-blog">
@@ -30,7 +32,14 @@
 
                     <% end %>
                 </ul>
-            </div>  
+                <%= link_to 'New Article', new_article_path(@article) %>
+            </div> 
+            
+
+        <% else %>
+
+        <% end %>
+
         </div>  
     </div>
 
@@ -44,3 +53,6 @@
       gif.hidden = false;
   });
 </script>
+
+
+   
