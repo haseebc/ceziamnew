@@ -1,10 +1,14 @@
+<!-- SEO Meta-tags -->
+<% set_meta_tags title: 'Log in',
+              description: 'Log in to your user account to view your dashboard and access your security checks.' %>
+
 <div class="container-log-in">
   <div class="row">
     <%= render 'shared/navbar' %>
       <div class="col-xs-12 col-sm-4 col-sm-offset-4">
 
           <div class="form-login">
-            <p class="white" id="log-in-paragraph">Log in to your user account to view your profile and access your security checks.</p>
+            <p class="white" id="log-in-paragraph">Log in to your user account to view your bashboard and access your security checks.</p>
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-inputs">
                   <%= f.input :email, required: false, autofocus: true, placeholder: "E-mail", class: "input-fields" %>
@@ -14,15 +18,13 @@
                     <%= f.button :submit, "Log in", class: "button-white alternate-log-in" %>
                     <%# <%= render "devise/shared/links" %>
                     <div class="line"></div>
-                    <a href="#" class="thin-buttons">Use Google +</a>
-                    <a href="#" class="thin-buttons">Use Facebook</a>
+                    <%# <a href="#" class="thin-buttons">Use Google +</a>
+                    <a href="#" class="thin-buttons">Use Facebook</a> %>
                     <hr>
                   </div>
                 </div>
               <% end %>
           </div>
-
-
           <div class="sns-login">
           </div>
       </div>

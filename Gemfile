@@ -27,6 +27,10 @@ gem 'bourbon'
 gem 'jquery-rails', '~> 4.3.3'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
+gem 'meta-tags'
+gem 'sitemap_generator'
+gem 'redcarpet'
+gem 'pygments.rb'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

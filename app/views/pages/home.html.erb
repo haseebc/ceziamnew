@@ -1,13 +1,16 @@
+<!-- SEO Meta-tags -->
+<% set_meta_tags title: 'Cyber-security checker',
+                description: 'Detect your core cyber security risks including dangerous ports and attack surface with a simple website freely available to all.' %>
 
 <div class="banner-green">
   <%= render 'shared/navbar' %>
   <div class="header-description">
-    <p class="header-title">Welcome to Ceziam</p>
-    <p class="page-description"> Detect your core cyber security risks with a simple website freely available to all.</p>
+    <h1><p class="header-title">Welcome to Ceziam</p></h1>
+    <h2><p class="page-description">Detect your core cyber security risks with a simple website freely available to all.</p><h2>
     <form id="search" action="/checks#report-banner-1" method="post">
       <div>
        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your hostname..." autocomplete="off"/>
+      <input class="string required" id="check-start" maxlength="255" name="hostname" size="50" type="text" placeholder="Insert your hostname e.g. cnn.com" autocomplete="off"/>
       </div>
       <div class="button-loader-container">
         <input class="button-white" id="button-banner" name="commit" type="submit" value="Detect" />

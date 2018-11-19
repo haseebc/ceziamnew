@@ -1,10 +1,14 @@
+<!-- SEO Meta-tags -->
+<% set_meta_tags title: 'Full report',
+              description: 'Here you will find all the information related to your website security and your attack surface that we have detected.' %>
+
 <% if @check.completed? %>
 
 <div class="card-container full-report-page">
   <div class="banner-green glossary">
   <%= render 'shared/navbar' %>
   <div class="glossary-header-container">
-      <p class="page-description glossary-description" id="full-report-header-description">This is your full report page. You'll find all the information related to your sites security that we've detected.</p>
+      <p class="page-description glossary-description" id="full-report-header-description">This is your full report page. You will find all the information related to your website's security that we have detected.</p>
       </div>
       <div class="logo-banner static-logo" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
       </div>
@@ -20,7 +24,7 @@
   <div class="data-container">
     <div class="risk-chart">
       <div class="risk-factor"> <%= @check.score %>%
-      <div class="risk-title">Risk Factor</div>
+      <div class="risk-title">Port Risks</div>
       <a href="#report-banner-2" class="thin-buttons scroll result-graph">See Report</a>
     </div>
       <ul class="progress">
@@ -35,9 +39,11 @@
               <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
               </g>
               </svg>
-              <svg viewBox="-10 -10 220 220">
-              <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="<%= @check.score * 3 %>%"></path>
-              </svg>
+              <% if @check.score %>
+                <svg viewBox="-10 -10 220 220">
+                <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="<%= @check.score * 3 %>%"></path>
+                </svg>
+              <% end %>
           </li>
         </li>
       </ul>
@@ -72,7 +78,11 @@
       </svg>
     </div>
     <div class="wrapper-clock margin-graph">
+    <% if @check.duration %>
+      <div class="style-clock"><%= @check.duration %> s
+    <% else %>
       <div class="style-clock"><%= @check.scandur %> s
+    <% end %>
         <div class="scan-duration">Detection Time</div>
       </div>
     </div>
@@ -92,7 +102,7 @@
     </div>
   </div>
 <div class="circle-description-container">
-    <div class="no-margin-desc-start" id="graph-description">The number displayed above indicates the likelyhood of a dangerous port in your website being hacked.
+    <div class="no-margin-desc-start" id="graph-description">The risk associated with the dangerous port(s) that has been detected.
    </div>
     <div id="graph-description">The amount of time we took detecting the weaknesses in the hostname you provided.</div>
     <div id="graph-description">The attack surface is the sum of the entry points (subdomains) in your main domain. </div>
@@ -100,7 +110,7 @@
   </div>
 </div>
 <div class="general-info-container-vuln" id="report-banner-2">
-<div class="risks-title vuln" id="result-full-report">Vulnerabilities</div>
+<div class="risks-title vuln" id="result-full-report">Dangerous Ports</div>
 <br>
 
 <div class="container">
@@ -166,6 +176,8 @@
       </tbody>
     </table>
   </div>
+
+<p id="scanned-by"><a href="http://websec.app:8080/<%=@check.hostname%>.json">Download raw attack surface results data in JSON</a></p>
 
   <p id="scanned-by">Need some help understanding your data?</p>
   <div class="buttons-full-report-table">

@@ -12,11 +12,18 @@ class CheckService
     end
 
     def run
+        begin_checks = Time.now
+
         ports_check_response = ports_check(@target)  
         @check.fullresponse = ports_check_response if ports_check_response
 
         subdomain_response = subdomains_check(@target)
         @check.attacksurface = subdomain_response if subdomain_response
+
+        end_checks = Time.now
+        duration_checks = (end_checks - begin_checks)
+
+        @check.duration = duration_checks.round(2).to_s
         @check.complete!
         @check.save
         @check.set_vulnerabilities
@@ -28,7 +35,7 @@ class CheckService
         ports_to_check = "7,9,13,19,20,21,23,25,37,53,67,69,80,113,115,135,137,138,139,161,389,445,548,1433,3389"
     
         @jumphost = "websec.app"
-        @username = "root"
+        @username = "checksuser"
         @password = ENV["PASS_SECRET"] 
         @cmd = "nmap -sV -oX /var/www/html/output2.xml -p #{ports_to_check} #{@target}"
     
@@ -51,7 +58,7 @@ class CheckService
     
       def subdomains_check(target)
         @jumphost = "websec.app"
-        @username = "root"
+        @username = "checksuser"
         @password = ENV["PASS_SECRET"]
     
         #attacksurface_check

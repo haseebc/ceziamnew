@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :glossary]
+  skip_before_action :authenticate_user!, only: [:home, :glossary, :healthcheck, :privacy, :blog]
 
   def home
   end
@@ -7,6 +7,12 @@ class PagesController < ApplicationController
   def glossary
   end
 
-  def about
+  def healthcheck
+  end
+
+  def privacy
+  end
+
+  def blog
   end
 end

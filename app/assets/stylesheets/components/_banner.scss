@@ -8,6 +8,18 @@
   background: linear-gradient(90deg, rgba(40, 60, 134, 0.8) 0%, rgba(69, 162, 71, 0.8) 100%);
 }
 
+.banner-white {
+  position: relative;
+  vertical-align: top;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #f9f9facc 0%, rgba(207, 208, 207, 0.8) 100%);
+
+
+
+
+}
+
 .logo-banner {
   opacity: 0.8;
   height: 85%;
@@ -16,6 +28,26 @@
   background-repeat: no-repeat;
   background-position: right;
   margin-bottom: 50px;
+}
+
+.logo-banner-blog {
+  opacity: 0.8;
+  height: 20%;
+  width: 20%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  margin-bottom: px;
+}
+
+.seccheck-banner {
+  opacity: 1;
+  height: 150%;
+  width: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+  margin-bottom: 20px;
 }
 
 .header-title {
@@ -44,6 +76,16 @@
   width: 40%;
 }
 
+.header-description-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: center;
+  margin-left: 55%;
+  height: 90%;
+  width: 90%;
+}
+
 .white-vector {
   position: absolute;
   height: 25vh;
@@ -53,3 +95,17 @@
   background-position: center;
   bottom: 0px;
 }
+
+@media (max-width: 767.98px) {
+  .page-description {
+    font-size: 24px;
+  }
+
+  .logo-banner {
+    margin-bottom: 100%;
+  }
+
+  .header-description {
+    width: unset;
+  }
+ }

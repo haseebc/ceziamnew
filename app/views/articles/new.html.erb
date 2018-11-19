@@ -1,0 +1,7 @@
+<!-- This is basically saying if you're logged in and you are user Haseeb you can edit stuff 
+-->
+<% if current_user && current_user.firstname=="Haseeb" %>
+    <%= render 'shared/form' %>
+<% else %>
+    <p> You do not have permission </p>
+<% end %>

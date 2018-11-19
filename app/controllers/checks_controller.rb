@@ -6,33 +6,29 @@ class ChecksController < ApplicationController
   end
 
   def create
-    if hostname_valid?(params[:hostname]).nil?
+    hostname_verified = hostname_valid?(params[:hostname])
+    
+    unless hostname_verified
       # feeback about non valid hostname
       flash[:notice] = "Please remove \"http://\" or enter a valid hostname to run the check."
       render 'pages/home'
-
     else
+      #@check = CheckService.new(params[:hostname]).run
+      @check = Check.new(hostname: hostname_verified)
+      @check.user = current_user if current_user 
 
-      # @check = CheckService.new(params[:hostname]).run
-      @check = Check.new
-      @check.hostname = params[:hostname]
-      
-      if current_user 
-        @check.user = current_user
-          if @check.save
-            redirect_to check_full_report_path(@check)
-          else
-            redirect_to root_path
-          end
-      else 
-          if @check.save
-            session[:last_check_id] = @check.id
-            redirect_to check_path(@check)
-          else
-            redirect_to root_path
-          end
-      end 
-    end
+      if @check.save
+        if current_user
+          redirect_to check_full_report_path(@check) 
+        else
+          session[:last_check_id] = @check.id
+          redirect_to check_path(@check)
+        end
+      else
+        flash[:notice] = "An error occured."
+        redirect_to root_path
+      end
+    end 
   end 
 
   def show
@@ -58,7 +54,7 @@ class ChecksController < ApplicationController
 
     if user_input.end_with? "/"
       user_input.tr!("/", "")
-    end
+    end 
 
     user_input.match(valid_hostname_regex)
   end

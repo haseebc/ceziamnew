@@ -13,12 +13,14 @@
   font-size: 50px;
   color: #4F4F4F;
 }
+
 .summary-page {
   display: flex;
   flex-direction: column;
   align-items: space-around;
   justify-content: center;
 }
+
 .progress {
   width: 100%;
   height: 100%;
@@ -45,6 +47,7 @@
   font-size: 28px;
   color: #4F4F4F;
 }
+
 .risk-chart {
   position: relative;
   display: flex;
@@ -52,7 +55,6 @@
   align-items: center;
   justify-content:center;
 }
-
 
 #result-font-summary {
 }
@@ -67,6 +69,7 @@
   font-size: 42px;
   color: #4F4F4F;
 }
+
 .info-table {
   font-family: 'montserrat', sans-serif !important;
   font-weight: 200;
@@ -75,6 +78,7 @@
   flex-direction: column;
   padding-bottom: 20px;
 }
+
 .results {
   font-family: 'montserrat', sans-serif;
   font-size: 42px;
@@ -127,4 +131,45 @@
             animation: load 7s;
         }
     }
+}
+
+@media (max-width: 767.98px) {
+  #result-summary {
+    font-size: 35px;
+    margin-top: 20%;
+  }
+
+  #result-font {
+    font-weight: 400 !important;
+    font-size: 22px;
+  }
+
+  .risk-factor {
+    font-size: 50px !important;
+  }
+  
+  .risk-title {
+    font-size: 30px !important;;
+  }
+
+  .info-table p {
+    padding-left: 2%;
+  }
+
+  .risk-chart {
+    height: 100%;
+  }
+
+  .summary-page {
+    height: 100%;
+  }
+
+  #button-purple {
+    margin: 0 auto;
+  }
+
+  .info-table {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
 }

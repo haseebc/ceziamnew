@@ -10,7 +10,6 @@
   height: 100vh;
 }
 
-
 #edit-paragraph{
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -30,6 +29,43 @@
 }
 
 
+@media (max-width: 767.98px) {
+  .orange-circle-mini {
+    display: none;
+  }
+
+  .profile-button-white {
+    display: none;
+  }
+
+  .profile-question {
+    display: none;
+  }
+
+  .card-4-image {
+    display: none;
+  }
+
+  .card-description {
+    width: 75%;
+  }
+
+  .user-details {
+    margin-right: 0px;
+  }
+
+  .profile-header-container {
+    margin-left: 8%;
+  }
+
+  .form-edit{
+    width: 100%;
+  }
+  
+  #edit-paragraph {
+    margin-top: 10%;
+  }
+}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -38,8 +74,6 @@ input:-webkit-autofill:active {
     -webkit-transition-delay: 9999s;
     -webkit-transition: color 9999s ease-out, background-color 9999s ease-out;
 }
-
-
 
 .avatar{
   width: 200px;
@@ -60,6 +94,8 @@ input:-webkit-autofill:active {
 .profile-pic-edit{
   padding-top: 50px;
   padding-right: 100px;
+  // Profile picture hidden
+  display: none;
 }
 
 
