@@ -1,6 +1,5 @@
 <% set_meta_tags title: 'Cyber-security checker',
     description: 'Detect your core cyber security risks including dangerous ports and attack surface with a simple website freely available to all.' %>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,11 +10,9 @@
      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   </head>
             <%= render 'shared/navbar-blog.html.erb' %>
-
     <div class="container-blog">
         <div class="text-left articles-title">
         <p>LATEST ARTICLES<p>
- 
         <% if current_user && current_user.firstname=="Haseeb" %>
 <!--     <h1>Showing selected article</h1> -->
                 <ul>
@@ -23,19 +20,15 @@
                     <li class="text-left title-blog">
                     <%=  article.title %>
                     </li>
-                    
                     <h4 class="description-blog"> </h4>
                     <%=   article.description.truncate_words(4) %>
                     <h4 class="description-blog red"> </h4>
                     <%= link_to 'Read more.', article_path(article) %>
                     </li> 
-
                     <% end %>
                 </ul>
                 <%= link_to 'New Article', new_article_path(@article) %>
             </div> 
-            
-
         <% else %>
                 <ul>
                     <% @articles.each do |article| %>
@@ -48,13 +41,11 @@
                     <%= link_to 'Read more.', article_path(article) %>
                     </li>
                     <% end %>
-                </ul>
+                </ul>        
             </div> 
         <% end %>
-
         </div>  
     </div>
-
 </html>
 <script>
   const form = document.querySelector('#search');
