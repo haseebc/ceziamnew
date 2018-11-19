@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'pages/privacy'
   # get 'blog', to: 'pages#blog'
   get 'blog', to: 'articles#index'
+  get 'about', to:'pages#about'
   
   devise_for :users, controllers: { registrations: "registrations" }
 
