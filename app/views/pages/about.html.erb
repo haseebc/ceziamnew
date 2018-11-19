@@ -1,59 +1,87 @@
 
-<div class="banner-green glossary">
+<div class="banner-green glossary glossary-page-banner">
   <%= render 'shared/navbar' %>
-  <div class="glossary-header-container">
-    <p class="page-description glossary-description"> These are the people that started Ceziam. Let us tell you a bit about them.</p>
+  <div class="about-header-container">
+     <h1 class="page-description">CEZIAM</h1>
+     <p class="page-description">A cyber security story like non other.</p>
     </div>
-    <div class="logo-banner static-logo" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
+    <div class="logo-banner" style="background-image: url(<%= image_path('logo-ceziam.png') %>);">
     </div>
-    <div class="white-vector" style="background-image: url(<%= image_path('white-vector.png') %>)";>
   </div>
 </div>
 
-<div class="about-content-container" id="about-container">
-  <div id="title-about">Founders</div>
-  <div class="about-card first">
-    <a href="https://www.linkedin.com/in/haseeb-chaudhary-07695938/" target="_blank">
-      <%= image_tag ('hass.jpeg'), class: "profile-pic" %>
-    </a>
-    <div class="founder-description">
-      <p><strong>Haseeb Chaudhary</strong></p>
-      <p class="founder-story"><i>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, iure enim quia ipsam minima, nulla, omnis dolorum eum architecto possimus eius delectus, nihil odio magnam numquam! Id rerum, a necessitatibus."</i></p>
+<div class="about-us-container">
+	<div class="about-body-container">
+		<p>Ceziam is a tool built to detect core cyber security risks and the overall atack surface on any website. Built around years of combined experience from it's founders, Ceziam detects and communicates all high risk issues associated to a website in a simple way.</p>
+		<p>With our robust software, we can deliver relevant and fast information to anyone, anywhere. We really want to help people feel safer in an ever expanding internet based world. </p>
+	</div>
+</div>
 
-    </div>
+<div class="about-content-container">
+	<div id="title-about">OUR TEAM</div>
+	<div class="row" id="about-card-container">
+  	<div class="col-xs-12 col-lg-4">
+  		<div class="about-card">
+  			<%= image_tag('hass.jpeg', class: "object-fit_cover") %>
+  			<div class="overlay-text">
+  				<h1>"It has been reported that there is more than ten million attacks a year on internet."</h1>
+  				<p>However, very few developers or engineers have the resources to mitigate these attacks as  existing cyber security detection tools, whilst great at what they do, are not effective for identifying the overall important risks. </p>
+  				<div class="team-title">Haseeb Chaudhary - CEO</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-xs-12 col-lg-4">
+  		<div class="about-card">
+  		    <%= image_tag('santi.jpg', class: "object-fit_cover") %>
+  		    <div class="overlay-text">
+  				<h1>"In our view, the cyber security industry is based largely around purchasing expensive tools."</h1>
+  				<p>These tools are used to identify risk issues that are time consuming to fix and for many developers and engineers difficult to understand.
+					The only realistic solution is to gain visibility of your attack surface and identifying core cyber security risks in a simple way.</p>
+					<div class="team-title">Santiago Eid- CDO</div>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="col-xs-12 col-lg-4">
+  		<div class="about-card">
+  		    <%= image_tag('jonna.jpeg', class: "object-fit_cover") %>
+  		    <div class="overlay-text">
+  				<h1>"The only realistic solution is to gain visibility of your attack surface and identifying core cyber security risks in a simple and easy way."</h1>
+  				<p>Ceziam detects your core cyber security risks with a simple web application available to all to keep you one step ahead of the threat. No one is exempt small or large business from the the threat online. </p>
+  				<div class="team-title">Jonathan Sitti - CTO</div>
+  			</div>
+  		</div>
+  	</div>
+		<div class="col-xs-12 col-lg-4">
+  		<div class="about-card">
+  			<div class="logo-container">
+					<%= link_to "#{image_tag('linked-in-logo.png')}".html_safe, "https://www.linkedin.com/company/ceziam/", target: "_blank" %>
+					<div class="logo-title">Be part of our experience on Linked In</div>
+  			</div>
+  		</div>
+		</div>
+		<div class="col-xs-12 col-lg-4">
+  		<div class="about-card">
+  			<div class="logo-container">
+					<%= link_to "#{image_tag('github-logo.png')}".html_safe, "https://github.com/haseebc/ceziamnew", target: "_blank" %>
+					<div class="logo-title">Check out our open source material on Github</div>
+				</div>
+  		</div>
+  	</div>
+  	<div class="col-xs-12 col-lg-4">
+  		<div class="about-card">
+  			<div class="logo-container">
+					<%= link_to "#{image_tag('instagram-logo.png')}".html_safe, "https://www.instagram.com/ceziam_/", target: "_blank" %>
+					<div class="logo-title">Follow us on Instagram</div>
+				</div>
+  		</div>
+  	</div>
   </div>
-  <div class="about-card">
-    <a href="https://www.linkedin.com/in/jonathansitti/" target="_blank">
-      <%= image_tag ('jonna.jpeg'), class: "profile-pic" %>
-    </a>
-    <div class="founder-description">
-      <p><strong>Jonathan Sitti</strong></p>
-      <p class="founder-story"><i>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, iure enim quia ipsam minima, nulla, omnis dolorum eum architecto possimus eius delectus, nihil odio magnam numquam! Id rerum, a necessitatibus."</i></p>
+</div>
 
-    </div>
-  </div>
-  <div class="about-card">
-    <a href="https://www.linkedin.com/in/santiago-eid-08845515b/" target="_blank">
-      <%= image_tag ('santi.jpg'), class: "profile-pic" %>
-    </a>
-    <div class="founder-description">
-      <p><strong>Santiago Eid</strong></p>
-      <p class="founder-story"><i>"I am a Bolivian Environmental Engineer graduate. I was introduced to Ceziam during a coding bootcamp in Barcelona called Le Wagon. Ceziam was our project, but became much more. After two weeks creating Ceziam with the rest of the founders, I discovered a new-found passion for cybersecurity."</i></p>
-
-    </div>
-  </div>
-  <div class="about-card">
-    <a href="">
-      <%= image_tag ('haruka.jpeg'), class: "profile-pic" %>
-    </a>
-    <div class="founder-description">
-      <p><strong>Haruka Aoki</strong></p>
-      <p class="founder-story"><i>"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, iure enim quia ipsam minima, nulla, omnis dolorum eum architecto possimus eius delectus, nihil odio magnam numquam! Id rerum, a necessitatibus."</i></p>
-
-    </div>
-
-  </div>
-  <div class="orange-vector purple-summary" style="background-image: url(<%= image_path('purple-vector.png') %>);">
-  </div>
+<div class="about-us-container">
+	<div class="about-body-container">
+		<p>The brains behind Ceziam are three co-founders who bring a wealth of experience in deep in tech, cyber security, science, marketing and business operations.</p>
+		<p>The team met quite randomly at the world’s #1 full stack coding bootcamp according to SwitchUp in the city of Barcelona...the birth place of Ceziam.</p>
+	</div>
 </div>
 <%= render 'shared/footer' %>
