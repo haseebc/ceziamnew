@@ -1,26 +1,15 @@
+<% set_meta_tags title: 'Cyber-security checker',
+    description: 'Detect your core cyber security risks including dangerous ports and attack surface with a simple website freely available to all.' %>
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121868609-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-121868609-1');
-    </script>
-    <%= favicon_link_tag 'favicon.ico' %>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,500|Titillium+Web|Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= display_meta_tags site: 'CEZIAM' %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI components sprint</title>
+     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   </head>
-    <%= render 'shared/navbar-blog.html.erb' %>
+            <%= render 'shared/navbar-blog.html.erb' %>
     <div class="container-blog">
         <div class="text-left articles-title">
         <p>LATEST ARTICLES<p>
