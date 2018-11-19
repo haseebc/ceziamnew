@@ -1,21 +1,17 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :glossary, :healthcheck, :privacy, :blog, :about]
 
-  def home
-  end
+  skip_before_action :authenticate_user!, only: %i[home glossary healthcheck privacy blog about]
 
-  def glossary
-  end
+  def home; end
 
-  def healthcheck
-  end
+  def glossary; end
 
-  def privacy
-  end
+  def healthcheck; end
 
-  def blog
-  end
+  def privacy; end
 
-  def about
-  end
+  def blog; end
+
+  def about; end
+
 end

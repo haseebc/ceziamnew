@@ -18,30 +18,29 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
-#Gems added by team Ceziam
-gem 'crack', '~> 0.4.3'
-gem 'json', '~> 1.8', '>= 1.8.3'
-gem 'net-ssh', '~> 3.2'
-gem 'net-scp', '~> 1.2', '>= 1.2.1'
+# Gems added by team Ceziam
 gem 'bourbon'
+gem 'crack', '~> 0.4.3'
 gem 'jquery-rails', '~> 4.3.3'
+gem 'json', '~> 1.8', '>= 1.8.3'
+gem 'meta-tags'
+gem 'net-scp', '~> 1.2', '>= 1.2.1'
+gem 'net-ssh', '~> 3.2'
+gem 'pygments.rb'
+gem 'redcarpet'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
-gem 'meta-tags'
 gem 'sitemap_generator'
-gem 'redcarpet'
-gem 'pygments.rb'
 
 group :development do
+  gem 'rubocop'
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
+  gem 'listen', '~> 3.0.5'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-
