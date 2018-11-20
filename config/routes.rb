@@ -8,10 +8,9 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard/profile'
-  get 'pages/glossary'
-  get 'pages/healthcheck'
-  get 'pages/privacy'
-  # get 'blog', to: 'pages#blog'
+  get 'glossary', to: 'pages#glossary'
+  get 'healthcheck', to: 'pages#healthcheck'
+  get 'privacy', to: 'pages#privacy'
   get 'blog', to: 'articles#index'
   get 'about', to: 'pages#about'
 
