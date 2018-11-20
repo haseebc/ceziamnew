@@ -15,8 +15,8 @@
   justify-content: space-between;
   background: linear-gradient(90deg, #f9f9facc 0%, rgba(207, 208, 207, 0.8) 100%);
 
- 
- 
+
+
 
 }
 
@@ -88,7 +88,7 @@
 
 .white-vector {
   position: absolute;
-  height: 20vh;
+  height: 25vh;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -96,7 +96,7 @@
   bottom: 0px;
 }
 
-@media (max-width: 767.98px) { 
+@media (max-width: 767.98px) {
   .page-description {
     font-size: 24px;
   }

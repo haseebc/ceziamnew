@@ -6,11 +6,11 @@
           <div class="drop-down-menu">
             <button class="drop-down pulse"></button>
             <div class="dropdown-content">
-            <%= link_to 'Security Checkup', pages_healthcheck_path %>
-            <%= link_to 'Blog', articles_path %>
             <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <%= link_to 'Blog', articles_path %>
             <%= link_to 'My dashboard', dashboard_profile_path %>
-            <%= link_to 'Glossary', pages_glossary_path(anchor: 'glossary-anchor') %>
+            <%= link_to 'About', about_path %>
+            <%= link_to 'Glossary', glossary_path(anchor: 'glossary-anchor') %>
           </div>
         </div>
       </div>
@@ -25,8 +25,9 @@
               <button class="drop-down pulse"></button>
               <div class="dropdown-content without-user">
               <%= link_to 'Blog', articles_path %>  
-              <%= link_to 'Security Checkup', pages_healthcheck_path %>
-              <a href="/pages/glossary">Glossary</a>
+              <%= link_to 'Security Checkup', healthcheck_path %>
+              <%= link_to 'About', about_path %>
+              <%= link_to 'Glossary', glossary_path(anchor: 'glossary-anchor') %>
               <%= link_to 'Log In', new_user_session_path %>
             </div>
           </div>

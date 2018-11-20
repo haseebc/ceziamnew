@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "https://ceziam.com"
+SitemapGenerator::Sitemap.default_host = 'https://ceziam.com'
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -25,6 +25,6 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  add '/', :changefreq => 'weekly', :priority => 0.9
-  add '/glossary', :changefreq => 'weekly'
+  add '/', changefreq: 'weekly', priority: 0.9
+  add '/glossary', changefreq: 'weekly'
 end
