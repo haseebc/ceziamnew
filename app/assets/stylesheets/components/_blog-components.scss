@@ -54,22 +54,14 @@ line-height: 1.6;
 .timestamp-blog{
     font-family: "georgia", serif;
     font-size: 10px;
-   
     }
 
-// @media (max-width: 767.98px) { 
-   
-// // .container-blog-medium{	
-// //     max-width:320px;
-// //     padding: 0px;
-// //     float: none;
-// //     width: 400px;
-
-// //         // max-width: 850px;
-// //         // padding: 100px;
-// // }
-
-	
-
-// // }
+@media (max-width: 767.98px) {   
+.container-blog-medium{	
+    max-width:320px;
+    padding: 0px;
+    float: none;
+    width: 400px
+}
+}
 
