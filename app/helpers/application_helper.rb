@@ -25,7 +25,7 @@ module ApplicationHelper
 
   end
   def markdown(description)
-    renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
+    renderer = HTMLwithPygments.new(hard_wrap: true)
     options = {
       autolink: true,
       no_intra_emphasis: true,
@@ -38,7 +38,7 @@ module ApplicationHelper
       underline: true,
       highlight: true,
       quote: true,
-      footnotes: true
+      footnotes: true,
     }
     Redcarpet::Markdown.new(renderer, options).render(description).html_safe
   end
