@@ -59,9 +59,34 @@ line-height: 1.6;
 @media (max-width: 767.98px) {   
 .container-blog-medium{	
     max-width:320px;
-    padding: 0px;
+    padding: 14%;
     float: none;
     width: 400px
-}
+    }
+.title-blog-main{	
+    max-width:320px;
+    padding: 0px;
+    
+    font-size: 20px;
+    }
+
+.black-burguer{	
+    max-width:320px;
+    padding: 0px;
+    float: none;
+    position: relative;
+
+    }
+
+.dropdown .dropdown-blog {
+    width: 100%;
+    font-size: 16px;
+    }
+    .dropdown-blog {
+        min-width: 315px;
+        }
+    .dropdown-content {
+    min-width: 315px;
+    }
 }
 
