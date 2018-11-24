@@ -4,8 +4,8 @@
         <div class="dropdown">
           <div class="drop-down-blog">
             <button class="drop-down-blog black-burguer pulse"></button>
-            <div class="dropdown-content">
-            <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+            <div class="dropdown-content-blog">
+            <a href="/">Home</a>
             <%= link_to "Create new article", new_article_path %>
             <%= link_to 'Security Checkup', healthcheck_path %>
           </div>
@@ -20,10 +20,10 @@
           <div class="dropdown">
             <div class="drop-down-blog">
               <button class="drop-down-blog black-burguer pulse"></button>
-              <div class="dropdown-content without-user">
-              <%= link_to 'Log In', new_user_session_path %>
-              <a href="/pages/glossary">Glossary</a>
+              <div class="dropdown-content-blog without-user">
+              <a href="/">Home</a>
               <%= link_to 'Security Checkup', healthcheck_path %>
+              <%= link_to 'Log In', new_user_session_path %>
             </div>
           </div>
         </div>
