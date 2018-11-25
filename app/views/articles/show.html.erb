@@ -26,13 +26,26 @@ the && used to guard against nil errors
         <%= link_to "Edit", edit_article_path(@article) %>
         <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
         <%= link_to 'Back', articles_path %>
+
+        <h2>Comments</h2>
+        <%= render @article.comments %>
         
+        <h2>Add a comment:</h2>
+        <%= render 'comments/form' %>
+
     <% else %>
     <!--     <h1>Showing selected article</h1> -->
         <p  class="title-blog-main"><%= @article.title %></p>
         <p><%= @article.created_at.strftime("%d %B %Y")  %> by Haseeb Chaudhary</p>
         <p><%= markdown @article.description %></p>
         <%= link_to 'Back', articles_path %>
+
+        <h2>Comments</h2>
+        <%= render @article.comments %>
+        
+        <h2>Add a comment:</h2>
+        <%= render 'comments/form' %>
+
     <% end %>
 
     </div>
