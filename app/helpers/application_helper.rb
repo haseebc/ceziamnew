@@ -38,7 +38,7 @@ module ApplicationHelper
       underline: true,
       highlight: true,
       quote: true,
-      footnotes: true,
+      footnotes: true
     }
     Redcarpet::Markdown.new(renderer, options).render(description).html_safe
   end
