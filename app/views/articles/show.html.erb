@@ -22,7 +22,7 @@
 
     <h2>Comments:</h2>
     <% @article.comments.each do |comment| %>
-        <p>-- <%= comment.body %></p>
+        <p>-- <%= comment.body %> by <%= comment.user.first_name || comment.user.email %></p>
     <% end %>
 
     <h2>Add a comment:</h2>

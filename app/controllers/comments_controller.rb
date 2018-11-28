@@ -1,11 +1,18 @@
 class CommentsController < ApplicationController
 
-  skip_before_action :authenticate_user!, only: %i[show index create]
+  skip_before_action :authenticate_user!, only: %i[show index]
 
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
-    redirect_to article_path(@article)
+    @comment.user = current_user
+    
+    if @comment.save
+      redirect_to article_path(@article)
+    else
+      flash[:alert] = 'Comment was not created'
+      redirect_to article_path(@article)
+    end
   end
 
   def destroy

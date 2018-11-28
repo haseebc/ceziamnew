@@ -22,12 +22,12 @@ class ChecksController < ApplicationController
           redirect_to check_path(@check)
         end
       else
-        flash[:notice] = 'An error occured.'
+        flash[:alert] = 'An error occured.'
         redirect_to root_path
       end
     else
       # feeback about non valid hostname
-      flash[:notice] = 'Please remove "http://" or enter a valid hostname to run the check.'
+      flash[:alert] = 'Please remove "http://" or enter a valid hostname to run the check.'
       render 'pages/home'
     end
   end
