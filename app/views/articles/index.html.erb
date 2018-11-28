@@ -23,11 +23,11 @@
                     <h4 class="description-blog"> </h4>
                     <%=   article.description.truncate_words(4) %>
                     <h4 class="description-blog red"> </h4>
-                    <%= link_to 'Read more.', article_path(article) %>
+                    <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
                     </li> 
                     <% end %>
                 </ul>
-                <%= link_to 'New Article', new_article_path(@article) %>
+                <%= link_to 'New Article', new_article_path(@article), class: "btn btn-xs btn-primary" %>
             </div> 
         <% else %>
                 <ul>
@@ -38,7 +38,7 @@
                     <h4 class="description-blog"> </h4>
                     <%=   article.description.truncate_words(4) %>
                     <h4 class="description-blog red"> </h4>
-                    <%= link_to 'Read more.', article_path(article) %>
+                    <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
                     </li>
                     <% end %>
                 </ul>        

@@ -14,11 +14,14 @@
     -->
 
     <% if current_user && current_user.firstname == "Haseeb" %>
-        <%= link_to "Edit", edit_article_path(@article) %>
-        <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
+        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-xs btn-primary" %> |
+        
+        <%= link_to 'Delete', article_path(@article), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %> |
+
+        
     <% end %>    
 
-    <%= link_to 'Back', articles_path %>
+    <%= link_to 'Back', articles_path, class: "btn btn-xs btn-success" %>
 
     <h2>Comments:</h2>
     <% @article.comments.each do |comment| %>
