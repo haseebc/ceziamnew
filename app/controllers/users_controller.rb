@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to dashboard_profile_path
     else
+      flash[:alert] = 'An error occured.'
       render :edit
     end
   end

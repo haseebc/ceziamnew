@@ -1,7 +1,7 @@
-<% set_meta_tags title: 'Ceziam blog',
+<% set_meta_tags title: 'Ceziam article',
     description: 'Discover our articles about cyber-security' %>
 
-<%= render 'shared/navbar-blog.html.erb' %>
+<%= render 'shared/navbar-blog' %>
 
 <div class ="background-white">
     <div class="container-blog-medium"> 
@@ -25,7 +25,7 @@
 
     <h2>Comments:</h2>
     <% @article.comments.each do |comment| %>
-        <p>-- <%= comment.body %></p>
+        <p>-- <%= comment.body %> by <%= comment.user.first_name || comment.user.email %></p>
     <% end %>
 
     <h2>Add a comment:</h2>
