@@ -35,6 +35,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    session[:article_id] = @article.id
   end
 
   def edit
