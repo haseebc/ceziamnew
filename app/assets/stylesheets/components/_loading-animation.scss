@@ -165,9 +165,6 @@
   font: normal 100 2rem/1 Roboto;
   letter-spacing: .5em;
 }
-[class*="el"] {
-  animation: bouncing 3s infinite ease;
-}
 
 @for $i from 1 through 15 {
   $delay: percentage($i);

@@ -17,7 +17,6 @@
         <%= link_to "Edit", edit_article_path(@article), class: "btn btn-xs btn-primary" %> |
         
         <%= link_to 'Delete', article_path(@article), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %> |
-
     <% end %>    
 
     <%= link_to 'Back', articles_path, class: "btn btn-xs btn-success" %>
@@ -38,11 +37,3 @@
     
     </div>
 </div>
-
-<script>
-  const form = document.querySelector('#search');
-  const gif = document.querySelector("#loading-symbol");
-  form.addEventListener('submit', function(event) {
-      gif.hidden = false;
-  });
-</script>

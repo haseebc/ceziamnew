@@ -1,49 +1,25 @@
 <% set_meta_tags title: 'Ceziam blog',
     description: 'Discover our articles about cyber-security' %>
 
-    <%= render 'shared/navbar-blog' %>
-    <div class="container-blog">
-        <div class="text-left articles-title">
-        <p>LATEST ARTICLES<p>
-        <% if current_user && current_user.firstname=="Haseeb" %>
-            <ul>
-                <% @articles.each do |article| %>
-                <li class="text-left title-blog">
-                <%=  article.title %>
-                </li>
-                <h4 class="description-blog"> </h4>
-                <%=   article.description.truncate_words(4) %>
-                <h4 class="description-blog red"> </h4>
-                <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
-                </li> 
-                <% end %>
-            </ul>
-            <%= link_to 'New Article', new_article_path(@article), class: "btn btn-xs btn-primary" %>
-        </div> 
-        <% else %>
-            <ul>
-                <% @articles.each do |article| %>
-                <li class="text-left title-blog">
-                <%=  article.title %>
-                </li>
-                <h4 class="description-blog"> </h4>
-                <%=   article.description.truncate_words(4) %>
-                <h4 class="description-blog red"> </h4>
-                <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
-                </li>
-                <% end %>
-            </ul>        
-        </div> 
+<%= render 'shared/navbar-blog' %>
+
+<div class="container-blog">
+    <div class="text-left articles-title">
+    <p>LATEST ARTICLES<p>
+    <ul>
+        <% @articles.each do |article| %>
+        <li class="text-left title-blog">
+        <%=  article.title %>
+        </li>
+        <h4 class="description-blog"> </h4>
+        <%=   article.description.truncate_words(4) %>
+        <h4 class="description-blog red"> </h4>
+        <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
+        </li> 
         <% end %>
-        </div>  
-    </div>
-<script>
-  const form = document.querySelector('#search');
-  const gif = document.querySelector("#loading-symbol");
-  form.addEventListener('submit', function(event) {
-      gif.hidden = false;
-  });
-</script>
-
-
-   
+    </ul>
+    <% if current_user && current_user.firstname=="Haseeb" %>
+        <%= link_to 'New Article', new_article_path(@article), class: "btn btn-xs btn-primary" %>
+    <% end %>
+    </div>  
+</div>
