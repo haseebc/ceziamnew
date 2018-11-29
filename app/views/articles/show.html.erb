@@ -17,15 +17,19 @@
         <%= link_to "Edit", edit_article_path(@article), class: "btn btn-xs btn-primary" %> |
         
         <%= link_to 'Delete', article_path(@article), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %> |
-
-        
     <% end %>    
 
     <%= link_to 'Back', articles_path, class: "btn btn-xs btn-success" %>
 
     <h2>Comments:</h2>
     <% @article.comments.each do |comment| %>
-        <p>-- <%= comment.body %> by <%= comment.user.first_name || comment.user.email %></p>
+        <p>-- <%= comment.body %> by <%= comment.user.firstname || comment.user.email %>
+
+        <% if current_user && current_user.firstname == "Haseeb" %>
+        | <%= link_to 'Delete', article_comment_path(@article, comment), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
+
+        </p>
     <% end %>
 
     <h2>Add a comment:</h2>
@@ -33,11 +37,3 @@
     
     </div>
 </div>
-
-<script>
-  const form = document.querySelector('#search');
-  const gif = document.querySelector("#loading-symbol");
-  form.addEventListener('submit', function(event) {
-      gif.hidden = false;
-  });
-</script>

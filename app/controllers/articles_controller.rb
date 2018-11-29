@@ -8,18 +8,6 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  # This is the create action to create an article
-  # def create
-  #     render plain: params[:article].inspect
-  # end
-
-  # def create
-  #     @article = Article.new(article_params)
-  # #saving article to the database
-  #     @article.save
-  #     redirect_to articles_show(@article)
-  # end
-
   def index
     @articles = Article.all
   end

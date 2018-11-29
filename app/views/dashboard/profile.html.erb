@@ -84,12 +84,13 @@
           </span>
         </span>
       </span>
+      <% unless check.attacksurface.nil? %>
       <div class="orange-circle-mini">
-      <div class="style-clock-mini"><%= check.attacksurface["hosts"].count %>
-        <div class="scan-duration" id="subdomains-found-mini">Attack Surface Points
+        <div class="style-clock-mini"><%= check.attacksurface["hosts"].count %>
+          <div class="scan-duration" id="subdomains-found-mini">Attack Surface Points</div>
         </div>
       </div>
-    </div>
+     <% end %>
 
       <span class="survey-stage">
         <span class="stage draft">Draft</span>
