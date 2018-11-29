@@ -10,7 +10,6 @@ class ChecksController < ApplicationController
     hostname_verified = hostname_valid?(params[:hostname])
 
     if hostname_verified
-      # @check = CheckService.new(params[:hostname]).run
       @check = Check.new(hostname: hostname_verified)
       @check.user = current_user if current_user
 

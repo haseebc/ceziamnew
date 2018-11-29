@@ -18,14 +18,19 @@
         
         <%= link_to 'Delete', article_path(@article), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %> |
 
-        
     <% end %>    
 
     <%= link_to 'Back', articles_path, class: "btn btn-xs btn-success" %>
 
     <h2>Comments:</h2>
     <% @article.comments.each do |comment| %>
-        <p>-- <%= comment.body %> by <%= comment.user.firstname || comment.user.email %></p>
+        <p>-- <%= comment.body %> by <%= comment.user.firstname || comment.user.email %>
+
+        <% if current_user && current_user.firstname == "Haseeb" %>
+        | <%= link_to 'Delete', article_comment_path(@article, comment), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
+        <% end %>
+
+        </p>
     <% end %>
 
     <h2>Add a comment:</h2>
