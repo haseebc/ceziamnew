@@ -8,7 +8,8 @@
     <p class="title-blog-main"><%= @article.title %></p>
     <p><%= @article.created_at.strftime("%d %B %Y")  %> by Haseeb Chaudhary</p>
     <p><%= markdown @article.description %></p>
-
+    <br>
+    <br>
     <!-- This is basically saying if you're logged in and you are user Haseeb you can edit stuff 
     the && used to guard against nil errors 
     -->
@@ -18,22 +19,23 @@
         
         <%= link_to 'Delete', article_path(@article), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %> |
     <% end %>    
-
     <%= link_to 'Back', articles_path, class: "btn btn-xs btn-success" %>
-
-    <h2>Comments:</h2>
+    <br>
+    <br>
+    <div class="comments-blog">
+        <p>Comments:</p>
+    </div>
     <% @article.comments.each do |comment| %>
         <p>-- <%= comment.body %> by <%= comment.user.firstname || comment.user.email %>
-
         <% if current_user && current_user.firstname == "Haseeb" %>
         | <%= link_to 'Delete', article_comment_path(@article, comment), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you sure?"} %>
         <% end %>
-
         </p>
     <% end %>
-
-    <h2>Add a comment:</h2>
-    <%= render 'shared/comment-form' %>
+    <div class="comments-blog">
+        <p>Add a comment:</p>
+    </div>
+        <%= render 'shared/comment-form' %>
     
     </div>
 </div>
