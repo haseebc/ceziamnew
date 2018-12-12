@@ -11,15 +11,22 @@
         <li class="text-left title-blog">
         <%=  article.title %>
         </li>
+
+        <!--
         <h4 class="description-blog"> </h4>
         <%=   article.description.truncate_words(4) %>
         <h4 class="description-blog red"> </h4>
-        <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
+        -->
+        <div class="readmore-blog">
+            <%= link_to 'Read more.', article_path(article), class: "btn btn-xs btn-success" %>
+        </div>
         </li> 
         <% end %>
     </ul>
     <% if current_user && current_user.firstname=="Haseeb" %>
+        <div class="newarticle-blog">
         <%= link_to 'New Article', new_article_path(@article), class: "btn btn-xs btn-primary" %>
+        </div>
     <% end %>
     </div>  
 </div>
