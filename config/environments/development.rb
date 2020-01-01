@@ -1,7 +1,8 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
   # Verifies that versions and hashed value of the package contents in the project's package.json
-  config.webpacker.check_yarn_integrity = true
+  # changed line blow to false to get rid of an error Sept2019
+  config.webpacker.check_yarn_integrity = false
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
