@@ -9,6 +9,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
+# Specific Sprockets version added by Haseeb Chaudhary 14/01/2020
+gem 'sprockets', '~> 3.7', '>= 3.7.2'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 # Gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1' updated from 'bootstrap-sass', '~> 3.3' by HC in response to Github security advisory
