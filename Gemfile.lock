@@ -275,6 +275,7 @@ DEPENDENCIES
   sitemap_generator
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets (~> 3.7, >= 3.7.2)
   uglifier
   web-console (>= 3.3.0)
   webpacker
@@ -283,4 +284,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
