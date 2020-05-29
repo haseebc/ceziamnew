@@ -1,0 +1,4 @@
+Running bundle exec sidekiq on ceziamnew... starting, run.5272 (Hobby)
+Running bundle exec sidekiq on ceziamnew... connecting, run.5272 (Hobby)
+Running bundle exec sidekiq on ceziamnew... up, run.5272 (Hobby)
+/Users/haseeb/.local/share/heroku/client/bin/../7.35.0/bin/heroku: line 45: 22719 Hangup: 1               "$NODE" "$DIR/run" "$@"
