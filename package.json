@@ -2,7 +2,7 @@
   "name": "ceziamnew",
   "private": true,
   "engines": {
-    "node": "14.3.0",
+    "node": "14.3.0"
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
