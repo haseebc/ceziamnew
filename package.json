@@ -1,12 +1,12 @@
 {
   "name": "ceziamnew",
   "private": true,
+  "engines": {
+    "node": "14.3.0",
+  },
   "dependencies": {
     "@rails/webpacker": "3.5",
     "bootstrap": "3",
-    "engines": {
-    "node": "14.3.0"
-  },
     "jquery": "^3.3.1"
   },
   "devDependencies": {
