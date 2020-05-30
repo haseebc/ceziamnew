@@ -18,7 +18,9 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+#try to install latest webpacker may 2020
+#gem 'webpacker'
+gem 'webpacker', '~> 4.0'
 
 # Gems added by team Ceziam
 gem 'bourbon'

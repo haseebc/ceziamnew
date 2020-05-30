@@ -278,7 +278,7 @@ DEPENDENCIES
   sprockets (~> 3.7, >= 3.7.2)
   uglifier
   web-console (>= 3.3.0)
-  webpacker
+  webpacker (~> 4.0)
 
 RUBY VERSION
    ruby 2.4.4p296
