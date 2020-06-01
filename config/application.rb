@@ -38,5 +38,7 @@ module Ceziamnew
     config.active_job.queue_adapter = :sidekiq
     config.generators.system_tests = nil
 
+    config.assets.initialize_on_precompile = false
+
   end
 end
